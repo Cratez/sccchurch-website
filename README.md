@@ -1,5 +1,4 @@
 # South Clackamas Community Church Website
-
 Static website for [South Clackamas Community Church](https://sccchurch.com) hosted on GitHub Pages.
 
 ## Local development
@@ -16,5 +15,5 @@ Static website for [South Clackamas Community Church](https://sccchurch.com) hos
 - etc...
 
 ## Notes
-- Custom domain: ...
-- Contact: ...
+- https://docs.github.com/en/pages
+- all content on this page is public, strictly avoid adding any confidential information
