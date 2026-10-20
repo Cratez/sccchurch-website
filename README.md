@@ -20,12 +20,16 @@ sccchurch-website/
 ├── README.md               This file
 ├── LICENSE
 └── assets/
-    ├── favicon.svg         Site icon (placeholder cross; replace with the real logo)
+    ├── favicon.svg         Simple cross mark (tab icon and header mark)
+    ├── img/
+    │   ├── original-logo.webp   Original watercolor mountain logo (footer easter egg)
+    │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
     ├── css/
     │   ├── base.css        Shared: colors, fonts, header, buttons, footer (loaded on every page)
-    │   ├── home.css        Home page only
+    │   ├── home.css        Home page only (hero sun glow + subtle mountain silhouette)
     │   └── beliefs.css     Statement of Faith page only
     └── js/
+        ├── site.js         Every page: footer easter egg (original logo pop-up)
         ├── home.js         Home page: friendly fallback when the video can't play from a local file
         └── beliefs.js      Reading-progress bar, sidebar highlighting, scripture lookups
 ```
@@ -52,7 +56,8 @@ Scripture lookups and the YouTube video need an internet connection and a local 
 | Welcome verse | `index.html`, the `<h1>` in the hero and the `.verse-ref` line under it |
 | Colors | The `:root { ... }` block at the top of `assets/css/base.css`. There is also a dark-mode set in the `prefers-color-scheme: dark` block just below it. |
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
-| Church logo | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
+| Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
+| Hero mountain silhouette | `assets/css/home.css` — the `.hero::before` rule |
 
 ### Statement of Faith
 
@@ -127,13 +132,19 @@ Do this only when ready to cut over from Wix. Check how email for the domain is 
 
 - **Style:** warm cream and forest green with a copper accent, a serif for headings (Source Serif 4) and a clean sans for body text (Inter). Dark mode follows the visitor's system setting.
 - **Accessibility:** semantic HTML, keyboard focus outlines, `prefers-reduced-motion` respected, and light/dark contrast chosen deliberately. Check any new color combination for contrast.
+- **Hero:** a soft copper sun glow sits in the top-right. A faint mountain silhouette runs along the bottom of the hero (CSS-only SVG, low opacity, adapts to light/dark). Both are decorative only and stay behind the text.
+- **Logos:**
+  - Header / tab icon: simple cross (`assets/favicon.svg`).
+  - Original logo: watercolor three-peak mark (`assets/img/original-logo.webp`), shown by the footer easter egg.
+  - Newer logo: modern mountain + trees illustration (`assets/img/new-logo-v1.jpg`). Kept in the repo for possible future use (e.g. about page, print materials, or a refined favicon). Not currently shown on the live pages.
+- **Easter egg:** the small mountain icon after the copyright line in the footer opens a pop-up with the original logo (built in `assets/js/site.js`). It is intentionally unlabeled on screen; screen readers announce it as "See our original logo".
 - **Responsive:** layouts collapse to a single column on phones.
 - **Why plain CSS:** the site is small, one person can maintain it, and there is nothing to install or break. A utility framework such as Tailwind would add a build step without much benefit at this size.
 
 ## Known follow-ups
 
 - Add the church's street address (the original site only linked to Google Maps).
-- Replace the placeholder cross icon with the real logo, and consider a hero photo.
+- Optionally replace the cross favicon with a simplified mountain mark derived from `new-logo-v1.jpg` or the original logo.
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
 - A dedicated Sermons page (the old Wix "Sermon Lists" page was not migrated). The "Sermons" and "Browse sermons" links currently go to the YouTube channel's **Streams** tab, because sermons are not uploaded as separate videos; each Sunday's past live stream is the sermon recording.
 

@@ -256,3 +256,68 @@ h3 {
 .nb {
   white-space: nowrap
 }
+
+/* Footer easter egg: small mountain that opens the original logo (see assets/js/site.js) */
+.egg {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: middle;
+  margin-left: 8px;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  opacity: .55;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: opacity .15s, transform .15s
+}
+
+.egg:hover {
+  opacity: 1;
+  transform: translateY(-2px)
+}
+
+.egg svg {
+  width: 18px;
+  height: 18px
+}
+
+.egg-dialog {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 24px;
+  background: var(--surface);
+  color: var(--ink);
+  width: min(520px, 92vw);
+  text-align: center
+}
+
+.egg-dialog::backdrop {
+  background: rgba(20, 26, 22, .55);
+  backdrop-filter: blur(3px)
+}
+
+.egg-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px
+}
+
+.egg-dialog p {
+  margin: 14px 0 16px;
+  color: var(--muted);
+  font-size: .95rem
+}
+
+.egg-dialog .btn {
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer
+}
