@@ -26,6 +26,7 @@ sccchurch-website/
     │   ├── home.css        Home page only
     │   └── beliefs.css     Statement of Faith page only
     └── js/
+        ├── home.js         Home page: friendly fallback when the video can't play from a local file
         └── beliefs.js      Reading-progress bar, sidebar highlighting, scripture lookups
 ```
 
@@ -33,14 +34,14 @@ Each page loads `base.css` plus its own stylesheet. The header and footer are re
 
 ## Running locally
 
-**Quickest:** double-click `index.html`. It opens in your browser, and every feature works from a file except where noted below.
+**Quickest:** double-click `index.html` to check layout and text. The embedded YouTube video will not play this way (YouTube blocks embeds on pages opened from a file and shows "Error 153"), so the page shows a link instead. Use a local server for the full experience.
 
 **Recommended:** run a small local server, which behaves like the real site:
 
 - **VS Code:** install the "Live Server" extension, right-click `index.html`, then "Open with Live Server". The page reloads when you save.
 - **Python:** from this folder run `py -m http.server 8000` (Windows) or `python3 -m http.server 8000` (Mac/Linux), then open <http://localhost:8000>.
 
-Scripture lookups and the YouTube video need an internet connection.
+Scripture lookups and the YouTube video need an internet connection and a local server (not a double-clicked file).
 
 ## Making common edits
 
@@ -89,9 +90,11 @@ Clicking a reference on the Statement of Faith page fetches the passage from [bi
 - Showing NKJV, ESV, or NIV text directly on the page would require a licensed API key (the ESV API is free for non-commercial use). Keys must not be placed in this public repository, so it would need a small server-side proxy. Not worth it unless there is strong demand.
 
 ### Latest service video
-The home page embeds the channel's **uploads playlist** (`UU1Svz8uLW3raCDDP9I1eg_A`, which is the channel ID `UC1Svz8uLW3raCDDP9I1eg_A` with `UC` changed to `UU`). It always plays the newest upload first, so nothing needs updating each week. It uses the `youtube-nocookie.com` domain to limit tracking.
+The home page embeds the channel's **uploads playlist** (`UU1Svz8uLW3raCDDP9I1eg_A`, which is the channel ID `UC1Svz8uLW3raCDDP9I1eg_A` with `UC` changed to `UU`). The newest item plays first, so nothing needs updating each week. Past live streams are the sermon recordings.
 
-If the video shows an old service, the channel itself has not had a newer upload. Check the YouTube channel. The "Open the live stream" link (`/live`) only works while a stream is actually live.
+- If the player shows **"Error 153"**, the page was probably opened as a local file or without a referrer. YouTube requires embeds to be loaded from a real web address. Test on the deployed site or a local server.
+- If the video shows an old service, the channel has not had a newer upload or stream.
+- A "Watch on YouTube" link sits above the player as a backup.
 
 ## Adding a page
 
@@ -132,11 +135,11 @@ Do this only when ready to cut over from Wix. Check how email for the domain is 
 - Add the church's street address (the original site only linked to Google Maps).
 - Replace the placeholder cross icon with the real logo, and consider a hero photo.
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
-- A dedicated Sermons page (the old Wix "Sermon Lists" page was not migrated). Sermons currently link to the YouTube channel.
+- A dedicated Sermons page (the old Wix "Sermon Lists" page was not migrated). The "Sermons" and "Browse sermons" links currently go to the YouTube channel's **Streams** tab, because sermons are not uploaded as separate videos; each Sunday's past live stream is the sermon recording.
 
 ## Privacy and security
 
-Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The site makes requests to three outside services: Google Fonts, YouTube (`youtube-nocookie.com`), and bible-api.com.
+Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The site makes requests to three outside services: Google Fonts, YouTube (`youtube.com`), and bible-api.com.
 
 ## License
 

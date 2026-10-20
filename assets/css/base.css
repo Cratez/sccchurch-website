@@ -222,8 +222,7 @@ h2 {
 }
 
 .head p {
-  text-wrap: pretty;
-  max-width: 560px
+  text-wrap: pretty
 }
 
 .head p a {
@@ -232,4 +231,28 @@ h2 {
 
 [hidden] {
   display: none !important
+}
+/* Typography: avoid awkward line breaks everywhere.
+   - paragraphs/list items avoid single-word last lines
+   - headings balance their lines
+   - short things that should never split (buttons, links, reference chips) stay on one line
+   - .nb marks a phrase that must stay together (e.g. "9:30 am") */
+p,
+li {
+  text-wrap: pretty
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance
+}
+
+.btn,
+.list a,
+.card .link,
+.refs .ref,
+.head p a,
+.nb {
+  white-space: nowrap
 }
