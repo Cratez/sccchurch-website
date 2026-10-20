@@ -1,0 +1,287 @@
+/* Statement of Faith page */
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 20
+}
+
+.page-hero {
+    padding: 80px 0 40px;
+    max-width: 760px
+}
+
+.page-hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    margin: 14px 0 22px
+}
+
+.preamble {
+    font-family: var(--serif);
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    line-height: 1.6;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+    margin: 0
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 64px;
+    padding: 48px 0 96px
+}
+
+.toc {
+    position: sticky;
+    top: 100px;
+    align-self: start
+}
+
+.toc p {
+    margin: 0 0 14px
+}
+
+.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid var(--line)
+}
+
+.toc a {
+    display: block;
+    padding: 7px 0 7px 18px;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: .95rem
+}
+
+.toc a:hover {
+    color: var(--ink)
+}
+
+.toc a.on {
+    color: var(--ink);
+    font-weight: 600;
+    border-left-color: var(--accent)
+}
+
+.tenet {
+    padding: 0 0 64px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid var(--line)
+}
+
+.tenet:last-child {
+    border: 0;
+    margin: 0;
+    padding: 0
+}
+
+.num {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .08em
+}
+
+.tenet h2 {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    margin: 6px 0 20px
+}
+
+.tenet p.body {
+    font-size: 1.12rem;
+    line-height: 1.8;
+    max-width: 62ch;
+    margin: 0
+}
+
+.key {
+    margin: 28px 0 0;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    max-width: 62ch
+}
+
+@media(max-width:860px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 24px
+    }
+
+    .toc {
+        display: none
+    }
+}
+
+.key .label {
+    margin: 0 0 12px;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent)
+}
+
+.refs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.refs li {
+    font-size: .9rem;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--bg)
+}
+
+.tenet h2 {
+    text-transform: none
+}
+
+/* Translation switch */
+.tr {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    font-size: .9rem;
+    color: var(--muted)
+}
+
+.tr div {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--surface)
+}
+
+.tr button {
+    font: inherit;
+    font-weight: 600;
+    font-size: .85rem;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    padding: 6px 16px;
+    border-radius: 999px;
+    cursor: pointer
+}
+
+.tr button[aria-pressed="true"] {
+    background: var(--brand);
+    color: var(--brand-ink)
+}
+
+/* Clickable references + passage panel */
+.refs .ref {
+    font: inherit;
+    font-size: .9rem;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--bg);
+    cursor: pointer;
+    transition: border-color .15s, color .15s
+}
+
+.refs .ref:hover {
+    border-color: var(--accent);
+    color: var(--ink)
+}
+
+.refs .ref[aria-expanded="true"] {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: var(--brand-ink)
+}
+
+.refs li {
+    padding: 0;
+    border: 0;
+    background: none
+}
+
+.passage {
+    margin-top: 16px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--accent);
+    background: var(--bg);
+    border-radius: 0 12px 12px 0
+}
+
+.passage .ph {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px
+}
+
+.passage h3 {
+    font-size: 1.05rem;
+    margin: 0
+}
+
+.passage .x {
+    font: inherit;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: .85rem;
+    font-weight: 600
+}
+
+.passage .x:hover {
+    color: var(--ink)
+}
+
+.passage .pt {
+    max-height: 320px;
+    overflow: auto;
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    line-height: 1.75;
+    margin: 0;
+    padding-right: 8px
+}
+
+.passage sup {
+    font-family: var(--sans);
+    font-size: .65em;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 3px 0 6px
+}
+
+.passage .pf {
+    margin: 12px 0 0;
+    font-size: .8rem;
+    color: var(--muted)
+}
+
+.passage .pf a {
+    color: var(--accent)
+}
