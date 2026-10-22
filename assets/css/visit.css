@@ -80,29 +80,8 @@
   max-width: var(--measure)
 }
 
-/* ---- When we gather (same markup as Home) ---- */
-.gather .time {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-  white-space: nowrap
-}
-
-.gather .when {
-  font-family: var(--sans);
-  font-size: .92rem;
-  color: var(--muted);
-  text-align: right
-}
-
-.note {
-  color: var(--muted);
-  max-width: var(--measure);
-  margin: 20px 0 0
-}
-
 /* ---- Where we are ---- */
-.actions {
+.visit-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 16px;
@@ -135,10 +114,6 @@
 
   .steps>li::before {
     font-size: 2.4rem
-  }
-
-  .gather .when {
-    text-align: left
   }
 
   .cols.two {

@@ -49,7 +49,7 @@ test('home page "When we gather" rows list every time', async ({ page }) => {
   await expect(rows.nth(2)).toContainText('summer');
   await expect(rows.nth(3)).toContainText(`${EXPECTED.thursdays.time} pm`);
   await expect(rows.nth(3)).toContainText(EXPECTED.thursdays.label);
-  await expect(page.locator('#gather .note')).toContainText(`${EXPECTED.radio} FM`);
+  await expect(page.locator('#gather .rows-note')).toContainText(`${EXPECTED.radio} FM`);
 });
 
 test('home page "In person" column states the same times', async ({ page }) => {

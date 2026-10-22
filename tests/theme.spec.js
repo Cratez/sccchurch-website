@@ -4,7 +4,9 @@
  * COVERS:  the inline theme <script> in every page's <head>, the theme code in
  *          assets/js/site.js, the .theme-toggle in every footer, and the :root /
  *          [data-theme] / prefers-color-scheme tokens in assets/css/base.css
- * WHY:     If the saved choice were applied late, dark-mode visitors would see a white flash
+ * WHY:     Older Safari (13 and earlier) has no matchMedia().addEventListener; the theme code
+ *          must not throw there, or the easter egg after it never gets set up.
+ *          If the saved choice were applied late, dark-mode visitors would see a white flash
  *          on every page. If storage is blocked (private browsing), the toggle must still work.
  * UPDATE WHEN: the toggle's labels, the storage key ("theme"), or the --bg colors change.
  * REMOVE WHEN: the site drops the theme toggle.
@@ -106,5 +108,24 @@ test('still works when storage is blocked (no JavaScript errors)', async ({ page
   expect(await theme(page)).toBe('dark');
   expect(await bodyBg(page)).toBe(DARK_BG);
   await expect(toggle(page)).toHaveAttribute('aria-label', 'Switch to light theme');
+  // The fixture fails the test if any JavaScript error was logged.
+});
+
+test('an old browser without matchMedia().addEventListener (Safari 13) still works', async ({ page }) => {
+  await page.addInitScript(() => {
+    const real = window.matchMedia.bind(window);
+    window.matchMedia = (q) => {
+      const mql = real(q);
+      return {
+        matches: mql.matches, media: mql.media,
+        addListener() {}, removeListener() {},
+      };
+    };
+  });
+  await page.goto('index.html');
+  await toggle(page).click();
+  await expect(toggle(page)).toBeVisible();
+  // site.js kept running past the theme code, so the easter egg button was still built.
+  await expect(page.getByRole('button', { name: 'See our original logo' })).toBeVisible();
   // The fixture fails the test if any JavaScript error was logged.
 });

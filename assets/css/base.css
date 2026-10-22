@@ -189,6 +189,27 @@ li {
   margin: 0
 }
 
+/* "When we gather" rows (Home, Visit): big time, small "when" note */
+.gather .time {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap
+}
+
+.gather .when {
+  font-family: var(--sans);
+  font-size: .92rem;
+  color: var(--muted);
+  text-align: right
+}
+
+.rows-note {
+  color: var(--muted);
+  max-width: var(--measure);
+  margin: 20px 0 0
+}
+
 /* Three columns, each topped by a fir rule */
 .cols {
   display: grid;
@@ -223,6 +244,10 @@ li {
     gap: 4px
   }
 
+  .gather .when {
+    text-align: left
+  }
+
   .cols {
     grid-template-columns: 1fr;
     gap: 32px
@@ -247,13 +272,14 @@ li {
 }
 
 /* Full-width photo with dark overlay and white text (Home, Visit).
-   If the photo fails to load, the fir background keeps the white text readable. */
+   If the photo fails to load, the dark fir background (a fixed color, the same in light and
+   dark mode, like the overlay) keeps the white text readable. */
 .photo-hero {
   position: relative;
   display: grid;
   align-items: end;
   min-height: min(78vh, 680px);
-  background-color: var(--brand);
+  background-color: #1f3328;
   color: var(--on-photo);
   overflow: hidden
 }
@@ -267,6 +293,7 @@ li {
 }
 
 .photo-hero img {
+  color: transparent; /* hides the alt text if the photo fails, so it doesn't show over the fir background */
   object-fit: cover;
   object-position: 50% 45%
 }
@@ -531,7 +558,7 @@ footer.site {
   width: 36px;
   height: 36px;
   padding: 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--muted);
   border-radius: 0;
   background: transparent;
   color: var(--ink);

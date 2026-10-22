@@ -49,7 +49,9 @@ document.documentElement.classList.add('js');
     try { localStorage.setItem('theme', next); } catch (e) { /* not saved */ }
     label();
   });
-  deviceDark.addEventListener('change', label);
+  // Older Safari (13 and earlier) only has addListener.
+  if (deviceDark.addEventListener) deviceDark.addEventListener('change', label);
+  else if (deviceDark.addListener) deviceDark.addListener(label);
   label();
 })();
 

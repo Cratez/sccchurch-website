@@ -2,10 +2,11 @@
  * FEATURE: Home page photo hero: Mt. Hood photo, church name, rotating Bible verse (with a
  *          pause button), and the quick-link bar along its bottom edge.
  * COVERS:  index.html (.home-hero, figure.verse, #hero-verses, nav.quick),
- *          the verse rotator in assets/js/home.js, the hero styles in assets/css/home.css
+ *          the verse rotator in assets/js/home.js, the hero styles in assets/css/home.css, the fallback color in .photo-hero (base.css)
  * WHY:     The verse must not move for visitors who ask for less motion, must be pausable,
  *          and must still show (Psalm 122:1) without JavaScript. The photo must actually load
  *          (in the small WebP format), and the quick links must go somewhere real.
+ *          If the photo fails to load, the white text needs a dark background in both themes.
  * UPDATE WHEN: the hero layout, quick links, verse list format, or rotation timing changes.
  * REMOVE WHEN: the home page drops the photo hero or the rotating verse.
  */
@@ -121,4 +122,11 @@ test.describe('without JavaScript', () => {
     await expect(verseText(page)).toContainText('I was glad when they said unto me');
     await expect(pauseBtn(page)).toBeHidden();
   });
+});
+
+test('the hero keeps a dark fir background behind the photo in dark mode too', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('index.html');
+  const bg = await page.locator('.home-hero').evaluate((el) => getComputedStyle(el).backgroundColor);
+  expect(bg).toBe('rgb(31, 51, 40)'); // #1f3328, not the light dark-mode --brand
 });

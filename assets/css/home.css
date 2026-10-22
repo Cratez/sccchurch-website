@@ -128,27 +128,6 @@
   text-underline-offset: 3px
 }
 
-/* ---- When we gather ---- */
-.gather .time {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-  white-space: nowrap
-}
-
-.gather .when {
-  font-family: var(--sans);
-  font-size: .92rem;
-  color: var(--muted);
-  text-align: right
-}
-
-.note {
-  color: var(--muted);
-  max-width: var(--measure);
-  margin: 20px 0 0
-}
-
 /* ---- Three ways to join ---- */
 .cols .freq {
   font-size: 2.2rem;
@@ -239,10 +218,6 @@
     align-items: baseline;
     gap: 2px 12px;
     padding: 12px 0
-  }
-
-  .gather .when {
-    text-align: left
   }
 }
 
