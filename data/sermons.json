@@ -1,8 +1,69 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T00:00:00.000Z",
+  "generatedAt": "2026-10-22T02:15:50.000Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
-  "recent": [],
+  "recent": [
+    {
+      "videoId": "6zuVPimQvxU",
+      "url": "https://www.youtube.com/watch?v=6zuVPimQvxU",
+      "thumbnail": "https://i.ytimg.com/vi/6zuVPimQvxU/hqdefault.jpg",
+      "date": "2026-10-18",
+      "youtubeTitle": "SCCC 10/18/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "V4V7DZmF-zk",
+      "url": "https://www.youtube.com/watch?v=V4V7DZmF-zk",
+      "thumbnail": "https://i.ytimg.com/vi/V4V7DZmF-zk/hqdefault.jpg",
+      "date": "2026-10-11",
+      "youtubeTitle": "SCCC 10/11/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "bBLv6JDgdpo",
+      "url": "https://www.youtube.com/watch?v=bBLv6JDgdpo",
+      "thumbnail": "https://i.ytimg.com/vi/bBLv6JDgdpo/hqdefault.jpg",
+      "date": "2026-10-04",
+      "youtubeTitle": "SCCC 10/04/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "C6925R5FDTM",
+      "url": "https://www.youtube.com/watch?v=C6925R5FDTM",
+      "thumbnail": "https://i.ytimg.com/vi/C6925R5FDTM/hqdefault.jpg",
+      "date": "2026-09-27",
+      "youtubeTitle": "SCCC 09/27/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "CXhfA9HoQsU",
+      "url": "https://www.youtube.com/watch?v=CXhfA9HoQsU",
+      "thumbnail": "https://i.ytimg.com/vi/CXhfA9HoQsU/hqdefault.jpg",
+      "date": "2026-09-20",
+      "youtubeTitle": "SCCC 09/20/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "wDxOt9zxxdg",
+      "url": "https://www.youtube.com/watch?v=wDxOt9zxxdg",
+      "thumbnail": "https://i.ytimg.com/vi/wDxOt9zxxdg/hqdefault.jpg",
+      "date": "2026-09-13",
+      "youtubeTitle": "SCCC 09/13/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    }
+  ],
   "series": [
     {
       "id": "james",
@@ -10,9 +71,362 @@
       "current": false,
       "folderUrl": "https://drive.google.com/drive/folders/10qhMfF2NgGNnmGcpaVqIX7nIDKNqtx5l",
       "summary": null,
-      "firstDate": null,
-      "lastDate": null,
-      "sermons": []
+      "firstDate": "2022-01-09",
+      "lastDate": "2022-12-18",
+      "sermons": [
+        {
+          "key": "001 01-09-22",
+          "number": "1",
+          "date": "2022-01-09",
+          "title": "You Can Have Joy No Matter What",
+          "passage": "James 1:1-4",
+          "notesUrl": "https://drive.google.com/file/d/11-Wd7M1tg8BApPOZDwV8KldsB5B6wvjW/view",
+          "audioUrl": "https://drive.google.com/file/d/10wHdPDRx20vfZHsCX0KNYXgS4ktlbKhU/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "002 01-16-22",
+          "number": "2",
+          "date": "2022-01-16",
+          "title": "\"What Are You ... Some Kind of Wise Guy?\"",
+          "passage": "James 1:5-8",
+          "notesUrl": "https://drive.google.com/file/d/11HIdjDs0LkVKlcjU6lTLGayYn0r8z06j/view",
+          "audioUrl": "https://drive.google.com/file/d/11EbBGZjWPAxKkj7p7Qb_dAP_piP27iwF/view",
+          "videoUrl": "https://www.youtube.com/watch?v=iiTAO4bBa7g",
+          "summary": null
+        },
+        {
+          "key": "003 01-23-22",
+          "number": "3",
+          "date": "2022-01-23",
+          "title": "Equally Dependent on God",
+          "passage": "James 1:9-11",
+          "notesUrl": "https://drive.google.com/file/d/11bojBhRKy08qAmAUkmX0oXtX7-t1g7jY/view",
+          "audioUrl": "https://drive.google.com/file/d/11K2IKr-hmQzpMTKcth3hHOKa3rs1hAMx/view",
+          "videoUrl": "https://www.youtube.com/watch?v=bjcvdNVtv4Q",
+          "summary": null
+        },
+        {
+          "key": "004 01-30-22",
+          "number": "4",
+          "date": "2022-01-30",
+          "title": "Are You Blessed?",
+          "passage": "James 1:12",
+          "notesUrl": "https://drive.google.com/file/d/11n8mrvK3Ich_enNWXQTkJZjM4AQDiMAy/view",
+          "audioUrl": "https://drive.google.com/file/d/11j9NlQq31yFhoPpkA3PkOBLPX20alLzH/view",
+          "videoUrl": "https://www.youtube.com/watch?v=NeaZjYVAg8o",
+          "summary": null
+        },
+        {
+          "key": "005 02-06-22",
+          "number": "5",
+          "date": "2022-02-06",
+          "title": null,
+          "passage": "James 1:13",
+          "notesUrl": "https://drive.google.com/file/d/11s597_jfhTsczDu8KCrOgVZwmeJK0fZH/view",
+          "audioUrl": "https://drive.google.com/file/d/11qgjxGKWOW02q7xXRvhPoD8d3sUnmcB1/view",
+          "videoUrl": "https://www.youtube.com/watch?v=irzoRAJvRM4",
+          "summary": null
+        },
+        {
+          "key": "006 02-13-22",
+          "number": "6",
+          "date": "2022-02-13",
+          "title": null,
+          "passage": "James 1:16-18",
+          "notesUrl": "https://drive.google.com/file/d/11zYeF9lU1ss7_RZqMVht9pvQWed9u9EE/view",
+          "audioUrl": "https://drive.google.com/file/d/11teZ4i0uspwfAiUF1XWjhOP9vhfjuPcV/view",
+          "videoUrl": "https://www.youtube.com/watch?v=Vtk6v-GgVfQ",
+          "summary": null
+        },
+        {
+          "key": "007 02-20-22",
+          "number": "7",
+          "date": "2022-02-20",
+          "title": "“Why Don’t You People Read Your Bibles?”",
+          "passage": "James 1:19-21",
+          "notesUrl": "https://drive.google.com/file/d/128PoN8X_tYRl34jooiHG_ow3xu6KPGI0/view",
+          "audioUrl": "https://drive.google.com/file/d/123PLhrtihR4O-7aYoRklenoLzz5RfP_U/view",
+          "videoUrl": "https://www.youtube.com/watch?v=WDQvwvuDBcE",
+          "summary": null
+        },
+        {
+          "key": "008 02-27-22",
+          "number": "8",
+          "date": "2022-02-27",
+          "title": null,
+          "passage": "James 1:22-25",
+          "notesUrl": "https://drive.google.com/file/d/12oFTXpYJgw3G954MwIStXClCUIU_Nq7c/view",
+          "audioUrl": null,
+          "videoUrl": "https://www.youtube.com/watch?v=u7WTcBWQupY",
+          "summary": null
+        },
+        {
+          "key": "009 03-06-22",
+          "number": "9",
+          "date": "2022-03-06",
+          "title": "Pure and Undefiled Religion",
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/12t99iRZXpZKfXELPjFkSuVaJlhYUtnBr/view",
+          "audioUrl": "https://drive.google.com/file/d/12sykQwXNs0HJEm7X-qJpgYN1SFNavjXs/view",
+          "videoUrl": "https://www.youtube.com/watch?v=Vp7nVeMErEc",
+          "summary": null
+        },
+        {
+          "key": "010 03-13-22",
+          "number": "10",
+          "date": "2022-03-13",
+          "title": "Partiality is a Sin",
+          "passage": "James 2:1",
+          "notesUrl": "https://drive.google.com/file/d/12zlN7TKGjnaFhbclu5eudDn1XHezpEp-/view",
+          "audioUrl": "https://drive.google.com/file/d/12xn3uDqh6oxKzb0syz-2tnbhlJUD_-5i/view",
+          "videoUrl": "https://www.youtube.com/watch?v=iAtkoRUbFFg",
+          "summary": null
+        },
+        {
+          "key": "011 03-20-22",
+          "number": "11",
+          "date": "2022-03-20",
+          "title": null,
+          "passage": "James 2:1-4",
+          "notesUrl": "https://drive.google.com/file/d/137Dwaptw5vO6jX1JbKAtN8OUWRFwjnZN/view",
+          "audioUrl": "https://drive.google.com/file/d/134r4UOXx6WuYeQzVYJwWiOd3tjnJGoSr/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "012 03-27-22",
+          "number": "12",
+          "date": "2022-03-27",
+          "title": null,
+          "passage": "James 2:5-9",
+          "notesUrl": "https://drive.google.com/file/d/13Rr9Oc1WeFuJMOY_yZVIJ_oWBpnTLwF2/view",
+          "audioUrl": "https://drive.google.com/file/d/13LgQfUzu7bwcCuVvAuqiqgVy49Jwy51Z/view",
+          "videoUrl": "https://www.youtube.com/watch?v=vHOcsPxRG-0",
+          "summary": null
+        },
+        {
+          "key": "013 04-03-22",
+          "number": "13",
+          "date": "2022-04-03",
+          "title": "It’s About Genuine Christianity",
+          "passage": "James 2:10-13",
+          "notesUrl": "https://drive.google.com/file/d/13VTjvqIZ0-INwWzJedUc1I2yPn9Cczui/view",
+          "audioUrl": "https://drive.google.com/file/d/13T79Uev3k1gfRyI2WRZJ2LstIWQ3EqmX/view",
+          "videoUrl": "https://www.youtube.com/watch?v=zIoXVmi6zLo",
+          "summary": null
+        },
+        {
+          "key": "014 04-10-22",
+          "number": "14",
+          "date": "2022-04-10",
+          "title": null,
+          "passage": "James 2:14-20",
+          "notesUrl": "https://drive.google.com/file/d/13_Soix59FvNyirOeIayoJ9-KuHwALLuJ/view",
+          "audioUrl": "https://drive.google.com/file/d/13XKQ3UMJT1jSrDqNXgX57nuoeLx_MMzH/view",
+          "videoUrl": "https://www.youtube.com/watch?v=emVvBGiRrBs",
+          "summary": null
+        },
+        {
+          "key": "015 04-17-22",
+          "number": "15",
+          "date": "2022-04-17",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/14Sui4C4IyD_TtwogiJp0fErZVyIhtpjn/view",
+          "audioUrl": "https://drive.google.com/file/d/13_ZfQ7VcUaKFXauVfLWG2ZAGe4rS_vec/view",
+          "videoUrl": "https://www.youtube.com/watch?v=L5E3H3Nqrwk",
+          "summary": null
+        },
+        {
+          "key": "016 05-08-22",
+          "number": "16",
+          "date": "2022-05-08",
+          "title": "Not Means, But Outcome",
+          "passage": "James 2:21-26",
+          "notesUrl": "https://drive.google.com/file/d/13nVN3NTzqRbnroX1dbb2UWQrB3g-wZdp/view",
+          "audioUrl": "https://drive.google.com/file/d/13mxq2X0hObNkX3ojr7HsWs3oL87uPr4_/view",
+          "videoUrl": "https://www.youtube.com/watch?v=yOVvWP_vQ20",
+          "summary": null
+        },
+        {
+          "key": "017 05-15-22",
+          "number": "17",
+          "date": "2022-05-15",
+          "title": "Oh Be Careful Little Tongue What You Say!",
+          "passage": "James 3:1-2; James 1:19, 26",
+          "notesUrl": "https://drive.google.com/file/d/13pRjHinWRUxRThIaP4zX60S83z7dvlsO/view",
+          "audioUrl": "https://drive.google.com/file/d/13nk5kxrhaSliI07lQwGCgrme0qg5TMi9/view",
+          "videoUrl": "https://www.youtube.com/watch?v=A94ipJFdXhU",
+          "summary": null
+        },
+        {
+          "key": "018 05-22-22",
+          "number": "18",
+          "date": "2022-05-22",
+          "title": "A Bad Tongue Pollutes the Whole Person",
+          "passage": "James 3:3-12",
+          "notesUrl": "https://drive.google.com/file/d/14-3CNOt9dqxIB40Hbx4fAWFxJ0tOEJ3Z/view",
+          "audioUrl": "https://drive.google.com/file/d/13qtfEHfCkicrBP39xXxf7zafoWbt5pTH/view",
+          "videoUrl": "https://www.youtube.com/watch?v=CV6hslFphUQ",
+          "summary": null
+        },
+        {
+          "key": "019 05-29-22",
+          "number": "19",
+          "date": "2022-05-29",
+          "title": "Man’s Wisdom or God’s Wisdom?",
+          "passage": "James 3:13-14",
+          "notesUrl": "https://drive.google.com/file/d/142zmB9-v_1GhDmfwzNAJGMJvZAzfuUle/view",
+          "audioUrl": null,
+          "videoUrl": "https://www.youtube.com/watch?v=pf5N6gsGbf4",
+          "summary": null
+        },
+        {
+          "key": "019.2 06-12-22",
+          "number": "19.2",
+          "date": "2022-06-12",
+          "title": "Man’s Wisdom or God’s Wisdom?",
+          "passage": "James 3:13-16",
+          "notesUrl": "https://drive.google.com/file/d/1491oR5J0p4LuniN35X37PIntdFhKheJE/view",
+          "audioUrl": "https://drive.google.com/file/d/14DJP1O8ombxTRnPeZtH1eHy9otXhLZXt/view",
+          "videoUrl": "https://www.youtube.com/watch?v=BZYgvc0Zbhs",
+          "summary": null
+        },
+        {
+          "key": "020 06-19-22",
+          "number": "20",
+          "date": "2022-06-19",
+          "title": "Happy Father’s Day",
+          "passage": "James 3:17",
+          "notesUrl": "https://drive.google.com/file/d/14aC-gRWANq457YeIHS9an0E60hkpdp72/view",
+          "audioUrl": "https://drive.google.com/file/d/14U-DiRYHPMw-TH4thNPw-D-kFB8VqWr2/view",
+          "videoUrl": "https://www.youtube.com/watch?v=jpZhFOir3Cc",
+          "summary": null
+        },
+        {
+          "key": "021 06-26-22",
+          "number": "21",
+          "date": "2022-06-26",
+          "title": "Peace, Not Disorder",
+          "passage": "James 3:18; Isaiah 32:17",
+          "notesUrl": "https://drive.google.com/file/d/14ouNdm_zqp1qjr83E6LU_JW9bVqn0o3t/view",
+          "audioUrl": "https://drive.google.com/file/d/14mTAbAJz7Aa67Nb5XsiwC5t4tCdxntZj/view",
+          "videoUrl": "https://www.youtube.com/watch?v=PV1tB4NGrh4",
+          "summary": null
+        },
+        {
+          "key": "022 07-10-22",
+          "number": "22",
+          "date": "2022-07-10",
+          "title": "The Problem of War Within - #1",
+          "passage": "James 4:1-3; I Cor. 3:1-3",
+          "notesUrl": "https://drive.google.com/file/d/151rfIkAGMlYZ9NKKIiK4xLMbpK60gFbW/view",
+          "audioUrl": "https://drive.google.com/file/d/150rOStZq74FIkw_YkcagmtXhYC4bYEn0/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "023 07-17-22",
+          "number": "23",
+          "date": "2022-07-17",
+          "title": "The Problem of War Within #2",
+          "passage": "James 4:4-6; Luke 15:11-32",
+          "notesUrl": "https://drive.google.com/file/d/153Ys9VOLqvq-OiesD5VN_I_3ivGeBXZQ/view",
+          "audioUrl": "https://drive.google.com/file/d/152c8LiePlngF9_TqwedxV29T1AnhKTfW/view",
+          "videoUrl": "https://www.youtube.com/watch?v=t2xBEikJz44",
+          "summary": null
+        },
+        {
+          "key": "025 08-21-22",
+          "number": "25",
+          "date": "2022-08-21",
+          "title": "“Not Judgment, But Love,",
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/15qlm4jEA52E2QItfwhTPOAk3S7pJ2S5U/view",
+          "audioUrl": "https://drive.google.com/file/d/15i1Cvk0RbxzYLA7ic7sBSuz92bhiz3Ae/view",
+          "videoUrl": "https://www.youtube.com/watch?v=P8zZswKT5cY",
+          "summary": null
+        },
+        {
+          "key": "026 09-04-22",
+          "number": "26",
+          "date": "2022-09-04",
+          "title": "“… not my will, but Thine be done.” (Luke 22:42)",
+          "passage": "James 4:13-15; Matt. 6:9-13; Matt. 12:46-50",
+          "notesUrl": "https://drive.google.com/file/d/16jJTUiXMB2hIZdO9Qrhx8XMnn876JWR5/view",
+          "audioUrl": "https://drive.google.com/file/d/16Y140ROWiiskGVepKJO8gGb1prYyq-Xk/view",
+          "videoUrl": "https://www.youtube.com/watch?v=Pk-jOWIWmhg",
+          "summary": null
+        },
+        {
+          "key": "027 09-18-22",
+          "number": "27",
+          "date": "2022-09-18",
+          "title": "Don’t Be like the Wicked Wealthy",
+          "passage": "James 5:1-6; I Tim. 6:17-19",
+          "notesUrl": "https://drive.google.com/file/d/16h_9T8ahxBfZY_zWOoM8_rQXGjbZ5zKa/view",
+          "audioUrl": "https://drive.google.com/file/d/16cAxa99-qm2LrrwAWpoHe8rozTbQCa80/view",
+          "videoUrl": "https://www.youtube.com/watch?v=NWnyT3TQFPk",
+          "summary": null
+        },
+        {
+          "key": "028 09-25-22",
+          "number": "28",
+          "date": "2022-09-25",
+          "title": "Patience is a Command",
+          "passage": "James 5:7-9",
+          "notesUrl": "https://drive.google.com/file/d/16koAGsu2NDUsaV5VDdmYGDkvru54skoe/view",
+          "audioUrl": "https://drive.google.com/file/d/16kYctLaOmK1BXx512F3fqfVaAxQ6sEW9/view",
+          "videoUrl": "https://www.youtube.com/watch?v=pnz0kNtDR3U",
+          "summary": null
+        },
+        {
+          "key": "029 11-13-22",
+          "number": "29",
+          "date": "2022-11-13",
+          "title": "“Let Your Yes be Yes, and Your No, No!”",
+          "passage": "James 5:12",
+          "notesUrl": "https://drive.google.com/file/d/17eYkyBtDV7ukpL2XhI2fD99HOVlDFhm4/view",
+          "audioUrl": "https://drive.google.com/file/d/17apnOc2DaV9q5YbIz92WNY4023T00tLI/view",
+          "videoUrl": "https://www.youtube.com/watch?v=ecC5pPthOAY",
+          "summary": null
+        },
+        {
+          "key": "030 11-20-22",
+          "number": "30",
+          "date": "2022-11-20",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/17iDQWgWhHWh5tODiRvfraKTBsmx92bzs/view",
+          "audioUrl": "https://drive.google.com/file/d/17fuJX_qmm-9Cys7KUEiUDUNYBOU9bLU6/view",
+          "videoUrl": "https://www.youtube.com/watch?v=h8wiJllvPdE",
+          "summary": null
+        },
+        {
+          "key": "031 11-27-22",
+          "number": "31",
+          "date": "2022-11-27",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/17o4-Mqi_lNj5WPYuyFq7kF0T9ao4t4mL/view",
+          "audioUrl": "https://drive.google.com/file/d/17jKzf9Z-Pyqlb2MJSrJKhx6d_oNP1RBU/view",
+          "videoUrl": "https://www.youtube.com/watch?v=hHYXLX-nPYY",
+          "summary": null
+        },
+        {
+          "key": "033 12-18-22",
+          "number": "33",
+          "date": "2022-12-18",
+          "title": "Winning Back Those Who Stray",
+          "passage": "James 5:19-20; Matt. 7:13-14",
+          "notesUrl": "https://drive.google.com/file/d/184SPvO2F023ILiUXgrTLntFtE2bnqias/view",
+          "audioUrl": "https://drive.google.com/file/d/1841SHYaxloD-gRekqu7T_L0cyre82PaD/view",
+          "videoUrl": "https://www.youtube.com/watch?v=5_RFMJIGaqM",
+          "summary": null
+        }
+      ]
     },
     {
       "id": "jude",
@@ -20,9 +434,120 @@
       "current": false,
       "folderUrl": "https://drive.google.com/drive/folders/118Cl2xs7PtijtFxOtL8NlE5WBlQMR381",
       "summary": null,
-      "firstDate": null,
-      "lastDate": null,
-      "sermons": []
+      "firstDate": "2021-08-01",
+      "lastDate": "2021-11-07",
+      "sermons": [
+        {
+          "key": "001 08-01-21",
+          "number": "1",
+          "date": "2021-08-01",
+          "title": null,
+          "passage": "Jude 1-2",
+          "notesUrl": "https://drive.google.com/file/d/1v6bna2ZoHtNses11YrAX9MryWVbO6jsy/view",
+          "audioUrl": "https://drive.google.com/file/d/1v93CMAsv6WeWFX27S0SRW-KRevyjkPGO/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "002 08-08-21",
+          "number": "2",
+          "date": "2021-08-08",
+          "title": "They Crept In",
+          "passage": "Jude 3-4",
+          "notesUrl": "https://drive.google.com/file/d/1bflkcegmc5X6F7bnr2Zp4lc2rk3U3Xqy/view",
+          "audioUrl": "https://drive.google.com/file/d/125zUKA-UO3k30R3ih7a1GNJrl1zWLmZV/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "003 08-15-21",
+          "number": "3",
+          "date": "2021-08-15",
+          "title": "I Desire to Remind You",
+          "passage": "Jude 5-7",
+          "notesUrl": "https://drive.google.com/file/d/1BchTOy9PeZhkEz6wLhgwrzUTspdmUP4x/view",
+          "audioUrl": "https://drive.google.com/file/d/1vjNlw1NFZziPPL6_L67Xx3QdHAqKjq3h/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "004 08-22-21",
+          "number": "4",
+          "date": "2021-08-22",
+          "title": null,
+          "passage": "Jude 8-10; II Cor. 4:1-6",
+          "notesUrl": "https://drive.google.com/file/d/1r_y4DmLk5ahUcp8zE_AZdUx7MxJwFttb/view",
+          "audioUrl": "https://drive.google.com/file/d/1Xo-wlw1F2tfgen3c0V3U1p2LDrL92m22/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "005 09-26-21",
+          "number": "5",
+          "date": "2021-09-26",
+          "title": "Woe to Them!",
+          "passage": "Jude 11-13; John 14:6",
+          "notesUrl": "https://drive.google.com/file/d/1pSytuAYDsM-Qk_zjUeGmPfttYKJg8Yhx/view",
+          "audioUrl": "https://drive.google.com/file/d/1ar65_eQkfBBbiV-HQSmLr-iyQBQDsFsb/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "006 10-10-21",
+          "number": "6",
+          "date": "2021-10-10",
+          "title": "Judgment IS Coming",
+          "passage": "Jude 14-16",
+          "notesUrl": "https://drive.google.com/file/d/1toC4rqu0j-jGz0eQk1FAg9l_V-piJY2Y/view",
+          "audioUrl": "https://drive.google.com/file/d/1--45j1RwjMEA2NB4Q9TE7LZi1p2nFhBw/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "007 10-17-21",
+          "number": "7",
+          "date": "2021-10-17",
+          "title": "Our Marching Orders as it Pertains to a Time of Apostasy",
+          "passage": "Jude 17-21",
+          "notesUrl": "https://drive.google.com/file/d/1-4MrtMvEuBow-u_wIOO9Jys9AKXhWPTJ/view",
+          "audioUrl": "https://drive.google.com/file/d/1-13Ja8I3YlwL2imjYh7g81BCwwhKwyHc/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "007.2 10-24-21",
+          "number": "7.2",
+          "date": "2021-10-24",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/1-TGTil0dUboKjjhT4fbhSPEFtXVmHmUU/view",
+          "audioUrl": "https://drive.google.com/file/d/1-91GtrOSltmRQeSR7Ffv8_K8CHdQMIvc/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "008 10-31-21",
+          "number": "8",
+          "date": "2021-10-31",
+          "title": "Outreach to the Apostate and Those Under Their Influence",
+          "passage": "Jude 22-25; I John 4:1-6",
+          "notesUrl": "https://drive.google.com/file/d/1-ZkzUffW0ze0AtutJ7F2gcfXrcTcO8f8/view",
+          "audioUrl": "https://drive.google.com/file/d/1-UBoz5pySfRB_ENQylW1AKf9tQn7hFAr/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "009 11-07-21",
+          "number": "9",
+          "date": "2021-11-07",
+          "title": null,
+          "passage": "Jude 24-25",
+          "notesUrl": "https://drive.google.com/file/d/1-ds_XpvnXdt7xX9MqIMTHmSd-vWo7RJn/view",
+          "audioUrl": "https://drive.google.com/file/d/1-cxQiEzecLBCX0O-8I2_IWi5YKcXshKj/view",
+          "videoUrl": null,
+          "summary": null
+        }
+      ]
     },
     {
       "id": "second-peter",
@@ -30,9 +555,197 @@
       "current": false,
       "folderUrl": "https://drive.google.com/drive/folders/1WpipCZ2NdN5iUUcDo5l8mhr5ciwE6mL3",
       "summary": null,
-      "firstDate": null,
-      "lastDate": null,
-      "sermons": []
+      "firstDate": "2021-01-24",
+      "lastDate": "2021-07-11",
+      "sermons": [
+        {
+          "key": "001 01-24-21",
+          "number": "1",
+          "date": "2021-01-24",
+          "title": "God Has Given You All That You Need",
+          "passage": "II Peter 1:1-3",
+          "notesUrl": "https://drive.google.com/file/d/1t14OlEetvsSY41AxcUwkMLib2bOdx6Z7/view",
+          "audioUrl": "https://drive.google.com/file/d/1I1hxxXUUESJhZo2DuPwa9u-7-hxLbu5a/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "001.5 01-31-21",
+          "number": "1.5",
+          "date": "2021-01-31",
+          "title": "God Has Given You All That You Need",
+          "passage": "II Peter 1:1-3",
+          "notesUrl": "https://drive.google.com/file/d/1AAvmyXC1eM34twNMBWtreOpliqVsNLlR/view",
+          "audioUrl": null,
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "002 02-07-21",
+          "number": "2",
+          "date": "2021-02-07",
+          "title": "“Promises, Promises”",
+          "passage": "II Peter 1:4; Acts 16:22-34",
+          "notesUrl": "https://drive.google.com/file/d/1mozTDkGC6v2UQfsNLQ3BwNdp-7ZZhUG4/view",
+          "audioUrl": "https://drive.google.com/file/d/147343TRKLGymCqpCB8NY_BvtCzqRkYpK/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "003 02-28-21",
+          "number": "3",
+          "date": "2021-02-28",
+          "title": "Surety",
+          "passage": "II Peter 1:5-11",
+          "notesUrl": "https://drive.google.com/file/d/1JzR5OYBnc9d8BHLtNe72e51Nfodq2hPw/view",
+          "audioUrl": "https://drive.google.com/file/d/1poKzw5FyxG8QZ5nHAejjnOsE7cMJ--LP/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "003.5 03-07-21",
+          "number": "3.5",
+          "date": "2021-03-07",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://drive.google.com/file/d/1lFlp6GUHb6q4PnsohG4DxGaqCcjdhXCc/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "004 03-14-21",
+          "number": "4",
+          "date": "2021-03-14",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/16zmSxIvbk0hLlMJrPGS-1cuBee9LurNM/view",
+          "audioUrl": "https://drive.google.com/file/d/1W0g7whjzTmwzqk32VJkwNEyEJVrzaAI0/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "005 04-11-21",
+          "number": "5",
+          "date": "2021-04-11",
+          "title": "Pay Attention!",
+          "passage": "II Peter 1:16-21",
+          "notesUrl": "https://drive.google.com/file/d/1Efb1pIMJZlnr14iuKWya6CffECVIHVnz/view",
+          "audioUrl": "https://drive.google.com/file/d/1fClShWQgnFe6WvuMDRKQri08bJbxrDnp/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "006 04-18-21",
+          "number": "6",
+          "date": "2021-04-18",
+          "title": "Falsehood Fails",
+          "passage": "II Peter 2:1-3",
+          "notesUrl": "https://drive.google.com/file/d/1HF9lsn53FllGJPudrrt14kcWC1mFp0HA/view",
+          "audioUrl": "https://drive.google.com/file/d/1BXzK92tEdmMqC1D0fuWfLZiC5XGXPiCQ/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "007 04-25-21",
+          "number": "7",
+          "date": "2021-04-25",
+          "title": "“Good News! We Are Saved, They Are Judged”",
+          "passage": "II Peter 2:4-9; II Thess. 1:3-12",
+          "notesUrl": "https://drive.google.com/file/d/1lEXz7bW1eorw146KEhIH4ByvgMokUNKi/view",
+          "audioUrl": null,
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "008 05-02-21",
+          "number": "8",
+          "date": "2021-05-02",
+          "title": "5-2-21",
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/17W04LOYI2kfkjep5fqWbhP2tVrqJ3Yjv/view",
+          "audioUrl": "https://drive.google.com/file/d/1L6jsXIEQuub2YFDbnSm6UxMzWYBLFlI0/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "009 05-16-21",
+          "number": "9",
+          "date": "2021-05-16",
+          "title": null,
+          "passage": "2 Peter 2:17-22",
+          "notesUrl": "https://drive.google.com/file/d/1IKTt23zJw57zKq-EO8x8ZMCwZD6rF84C/view",
+          "audioUrl": "https://drive.google.com/file/d/1fz5QsY8gfGXefvI9mdo_6ilKUAJuNR6Q/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "010 05-23-21",
+          "number": "10",
+          "date": "2021-05-23",
+          "title": "Remember What You’ve Been Taught",
+          "passage": "II Peter 3:1-4",
+          "notesUrl": "https://drive.google.com/file/d/1F0p1qE1tyrstn_wRwc6wGp_-_TYKNKSV/view",
+          "audioUrl": "https://drive.google.com/file/d/1Uah6iiqep26HvbTFp4aubpTdESEjV4hM/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "011 05-30-21",
+          "number": "11",
+          "date": "2021-05-30",
+          "title": "By the Word of God",
+          "passage": "II Peter 3:5-7",
+          "notesUrl": "https://drive.google.com/file/d/1Ps_nH04o-SeWswgzDk8iUaWgRheWQnqI/view",
+          "audioUrl": "https://drive.google.com/file/d/1Wtbh2vrmcWxzSXHVNhxTyL9hu-91ieQe/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "012 06-06-21",
+          "number": "12",
+          "date": "2021-06-06",
+          "title": "The Lord is Not Slow",
+          "passage": "II Peter 3:8-9",
+          "notesUrl": "https://drive.google.com/file/d/1uvyQ13UKaMucSsM9TjypXyXkgaYuy8FA/view",
+          "audioUrl": "https://drive.google.com/file/d/12O_18BKsaGeAQaDo-HKWjk9tpdvjy5Ja/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "013 06-13-21",
+          "number": "13",
+          "date": "2021-06-13",
+          "title": "Holiness and Godliness",
+          "passage": "II Peter 3:10-13",
+          "notesUrl": "https://drive.google.com/file/d/1KKOSyidvAiD5hmMPRoY477hJ_sp0OT4O/view",
+          "audioUrl": "https://drive.google.com/file/d/1ef5KEjMPCQiIPtD6PCkBgp0OrSoyFIFF/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "014 06-27-21",
+          "number": "14",
+          "date": "2021-06-27",
+          "title": "In Peace",
+          "passage": "II Peter 3:14-16",
+          "notesUrl": "https://drive.google.com/file/d/1cYaecovI_HPTjqRDTSgBnTPKOBJawi79/view",
+          "audioUrl": "https://drive.google.com/file/d/1MGsFc52csMvvs3RMpYABWz77hCZBeKna/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "015 07-11-21",
+          "number": "15",
+          "date": "2021-07-11",
+          "title": "In conclusion …",
+          "passage": "II Peter 3:17-18",
+          "notesUrl": "https://drive.google.com/file/d/1UowfHrX7pFyQ8ncf5X4f0LXwFRM5YJpN/view",
+          "audioUrl": "https://drive.google.com/file/d/10uOcDPZnl6tWySG4XXosaMIgKz2QqiNz/view",
+          "videoUrl": null,
+          "summary": null
+        }
+      ]
     },
     {
       "id": "first-peter",
@@ -40,9 +753,329 @@
       "current": false,
       "folderUrl": "https://drive.google.com/drive/folders/1suYL5hRYeRnKYXve8ECevughT2TwdXpG",
       "summary": null,
-      "firstDate": null,
-      "lastDate": null,
-      "sermons": []
+      "firstDate": "2020-05-17",
+      "lastDate": "2021-01-10",
+      "sermons": [
+        {
+          "key": "001 05-17-20",
+          "number": "1",
+          "date": "2020-05-17",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/11LstFiI6WW3g4WK2Z3tyETUzN-_27qez/view",
+          "audioUrl": "https://drive.google.com/file/d/1BaNaZDVbnzqjuVK0l3fJWqGeP7PWVmhb/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "002 05-24-20",
+          "number": "2",
+          "date": "2020-05-24",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/127H5fXiAg__6ZLTCormKd7sYt8AW0e2j/view",
+          "audioUrl": "https://drive.google.com/file/d/1vNkmy0GRPn8q3-gRwbaGOyf4RgRBo_FD/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "003 05-31-20",
+          "number": "3",
+          "date": "2020-05-31",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/1NkxAP6Xl5tNoLyXQwcWVxbveYAgN7YsW/view",
+          "audioUrl": "https://drive.google.com/file/d/1FXNbKRHhb83oVvSRBf3iJm4ZpAOsLi7r/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "004 06-07-20",
+          "number": "4",
+          "date": "2020-06-07",
+          "title": "God’s Salvation is Everything",
+          "passage": "I Peter 1:10-12",
+          "notesUrl": "https://drive.google.com/file/d/1xHNQfidWKjqfw2HsIthCewbiXMQfn0Xd/view",
+          "audioUrl": "https://drive.google.com/file/d/12u5KECQqxf4A3TG9VAYb3rUDy4sg24Kh/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "005 06-14-20",
+          "number": "5",
+          "date": "2020-06-14",
+          "title": "Therefore …",
+          "passage": "I Peter 1:13-16",
+          "notesUrl": "https://drive.google.com/file/d/1RqI_c9a9wQTo-NJpmaO_fte-FpE7ltrk/view",
+          "audioUrl": "https://drive.google.com/file/d/1C-H6dBoj09pfmFUrG6_Nd2iogt-rMCWu/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "006 06-28-20",
+          "number": "6",
+          "date": "2020-06-28",
+          "title": "And …",
+          "passage": "I Peter 1:17-21",
+          "notesUrl": "https://drive.google.com/file/d/1oJz-BIbJCv0p7izAMEhLWf8DEbQ66cUl/view",
+          "audioUrl": "https://drive.google.com/file/d/1keZiiIStgAmY1MfRIpM51fTRS6d24Ad9/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "007 07-05-20",
+          "number": "7",
+          "date": "2020-07-05",
+          "title": "To Love God’s Word",
+          "passage": "I Peter 1:22-25",
+          "notesUrl": "https://drive.google.com/file/d/1VKSCpETnbTT0_RaPRoaCynLqGOE2d8I_/view",
+          "audioUrl": "https://drive.google.com/file/d/1P4GRI4eAoJLa_UhAhSJrKLNo8gZs4Rmz/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "008 07-12-20",
+          "number": "8",
+          "date": "2020-07-12",
+          "title": "We Must Long for God’s Word",
+          "passage": "I Peter 2:1-3",
+          "notesUrl": "https://drive.google.com/file/d/1e4_JZve5ipgEZGQ-i18gbiVdOTsD7CFs/view",
+          "audioUrl": "https://drive.google.com/file/d/153HZ0RonH7eOpqNv6_oxYsrD5n9UYVx1/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "009 07-19-20",
+          "number": "9",
+          "date": "2020-07-19",
+          "title": "Jesus is the Means by Which We Receive God’s Best",
+          "passage": "I Peter 2:4-10",
+          "notesUrl": "https://drive.google.com/file/d/1bDjS29er_V6WFgVbQTGfMcARIJwWYWKj/view",
+          "audioUrl": "https://drive.google.com/file/d/1vWxTtOok4xLAge1FYMhQ5Smjv3yDzWxs/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "010 07-26-20",
+          "number": "10",
+          "date": "2020-07-26",
+          "title": "We, Too, Are Living Stones",
+          "passage": "I Peter 2:4-10",
+          "notesUrl": "https://drive.google.com/file/d/1KWXHiDuGai3S1LrDzrCyal4E3rICQAqZ/view",
+          "audioUrl": "https://drive.google.com/file/d/1y88ilaVuSoEllfJkXbLsSPDWKcH8qS3h/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "011 08-02-20",
+          "number": "11",
+          "date": "2020-08-02",
+          "title": "Salvation or Judgment",
+          "passage": "I Peter 2:6-8",
+          "notesUrl": "https://drive.google.com/file/d/1ipKsqOzQLAm1Kx41EMRsbt-1jueb4pue/view",
+          "audioUrl": "https://drive.google.com/file/d/1kWX5AXkOol0T7VmAXtrepWUOI331RFOi/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "012 08-09-20",
+          "number": "12",
+          "date": "2020-08-09",
+          "title": "To Proclaim the Excellencies of Him",
+          "passage": "I Peter 2:9-10",
+          "notesUrl": "https://drive.google.com/file/d/1ySx9s65HA4L1_1grIh8KHxrLK3jUgLMo/view",
+          "audioUrl": "https://drive.google.com/file/d/1jZXJq5vedNp4qK-LS6OaBa87FFhs4XYi/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "013 08-16-20",
+          "number": "13",
+          "date": "2020-08-16",
+          "title": null,
+          "passage": "I Peter 2:11-12; Hebrews 12:1",
+          "notesUrl": "https://drive.google.com/file/d/1YdkmYogTUlL3HxcN9jAhbZm2Ecu45JiH/view",
+          "audioUrl": "https://drive.google.com/file/d/1vVMa-WU4Rwpn87bHnRiYzFFGH9N2wB9N/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "014 08-23-20",
+          "number": "14",
+          "date": "2020-08-23",
+          "title": "Good Deeds",
+          "passage": "I Peter 2:13-15",
+          "notesUrl": "https://drive.google.com/file/d/1_K1qjrPOy0jojuOn0FoXkuxHGr89PGRk/view",
+          "audioUrl": "https://drive.google.com/file/d/1KBwfh5RK-8xcyS8RqgX5kDH87QBe4dgc/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "015 09-06-20",
+          "number": "15",
+          "date": "2020-09-06",
+          "title": "I am Free to Obey God’s Command to Submit",
+          "passage": "I Peter 2:16-17",
+          "notesUrl": "https://drive.google.com/file/d/1EiARYNg4ozvx_UZDRth7Rg1o5QJZm7fH/view",
+          "audioUrl": "https://drive.google.com/file/d/1V9BS7095tAWe_unYjYiPcH03T5-JtBpy/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "016 09-20-20",
+          "number": "16",
+          "date": "2020-09-20",
+          "title": null,
+          "passage": "I Peter 2:18-20",
+          "notesUrl": "https://drive.google.com/file/d/1Xi1JV-L0fhl-zLuBNlm0AxtqSiBN8D0J/view",
+          "audioUrl": "https://drive.google.com/file/d/1W6V7llSWEuzwPVmpqt09iuueWiT9oWnC/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "017 10-04-20",
+          "number": "17",
+          "date": "2020-10-04",
+          "title": "And Now … A Brief Moment of Suffering",
+          "passage": "I Peter 2:21-25; Isaiah 53",
+          "notesUrl": "https://drive.google.com/file/d/1Yv5rKI-VuggrO0dbd45gdB5upH08vea4/view",
+          "audioUrl": "https://drive.google.com/file/d/1GxNoMdeFb_6lTLd839ZhbFP50YhWBk4k/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "018 10-11-20",
+          "number": "18",
+          "date": "2020-10-11",
+          "title": "“Wives, Please Do a Great Job!”",
+          "passage": "I Peter 3:1-6; Genesis 3:16 (curse of sin)",
+          "notesUrl": "https://drive.google.com/file/d/1XBNs75TryDEcD5-7WR_KqmJk25ORrxgB/view",
+          "audioUrl": "https://drive.google.com/file/d/1k_Z7A7sTcmnKFMj-29cR5fRIdP3lzP0Q/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "019 10-18-20",
+          "number": "19",
+          "date": "2020-10-18",
+          "title": "Husbands, Please Love Your Wife!",
+          "passage": "I Peter 3:7; Col. 3:1-19",
+          "notesUrl": "https://drive.google.com/file/d/1FXSxILOlds9JypKp85bWf3lj3TOiHSPb/view",
+          "audioUrl": "https://drive.google.com/file/d/1PWTHeM2W8qDv89x91dB2Cy1l02bOg21i/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "020 10-25-20",
+          "number": "20",
+          "date": "2020-10-25",
+          "title": null,
+          "passage": "I Peter 3:8-12; Psalm 34:12-16",
+          "notesUrl": "https://drive.google.com/file/d/1_GfEI1M6VaHIKTS4HSORXI2U-gdU4Ral/view",
+          "audioUrl": "https://drive.google.com/file/d/1PQwqmwXno1I1SoXMMGni_bVwbobvT_3Y/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "021 11-01-20",
+          "number": "21",
+          "date": "2020-11-01",
+          "title": "11/1/2020",
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/1gK1K7mKxpv3sM7tBm1BBDBlqgW8sDzqJ/view",
+          "audioUrl": "https://drive.google.com/file/d/1h94am0Qol6M9vo1lNQWxVBPAkM8u5iJN/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "022 11-15-20",
+          "number": "22",
+          "date": "2020-11-15",
+          "title": "Triumph in Suffering",
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/1OW9GL97Itv862GzaAGgFiynMg7RK-S8G/view",
+          "audioUrl": "https://drive.google.com/file/d/1XstuZ1qm6jMePmLP-383TX62K1O9kVe8/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "023 11-22-20",
+          "number": "23",
+          "date": "2020-11-22",
+          "title": "Armed for the Same Purpose",
+          "passage": "I Peter 4:1-6",
+          "notesUrl": "https://drive.google.com/file/d/1Fep9rSjo4B2O0eQTgx3qcpP_KYKSmRfW/view",
+          "audioUrl": "https://drive.google.com/file/d/10ZpPlk_mNu7d0grn3puJANVbCgvzferT/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "024 11-29-20",
+          "number": "24",
+          "date": "2020-11-29",
+          "title": null,
+          "passage": "I Peter 4:7-11",
+          "notesUrl": "https://drive.google.com/file/d/1z2JZUq6BX3W1LvS53TC-SBnzDy3vzACI/view",
+          "audioUrl": "https://drive.google.com/file/d/1vxK9mRiO2I4gHUIisGhMcoGrQ4fs1XX5/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "025 12-06-20",
+          "number": "25",
+          "date": "2020-12-06",
+          "title": "“Buckle Up! Suffering is Coming”",
+          "passage": "I Peter 4:12-19",
+          "notesUrl": "https://drive.google.com/file/d/1Nx7z2caMUaguUijvU1HOhEYrQcJOXA2l/view",
+          "audioUrl": "https://drive.google.com/file/d/1-Ti6UaRkXYc0qL2LY6fow4Xd-JY7CtzR/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "026 12-13-20",
+          "number": "26",
+          "date": "2020-12-13",
+          "title": "Each Must Do Their Part",
+          "passage": "I Peter 5:1-4; I Timothy 3:1-7; Titus 1:5-9",
+          "notesUrl": "https://drive.google.com/file/d/1qqJbLxK06a2tflkQkkIKe7_QGjRhkrpq/view",
+          "audioUrl": "https://drive.google.com/file/d/1p1TrdMJk0XT36XuB5b41blVP0wOQY0AF/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "027 01-03-21",
+          "number": "27",
+          "date": "2021-01-03",
+          "title": null,
+          "passage": "I Peter 5:5-7",
+          "notesUrl": "https://drive.google.com/file/d/1zJTXM5vJgvS7CPAArURYG2ZnsThcUfNN/view",
+          "audioUrl": "https://drive.google.com/file/d/1YENCzjyRNmvlJ_0RpdwlCYzjJJdpk2uH/view",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "028 01-10-21",
+          "number": "28",
+          "date": "2021-01-10",
+          "title": null,
+          "passage": "I Peter 5:8-14",
+          "notesUrl": "https://drive.google.com/file/d/1lo8HOaibeaMrI-W-Uun3x_pm90nBQf5G/view",
+          "audioUrl": null,
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "028  01-10-21",
+          "number": "28",
+          "date": "2021-01-10",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://drive.google.com/file/d/1n5BVfg86nKf-Zg0au6U8uTNRTBXem_SX/view",
+          "videoUrl": null,
+          "summary": null
+        }
+      ]
     }
   ]
 }
