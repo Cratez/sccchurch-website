@@ -1,14 +1,4 @@
 /* Sermons page */
-.page-hero {
-  padding: 80px 0 8px;
-  max-width: 760px
-}
-
-.page-hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  margin: 14px 0 0
-}
-
 #recent {
   padding-top: 48px
 }
@@ -28,6 +18,7 @@
 .from a,
 .series .folder {
   color: var(--brand);
+  font-family: var(--sans);
   font-weight: 600
 }
 
@@ -39,10 +30,11 @@
   font-weight: 600;
   letter-spacing: .06em;
   text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: var(--brand);
-  color: var(--brand-ink);
+  padding: 2px 8px;
+  border: 1px solid var(--brand);
+  border-radius: 0;
+  background: transparent;
+  color: var(--brand);
   white-space: nowrap
 }
 
@@ -50,12 +42,10 @@
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px
+  gap: 40px 28px
 }
 
 .video-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
   overflow: hidden;
   display: flex;
   flex-direction: column
@@ -78,8 +68,7 @@
   align-items: center;
   padding: 16px 22px;
   overflow-y: auto;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line)
+  background: var(--surface)
 }
 
 .video-card .summary p {
@@ -117,75 +106,86 @@
 .video-card .from,
 .video-card .links {
   margin: 0;
-  padding: 0 22px
+  padding: 0
 }
 
+/* Thin strong rule between the thumbnail and the text */
 .video-card .date {
-  padding-top: 18px;
-  color: var(--muted);
-  font-size: .9rem
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brand)
 }
 
 .video-card h3 {
-  font-size: 1.3rem;
-  margin: 6px 0 4px
+  font-size: 1.4rem;
+  margin: 8px 0 4px
+}
+
+.video-card .passage-ref,
+.video-card .from,
+.video-card .links {
+  font-family: var(--sans)
 }
 
 .video-card .passage-ref,
 .video-card .from {
   color: var(--muted);
-  font-size: .95rem
+  font-size: .92rem
 }
 
 .video-card .links {
   margin-top: auto;
   padding-top: 14px;
-  padding-bottom: 20px;
-  font-size: .95rem
+  font-size: .92rem
 }
 
 .more {
-  margin: 24px 0 0
+  margin: 40px 0 0
 }
 
 /* Sermon series: expandable cards */
 .series-list {
-  display: grid;
-  gap: 14px
+  border-top: 1px solid var(--line)
 }
 
 .series {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  border-bottom: 1px solid var(--line)
 }
 
 .series summary {
   cursor: pointer;
   list-style: none;
-  padding: 22px 56px 22px 26px;
-  position: relative;
+  padding: 24px 48px 24px 0;
+  position: relative
 }
 
 .series summary::-webkit-details-marker {
   display: none
 }
 
-/* Chevron that turns when the series is open */
+/* + when closed, minus when open (the empty alternative text keeps screen readers quiet) */
 .series summary::after {
-  content: "";
+  content: "+";
+  content: "+" / "";
   position: absolute;
-  right: 26px;
-  top: 30px;
-  width: 9px;
-  height: 9px;
-  border-right: 2px solid var(--muted);
-  border-bottom: 2px solid var(--muted);
-  transform: rotate(45deg);
-  transition: transform .15s
+  right: 4px;
+  top: 22px;
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--brand)
 }
 
 .series[open] summary::after {
-  transform: rotate(225deg)
+  content: "\2212";
+  content: "\2212" / ""
 }
 
 .series summary h3 {
@@ -197,13 +197,14 @@
 }
 
 .series .meta {
+  font-family: var(--sans);
   margin: 6px 0 0;
   color: var(--muted);
   font-size: .95rem
 }
 
 .series-body {
-  padding: 0 26px 22px
+  padding: 0 0 28px
 }
 
 .series-body .summary {
@@ -224,6 +225,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: var(--sans);
   border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: auto auto minmax(0, 1fr) auto;
@@ -309,16 +311,11 @@
   }
 
   .series summary {
-    padding: 18px 48px 18px 20px
+    padding: 20px 40px 20px 0
   }
 
   .series summary::after {
-    right: 20px;
-    top: 26px
-  }
-
-  .series-body {
-    padding: 0 20px 18px
+    top: 18px
   }
 
   /* Phones: number and date on one line, title and passage below, then the links. */

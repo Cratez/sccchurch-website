@@ -155,6 +155,34 @@ test.describe('with data', () => {
     await expect(page.locator('#series-acts')).toHaveAttribute('open', '');
   });
 
+  // The badges are outlined (transparent) so their text sits on the page background; the
+  // other muted/label text on this page is measured too, in both themes.
+  for (const theme of ['light', 'dark']) {
+    test(`badges and small labels meet 4.5:1 contrast in the ${theme} theme`, async ({ page }) => {
+      await page.evaluate((t) => { document.documentElement.dataset.theme = t; }, theme);
+      await page.locator('#series-james summary').click();
+      const ratios = await page.evaluate(() => {
+        const parse = (c) => c.match(/[\d.]+/g).map(Number);
+        const lin = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+        const lum = ([r, g, b]) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+        const backdrop = (el) => {
+          for (let n = el; n; n = n.parentElement) {
+            const c = parse(getComputedStyle(n).backgroundColor);
+            if (c.length < 4 || c[3] > 0) return c;
+          }
+        };
+        const out = {};
+        for (const sel of ['.video-card .badge', '.series .badge', '.video-card .date', '.video-card .passage-ref', '.series .meta', '.sermon-list .when']) {
+          const el = document.querySelector(sel);
+          const [hi, lo] = [lum(parse(getComputedStyle(el).color)), lum(backdrop(el))].sort((x, y) => y - x);
+          out[sel] = (hi + 0.05) / (lo + 0.05);
+        }
+        return out;
+      });
+      for (const [sel, ratio] of Object.entries(ratios)) expect(ratio, sel).toBeGreaterThanOrEqual(4.5);
+    });
+  }
+
   test('does not scroll sideways', async ({ page }) => {
     await page.locator('#series-james summary').click();
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
