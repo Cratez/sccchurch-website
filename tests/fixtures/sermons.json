@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-25T22:00:00.000Z",
+  "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
+  "recent": [
+    {
+      "videoId": "live0000001",
+      "url": "https://www.youtube.com/watch?v=live0000001",
+      "thumbnail": "https://i.ytimg.com/vi/live0000001/hqdefault.jpg",
+      "date": "2026-10-25",
+      "youtubeTitle": "SCCC 10/25/2026",
+      "live": true,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "vid00001018",
+      "url": "https://www.youtube.com/watch?v=vid00001018",
+      "thumbnail": "https://i.ytimg.com/vi/vid00001018/hqdefault.jpg",
+      "date": "2026-10-18",
+      "youtubeTitle": "SCCC 10/18/2026",
+      "live": false,
+      "summary": "Paul greets the church and gives thanks.",
+      "sermon": {
+        "seriesId": "acts",
+        "seriesTitle": "Acts",
+        "number": "2",
+        "title": "Waiting for the Promise",
+        "passage": "Acts 1:4-8",
+        "notesUrl": "https://drive.google.com/file/d/acts2pdf/view",
+        "audioUrl": "https://drive.google.com/file/d/acts2mp3/view"
+      }
+    },
+    {
+      "videoId": "vid00001011",
+      "url": "https://www.youtube.com/watch?v=vid00001011",
+      "thumbnail": "https://i.ytimg.com/vi/vid00001011/hqdefault.jpg",
+      "date": "2026-10-11",
+      "youtubeTitle": "SCCC 10/11/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "vid00001004",
+      "url": "https://www.youtube.com/watch?v=vid00001004",
+      "thumbnail": "https://i.ytimg.com/vi/vid00001004/hqdefault.jpg",
+      "date": "2026-10-04",
+      "youtubeTitle": "SCCC 10/04/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "vid00000927",
+      "url": "https://www.youtube.com/watch?v=vid00000927",
+      "thumbnail": "https://i.ytimg.com/vi/vid00000927/hqdefault.jpg",
+      "date": "2026-09-27",
+      "youtubeTitle": "SCCC 09/27/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
+    {
+      "videoId": "vid00000301",
+      "url": "https://www.youtube.com/watch?v=vid00000301",
+      "thumbnail": "https://i.ytimg.com/vi/vid00000301/hqdefault.jpg",
+      "date": "2026-03-01",
+      "youtubeTitle": "SCCC 03/01/2026",
+      "live": false,
+      "summary": null,
+      "sermon": null
+    }
+  ],
+  "series": [
+    {
+      "id": "acts",
+      "title": "Acts",
+      "current": true,
+      "folderUrl": "https://drive.google.com/drive/folders/ACTS",
+      "summary": null,
+      "firstDate": "2026-10-11",
+      "lastDate": "2026-10-18",
+      "sermons": [
+        {
+          "key": "001 10-11-26",
+          "number": "1",
+          "date": "2026-10-11",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/acts1pdf/view",
+          "audioUrl": null,
+          "videoUrl": "https://www.youtube.com/watch?v=vid00001011",
+          "summary": null
+        },
+        {
+          "key": "002 10-18-26",
+          "number": "2",
+          "date": "2026-10-18",
+          "title": "Waiting for the Promise",
+          "passage": "Acts 1:4-8",
+          "notesUrl": "https://drive.google.com/file/d/acts2pdf/view",
+          "audioUrl": "https://drive.google.com/file/d/acts2mp3/view",
+          "videoUrl": "https://www.youtube.com/watch?v=vid00001018",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "james",
+      "title": "James",
+      "current": false,
+      "folderUrl": "https://drive.google.com/drive/folders/JAMES",
+      "summary": "A practical letter about living out real faith.",
+      "firstDate": "2022-01-09",
+      "lastDate": "2022-01-09",
+      "sermons": [
+        {
+          "key": "001 01-09-22",
+          "number": "1",
+          "date": "2022-01-09",
+          "title": "You Can Have Joy No Matter What",
+          "passage": "James 1:1-4",
+          "notesUrl": "https://drive.google.com/file/d/james1pdf/view",
+          "audioUrl": "https://drive.google.com/file/d/james1mp3/view",
+          "videoUrl": null,
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "jude",
+      "title": "Jude",
+      "current": false,
+      "folderUrl": "https://drive.google.com/drive/folders/JUDE",
+      "summary": null,
+      "firstDate": null,
+      "lastDate": null,
+      "sermons": []
+    }
+  ]
+}

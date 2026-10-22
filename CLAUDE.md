@@ -24,4 +24,8 @@ Every change that adds or changes behavior, content structure, or layout must co
 6. **Run `npm test` before finishing** and report the result honestly. It runs every test on a desktop and a phone-sized screen. Run `npm run test:live` too when scripture references or the lookup code change.
 7. **Keep README.md accurate.** When a change affects anything the README describes, update it in the same change.
 
+## Sermon data
+
+`data/sermons.json` is generated daily by `scripts/build-sermons/` (workflow `.github/workflows/update-sermons.yml`). Never hand-edit it; series changes go in `data/series.json`. The JSON format is a contract between the job and `assets/js/sermons.js`, enforced by `scripts/build-sermons/validate.js`. Change all of them together with their tests, and bump `version` for breaking changes. Design history: `plans/sermons-page.md`.
+
 Commands: `npm install` and `npx playwright install chromium` once; then `npm test`, `npm run test:live`, `npm run test:report` (opens the last results in a browser). Tests also run on GitHub for every push (`.github/workflows/tests.yml`).

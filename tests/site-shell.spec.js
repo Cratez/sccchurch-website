@@ -1,6 +1,6 @@
 /**
  * FEATURE: Shared page shell (header nav, footer, links, mobile layout) on every page.
- * COVERS:  index.html, beliefs.html, assets/css/base.css
+ * COVERS:  index.html, beliefs.html, sermons.html, assets/css/base.css
  * WHY:     The header and footer are copied into each HTML file by hand, so they can drift
  *          apart or link to something that no longer exists.
  * UPDATE WHEN: a page is added or removed (edit PAGES below), or the nav links change.
@@ -11,9 +11,16 @@ const { test, expect } = require('./support/fixtures');
 const PAGES = [
   { path: 'index.html', title: 'South Clackamas Community Church' },
   { path: 'beliefs.html', title: 'Statement of Faith · South Clackamas Community Church', current: 'What We Believe' },
+  { path: 'sermons.html', title: 'Sermons · South Clackamas Community Church', current: 'Sermons' },
 ];
 
 const NAV = ['Join Us', 'Sermons', 'What We Believe', 'Contact'];
+const NAV_HREFS = ['index.html#join', 'sermons.html', 'beliefs.html', 'index.html#visit'];
+
+test('home page "Browse sermons" button goes to the Sermons page', async ({ page }) => {
+  await page.goto('index.html');
+  await expect(page.getByRole('link', { name: 'Browse sermons' })).toHaveAttribute('href', 'sermons.html');
+});
 
 for (const p of PAGES) {
   test.describe(p.path, () => {
@@ -21,6 +28,9 @@ for (const p of PAGES) {
       await page.goto(p.path);
       await expect(page).toHaveTitle(p.title);
       await expect(page.locator('header.site nav ul a')).toHaveText(NAV);
+      for (const [i, href] of NAV_HREFS.entries()) {
+        await expect(page.locator('header.site nav ul a').nth(i)).toHaveAttribute('href', href);
+      }
       await expect(page.locator('footer.site')).toContainText('© 2026 South Clackamas Community Church');
     });
 

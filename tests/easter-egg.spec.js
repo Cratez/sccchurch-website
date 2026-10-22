@@ -10,7 +10,7 @@
  */
 const { test, expect } = require('./support/fixtures');
 
-const PAGES = ['index.html', 'beliefs.html'];
+const PAGES = ['index.html', 'beliefs.html', 'sermons.html'];
 
 for (const path of PAGES) {
   test.describe(path, () => {

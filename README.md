@@ -2,13 +2,14 @@
 
 Static website for [South Clackamas Community Church](https://sccchurch.com), hosted on GitHub Pages. It replaces the old Wix site.
 
-There is no framework, no build step, and nothing to install to run the site. The site is plain HTML, CSS, and a little JavaScript. Edit a file, refresh the browser, and you see the change. Automated tests are the only part that needs an install (see "Testing").
+There is no framework, no build step, and nothing to install to run the site. The site is plain HTML, CSS, and a little JavaScript. Edit a file, refresh the browser, and you see the change. Only the automated tests and the daily sermon data job need an install (see "Testing" and "Sermon data").
 
 ## Pages
 
 | Page | File | What it contains |
 | --- | --- | --- |
 | Home | `index.html` | Welcome verse, service times, ways to join (in person / radio / online), latest-service video, TV casting help, contact info |
+| Sermons | `sermons.html` | The 6 most recent service recordings, and past sermon series with notes, audio, and video links (built from `data/sermons.json`; see "Sermon data") |
 | What We Believe | `beliefs.html` | The Statement of Faith, with clickable scripture references that load the verse text |
 
 ## Project structure
@@ -16,16 +17,25 @@ There is no framework, no build step, and nothing to install to run the site. Th
 ```
 sccchurch-website/
 ├── index.html              Home page
+├── sermons.html            Sermons page
 ├── beliefs.html            Statement of Faith
 ├── README.md               This file
 ├── CLAUDE.md               Rules for AI assistants working on the site (including testing rules)
 ├── LICENSE
-├── package.json            Test tooling only (Playwright); the site itself doesn't use it
+├── package.json            Test tooling and the sermon data job; the site itself doesn't use it
 ├── playwright.config.js    Test settings
+├── data/
+│   ├── series.json         Hand-edited list of sermon series (see "Sermon data")
+│   ├── sermons.json        Generated daily by the sermon data job; don't edit by hand
+│   └── cache/              Generated: titles already read from notes PDFs
+├── scripts/build-sermons/  The sermon data job (reads YouTube and Google Drive)
+├── plans/                  Design plans for larger features
 ├── .github/workflows/
-│   └── tests.yml           Runs the tests on GitHub for every push
+│   ├── tests.yml           Runs the tests on GitHub for every push
+│   └── update-sermons.yml  Runs the sermon data job daily
 ├── tests/                  Automated tests (see "Testing")
 │   ├── support/            Shared test setup: local web server, fake outside services
+│   ├── fixtures/           Sample data used by tests
 │   ├── live/               Opt-in checks against real outside services
 │   └── *.spec.js           One file per feature
 └── assets/
@@ -36,10 +46,12 @@ sccchurch-website/
     ├── css/
     │   ├── base.css        Shared: colors, fonts, header, buttons, footer (loaded on every page)
     │   ├── home.css        Home page only (hero, join cards, video, contact)
+    │   ├── sermons.css     Sermons page only
     │   └── beliefs.css     Statement of Faith page only
     └── js/
         ├── site.js         Every page: footer easter egg (original logo pop-up)
         ├── home.js         Home page: friendly fallback when the video can't play from a local file
+        ├── sermons.js      Sermons page: builds the cards and series list from data/sermons.json
         └── beliefs.js      Reading-progress bar, sidebar highlighting, scripture lookups
 ```
 
@@ -54,7 +66,7 @@ Each page loads `base.css` plus its own stylesheet. The header and footer are re
 - **VS Code:** install the "Live Server" extension, right-click `index.html`, then "Open with Live Server". The page reloads when you save.
 - **Python:** from this folder run `py -m http.server 8000` (Windows) or `python3 -m http.server 8000` (Mac/Linux), then open <http://localhost:8000>.
 
-Scripture lookups and the YouTube video need an internet connection and a local server (not a double-clicked file).
+Scripture lookups, the YouTube video, and the Sermons page need an internet connection and a local server (not a double-clicked file).
 
 ## Testing
 
@@ -72,7 +84,7 @@ npx playwright install chromium
 | Command | What it does |
 | --- | --- |
 | `npm test` | Runs all normal tests (a few seconds). Outside services like bible-api.com and YouTube are faked, so these never fail because a service is down. |
-| `npm run test:live` | Checks every scripture reference against the real bible-api.com (about 2.5 minutes). Run it after changing references. |
+| `npm run test:live` | Checks every scripture reference against the real bible-api.com (about 2.5 minutes), and, if `GOOGLE_API_KEY` is set, that every sermon series folder and the YouTube channel can be read. Run it after changing references or `data/series.json`. |
 | `npm run test:report` | Opens the results of the last run in a browser, with screenshots of any failures. |
 
 **On GitHub:** tests run automatically on every push (the "Tests" workflow in the repo's **Actions** tab). A red X next to a commit means a test failed; the run's page has a downloadable report.
@@ -92,6 +104,8 @@ npx playwright install chromium
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
 | Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
 | Hero sun glow | `assets/css/home.css`, the `.hero::after` rule |
+| Add or change a sermon series | `data/series.json` (see "Sermon data") |
+| Sermons page look | `assets/css/sermons.css` for styling, `assets/js/sermons.js` for what each card shows. Then update `tests/sermons-page.spec.js`. |
 
 ### Statement of Faith
 
@@ -135,13 +149,90 @@ The home page embeds the channel's **uploads playlist** (`UU1Svz8uLW3raCDDP9I1eg
 - If the video shows an old service, the channel has not had a newer upload or stream.
 - A "Watch on YouTube" link sits above the player as a backup.
 
+## Sermon data
+
+The Sermons page reads `data/sermons.json`. A GitHub job ("Update sermon data", `.github/workflows/update-sermons.yml`) rebuilds that file **every day at about 3 pm Pacific**. The job:
+
+1. Lists the channel's past **live streams** on YouTube (where each Sunday service is saved; titles like `SCCC 10/18/2026`).
+2. Lists the files in each series' Google Drive folder from `data/series.json`.
+3. Reads the **title and passage** from the top of each new notes PDF (only once per file; results are cached in `data/cache/`).
+4. Matches each sermon to the stream from the **same date**, and builds the 6 newest services plus every series.
+5. Commits `data/sermons.json` if anything changed. GitHub Pages then publishes it.
+
+If anything goes wrong (a folder made private, a bad key, Google down), the job changes nothing. The site keeps showing the last good data, and GitHub emails the repo owner that the run failed.
+
+### One-time setup
+
+The job needs a free Google API key.
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/) and create a project (e.g. "sccchurch-website").
+2. Under **APIs & Services, Library**, enable **YouTube Data API v3** and **Google Drive API**.
+3. Under **APIs & Services, Credentials**, choose **Create credentials, API key**. Then edit the key, and under **API restrictions** restrict it to those two APIs.
+4. In this GitHub repo: **Settings, Secrets and variables, Actions, New repository secret**. Name it `GOOGLE_API_KEY` and paste the key.
+5. Open the repo's **Actions** tab, choose **Update sermon data**, and click **Run workflow**. When it finishes, the Sermons page fills in.
+
+The key only reads public information, but still never put it in a file in this repo; it belongs only in the GitHub secret.
+
+### Adding a sermon series
+
+Add an entry to `data/series.json`:
+
+```json
+{
+  "id": "acts",
+  "title": "Acts",
+  "folder": "https://drive.google.com/drive/folders/<folder id>",
+  "current": true,
+  "summary": null,
+  "overrides": {}
+}
+```
+
+- **`id`**: short lowercase name, words joined with dashes. Used in links like `sermons.html#series-acts`.
+- **`folder`**: the series' Google Drive folder. It must be shared as **"Anyone with the link can view"**.
+- **`current`**: `true` for the series being preached now. It's listed first, labeled "Current series", and its sermons show up on the recent service cards. Set it back to `false` when the series ends.
+- **`summary`**: optional short description shown on the series card.
+- **`overrides`**: optional fixes for a single sermon, keyed by its file name without the extension, e.g. `"003 01-23-22": { "title": "Correct title", "passage": "James 1:9-11" }`.
+
+To hide a specific video from the Sermons page (e.g. a test stream), add its YouTube video ID to `"hiddenVideos"` at the top of the file.
+
+### File naming in Drive
+
+The job only understands files named **`NNN MM-DD-YY`** plus the extension, using the date of the sermon:
+
+- `001 01-09-22.mp3`: audio (`.mp3`, `.m4a`, or `.wav`)
+- `001 01-09-22.pdf`: notes
+- In-between numbers like `001.5 01-31-21.pdf` are fine.
+
+For the title and passage to show, the notes PDF should start like this:
+
+```
+James #1
+You Can Have Joy No Matter What
+January 9, 2022
+Text: James 1:1-4
+```
+
+Files with other names are skipped. The job lists them as warnings on the run's page (Actions tab, open the run, see the summary), so a misnamed upload is easy to spot.
+
+### Running it yourself
+
+```
+GOOGLE_API_KEY=your-key npm run sermons
+```
+
+(On Windows PowerShell: `$env:GOOGLE_API_KEY="your-key"; npm run sermons`.) This rewrites `data/sermons.json` locally; commit it if you want it published.
+
+### Changing the data format
+
+`data/sermons.json` is the contract between the job (`scripts/build-sermons/`) and the page (`assets/js/sermons.js`). The format is checked by `scripts/build-sermons/validate.js`. Change all of them together, with tests. The original design is in `plans/sermons-page.md`.
+
 ## Adding a page
 
 1. Copy `beliefs.html` (or `index.html`) to a new file, e.g. `about.html`, and replace the content inside `<main>`.
 2. Keep the header and footer. Set `aria-current="page"` on that page's nav link, and remove it from the page you copied.
 3. Add a link to the new page in the `<nav>` of **every** HTML file.
 4. If the page needs its own styles, add `assets/css/about.css` and link it after `base.css`. Reuse `base.css` colors and spacing so the look stays consistent.
-
 5. Add the new page to the page lists at the top of `tests/site-shell.spec.js` and `tests/easter-egg.spec.js`, and add tests for anything new the page does (see "Testing").
 
 Because the header and footer are copied into each file, a nav change means editing every page. If the site grows beyond a handful of pages, consider a static site generator such as Astro or Eleventy, which keep the design but remove that repetition.
@@ -236,11 +327,14 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - Hero artwork (for example a mountain illustration echoing the logos) is planned but not designed yet. The hero currently has only the sun glow.
 - Optionally replace the cross favicon with a simplified mountain mark derived from `new-logo-v1.jpg` or the original logo.
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
-- A dedicated Sermons page (the old Wix "Sermon Lists" page was not migrated). The "Sermons" and "Browse sermons" links currently go to the YouTube channel's **Streams** tab, because sermons are not uploaded as separate videos; each Sunday's past live stream is the sermon recording.
+- **Sermon data job, first run:** after adding the `GOOGLE_API_KEY` secret and running "Update sermon data", confirm that the bot's commit also triggers a GitHub Pages deploy ("pages build and deployment" in the Actions tab). If it doesn't, switch Pages to deploy with GitHub Actions or add a deploy step to the workflow, and update this README.
+- **Gospel of John series:** its Drive folder (`0B-mo4R1ry-JBakM1N3ZYUFAwams`) is private, so it isn't on the Sermons page. Make it "Anyone with the link can view" and add it to `data/series.json`. (Note: on the old Wix "Sermon Lists" page, each series' link pointed at the *next* series' folder. `data/series.json` uses the correct folders.)
+- **Sermon summaries:** deferred. Every video, sermon, and series in `data/sermons.json` has a `summary` field (currently empty) that the page already displays. Summaries could be hand-written (series `summary` and per-sermon `overrides` in `data/series.json`) or generated later by AI from the notes PDFs or YouTube transcripts.
+- **Header on phones:** at about 390px wide, the nav links wrap onto two lines and crowd the logo. Consider a shorter layout or a menu button for small screens.
 
 ## Privacy and security
 
-Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The site makes requests to three outside services: Google Fonts, YouTube (`youtube.com`), and bible-api.com.
+Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The site makes requests to these outside services: Google Fonts, YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
 
 ## License
 

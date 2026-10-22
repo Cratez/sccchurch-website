@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T00:00:00.000Z",
+  "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
+  "recent": [],
+  "series": [
+    {
+      "id": "james",
+      "title": "James",
+      "current": false,
+      "folderUrl": "https://drive.google.com/drive/folders/10qhMfF2NgGNnmGcpaVqIX7nIDKNqtx5l",
+      "summary": null,
+      "firstDate": null,
+      "lastDate": null,
+      "sermons": []
+    },
+    {
+      "id": "jude",
+      "title": "Jude",
+      "current": false,
+      "folderUrl": "https://drive.google.com/drive/folders/118Cl2xs7PtijtFxOtL8NlE5WBlQMR381",
+      "summary": null,
+      "firstDate": null,
+      "lastDate": null,
+      "sermons": []
+    },
+    {
+      "id": "second-peter",
+      "title": "Second Peter",
+      "current": false,
+      "folderUrl": "https://drive.google.com/drive/folders/1WpipCZ2NdN5iUUcDo5l8mhr5ciwE6mL3",
+      "summary": null,
+      "firstDate": null,
+      "lastDate": null,
+      "sermons": []
+    },
+    {
+      "id": "first-peter",
+      "title": "First Peter",
+      "current": false,
+      "folderUrl": "https://drive.google.com/drive/folders/1suYL5hRYeRnKYXve8ECevughT2TwdXpG",
+      "summary": null,
+      "firstDate": null,
+      "lastDate": null,
+      "sermons": []
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+/* Sermons page */
+.page-hero {
+  padding: 80px 0 8px;
+  max-width: 760px
+}
+
+.page-hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin: 14px 0 0
+}
+
+#recent {
+  padding-top: 48px
+}
+
+#series {
+  padding-top: 24px
+}
+
+.status {
+  color: var(--muted);
+  margin: 0
+}
+
+.status a,
+.more a,
+.links a,
+.from a,
+.series .folder {
+  color: var(--brand);
+  font-weight: 600
+}
+
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--brand-ink);
+  white-space: nowrap
+}
+
+/* Recent services: card grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px
+}
+
+.video-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column
+}
+
+.video-card .thumb {
+  display: block;
+  background: var(--line)
+}
+
+.video-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover
+}
+
+.video-card .date,
+.video-card h3,
+.video-card .passage-ref,
+.video-card .from,
+.video-card .summary,
+.video-card .links {
+  margin: 0;
+  padding: 0 22px
+}
+
+.video-card .date {
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: .9rem
+}
+
+.video-card h3 {
+  font-size: 1.3rem;
+  margin: 6px 0 4px
+}
+
+.video-card .passage-ref,
+.video-card .from {
+  color: var(--muted);
+  font-size: .95rem
+}
+
+.video-card .summary {
+  margin-top: 10px;
+  font-size: .95rem
+}
+
+.video-card .links {
+  margin-top: auto;
+  padding-top: 14px;
+  padding-bottom: 20px;
+  font-size: .95rem
+}
+
+.more {
+  margin: 24px 0 0
+}
+
+/* Sermon series: expandable cards */
+.series-list {
+  display: grid;
+  gap: 14px
+}
+
+.series {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r)
+}
+
+.series summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 56px 22px 26px;
+  position: relative;
+  border-radius: var(--r)
+}
+
+.series summary::-webkit-details-marker {
+  display: none
+}
+
+/* Chevron that turns when the series is open */
+.series summary::after {
+  content: "";
+  position: absolute;
+  right: 26px;
+  top: 30px;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform .15s
+}
+
+.series[open] summary::after {
+  transform: rotate(225deg)
+}
+
+.series summary h3 {
+  font-size: 1.5rem
+}
+
+.series summary .badge {
+  margin-left: 6px
+}
+
+.series .meta {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: .95rem
+}
+
+.series-body {
+  padding: 0 26px 22px
+}
+
+.series-body .summary {
+  margin: 0 0 12px;
+  max-width: 62ch
+}
+
+.series .folder {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: .95rem
+}
+
+.sermon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line)
+}
+
+.sermon-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line)
+}
+
+.sermon-list li:last-child {
+  border-bottom: 0
+}
+
+.sermon-list .info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+  min-width: 0
+}
+
+.sermon-list .num {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 2.5em
+}
+
+.sermon-list .when {
+  color: var(--muted);
+  font-size: .92rem
+}
+
+.sermon-list .title {
+  font-weight: 600
+}
+
+.sermon-list .passage-ref {
+  color: var(--muted);
+  font-size: .92rem
+}
+
+.sermon-list .links {
+  margin: 0;
+  font-size: .92rem;
+  white-space: nowrap
+}
+
+@media(max-width:980px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media(max-width:640px) {
+  .video-grid {
+    grid-template-columns: 1fr
+  }
+
+  .series summary {
+    padding: 18px 48px 18px 20px
+  }
+
+  .series summary::after {
+    right: 20px;
+    top: 26px
+  }
+
+  .series-body {
+    padding: 0 20px 18px
+  }
+}

@@ -1,0 +1,36 @@
+# Rebuilds data/sermons.json from YouTube and Google Drive (see "Sermon data" in README.md)
+# and commits it when something changed. Runs daily, or on demand from the Actions tab.
+name: Update sermon data
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # daily, 3 pm Pacific (daylight time) / 2 pm (standard time), after Sunday's stream
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: update-sermons
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run sermons
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add data/sermons.json data/cache/pdf-headers.json
+          git commit -m "Update sermon data"
+          git push

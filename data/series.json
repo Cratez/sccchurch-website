@@ -1,0 +1,37 @@
+{
+  "hiddenVideos": [],
+  "series": [
+    {
+      "id": "james",
+      "title": "James",
+      "folder": "https://drive.google.com/drive/folders/10qhMfF2NgGNnmGcpaVqIX7nIDKNqtx5l",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "jude",
+      "title": "Jude",
+      "folder": "https://drive.google.com/drive/folders/118Cl2xs7PtijtFxOtL8NlE5WBlQMR381",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "second-peter",
+      "title": "Second Peter",
+      "folder": "https://drive.google.com/drive/folders/1WpipCZ2NdN5iUUcDo5l8mhr5ciwE6mL3",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "first-peter",
+      "title": "First Peter",
+      "folder": "https://drive.google.com/drive/folders/1suYL5hRYeRnKYXve8ECevughT2TwdXpG",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    }
+  ]
+}
