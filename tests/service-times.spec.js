@@ -10,6 +10,7 @@
  * WHY:     The times are written in several places by hand, and only one season's times may
  *          show at once. Missing a place, or forgetting a data-season-only marker, would tell
  *          visitors the wrong time.
+ *          Also: every clock time on every page is written with am or pm.
  * UPDATE WHEN: the times or frequency change (edit EXPECTED), or they move/are added elsewhere.
  * REMOVE WHEN: the site stops listing service times.
  */
@@ -141,8 +142,26 @@ for (const season of SEASONS) {
     test('visit page Sunday School answer matches the season', async ({ page }) => {
       await goto(page, 'visit.html', season);
       const answer = await text(page.locator('#questions dt', { hasText: 'Sunday School' }).locator('xpath=following-sibling::dd'));
-      expect(answer).toMatch(school ? /^Yes\. It meets for an hour at 9:30, before the 10:30 Church Service\./ : /^Not over the summer; right now there’s one service at 9:30\./);
+      expect(answer).toMatch(school ? /^Yes\. It meets for an hour at 9:30 am, before the 10:30 am Church Service\./ : /^Not over the summer\. The building can get warm, so for now the service moves to 9:30 am and we get out earlier\./);
     });
+
+    // Every clock time a visitor reads says am or pm (scripture references like John 3:16 are skipped).
+    for (const p of PAGES) {
+      test(`${p} writes every time with am or pm`, async ({ page }) => {
+        await goto(page, p, season);
+        const visible = await page.locator('body').evaluate((body) => {
+          const copy = body.cloneNode(true);
+          copy.querySelectorAll('.ref, .passage-ref, figure, cite, blockquote, script').forEach((el) => el.remove());
+          // innerText on a detached copy ignores CSS, so drop the other season's text by hand.
+          const season = document.documentElement.dataset.season;
+          copy.querySelectorAll('[data-season-only]').forEach((el) => { if (el.dataset.seasonOnly !== season) el.remove(); });
+          return copy.textContent.replace(/\s+/g, ' ');
+        });
+        // A number right after a capitalized word is a verse (sermon titles quote them, e.g. "Luke 22:42").
+        const bare = [...visible.matchAll(/(?<![A-Z][a-z]+\.? )\b\d{1,2}:\d{2}\b(?!\s*[ap]m)/g)].map((m) => visible.slice(Math.max(0, m.index - 30), m.index + 15));
+        expect(bare, 'times without am/pm').toEqual([]);
+      });
+    }
 
     for (const p of PAGES) {
       test(`${p} footer shows this season's Sunday times`, async ({ page }) => {

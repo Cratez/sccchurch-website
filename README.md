@@ -46,9 +46,10 @@ sccchurch-website/
 │   ├── live/               Opt-in checks against real outside services
 │   └── *.spec.js           One file per feature
 └── assets/
-    ├── favicon.svg         Mountain mark: three peaks and a cross (tab icon and header mark)
+    ├── favicon.svg         Mountain mark: three rose peaks and fir trees in a round sky badge (tab icon and header mark)
     ├── img/
     │   ├── photos/         Website photos (hood-sunset-*, trillium-*, hood-summit-*, trillium-kayak-*) and CREDITS.md
+    │   ├── logo-options/   Other mark designs kept for future use (see "Logos")
     │   ├── original-logo.webp   Original watercolor mountain logo (footer easter egg)
     │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
     ├── css/
@@ -352,7 +353,8 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - **Photos:** the home page uses a Mt. Hood sunset, Plan your visit uses Mt. Hood over Trillium Lake, What We Believe uses a close-up of Mt. Hood's summit, and Sermons uses Trillium Lake with a kayaker, all by Aleksey Kuprikov (Pexels; see `assets/img/photos/CREDITS.md`). A dark overlay keeps the white text readable, and if a photo fails to load the green background still keeps the text readable.
 - **Rotating verse:** the home hero fades between King James verses about every 10 seconds, with a pause button. Visitors who ask their device for reduced motion see one verse per day instead of a rotation, and with JavaScript off they see the first verse (written into the page).
 - **Logos:**
-  - Header / tab icon: three-peak mountain mark with a small cross (`assets/favicon.svg`). In dark mode the header shows it on a light green square so it stays visible.
+  - Header / tab icon: three rose, snow-capped peaks (after the original logo) with fir trees in front, in a round pale-blue sky badge (`assets/favicon.svg`). The badge has its own background, so it shows up in both light and dark mode.
+  - Other mark designs, not shown on the site (`assets/img/logo-options/`): `rose-peaks.svg` (the same badge without trees), `fir-peaks.svg` (one-color dark green peaks), and `fir-peaks-cross.svg` (the previous mark, with a cross). To switch, copy one over `assets/favicon.svg`. The two dark green ones have no background and disappear in dark mode, so they would also need a light square behind them in dark mode (CSS on `.brand img` in `assets/css/base.css`).
   - Original logo: watercolor three-peak mark (`assets/img/original-logo.webp`), shown by the footer easter egg.
   - Newer logo: modern mountain + trees illustration (`assets/img/new-logo-v1.jpg`). Kept in the repo for possible future use (e.g. about page, print materials, or a refined favicon). Not currently shown on the live pages.
 - **Easter egg:** the small mountain icon after the copyright line in the footer opens a pop-up with the original logo (built in `assets/js/site.js`). It is intentionally unlabeled on screen; screen readers announce it as "See our original logo".

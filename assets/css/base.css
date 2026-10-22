@@ -639,19 +639,6 @@ html:not(.js) .theme-toggle {
   display: none
 }
 
-/* The fir mark would vanish on the dark background, so give it a light chip in dark mode */
-:root[data-theme="dark"] .brand img {
-  background: var(--brand);
-  padding: 3px
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .brand img {
-    background: var(--brand);
-    padding: 3px
-  }
-}
-
 /* ---- Focus and motion ---- */
 :focus-visible {
   outline: 3px solid var(--brand);

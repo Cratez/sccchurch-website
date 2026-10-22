@@ -4,9 +4,9 @@ Static website for South Clackamas Community Church, hosted on GitHub Pages (see
 
 ## Testing rules (required for all work)
 
-Every change that adds or changes behavior, content structure, or layout must come with tests, unless it truly cannot be tested (say so explicitly if that's the case). Tests use Playwright and live in `tests/`.
+Tests are a tool for proving that a change actually does what was asked, and for catching it if the site's important features break later. Write tests that serve those purposes; skip ones that don't. Tests use Playwright and live in `tests/`.
 
-1. **Write or update tests in the same change.** New feature: new tests. Changed feature: update its tests. Bug fix: add a test that fails without the fix (check this by temporarily undoing the fix).
+1. **Write useful tests, not exhaustive ones.** For each change, write tests that show it works as intended (the user-visible result, not implementation details). Make sure core features (navigation, service times, scripture lookups, the sermons page, phone layout, and so on) have clear tests that would catch them breaking. Don't write narrow, brittle tests that pin down exact wording, pixel values, or markup that could change for good reasons, or tests that only restate the code. If a change doesn't need a new test (a copy edit, a small style tweak already covered by existing checks), say so in the summary instead of adding one. Changed feature: update its tests. Bug fix: add a test that fails without the fix when that bug is plausible to come back (check by temporarily undoing the fix).
 2. **Every test file starts with a header comment** in this format, so anyone can tell later whether the tests still apply:
    ```js
    /**
