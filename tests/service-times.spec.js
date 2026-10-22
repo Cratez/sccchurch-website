@@ -2,7 +2,7 @@
  * FEATURE: Service times and radio frequency are stated the same way everywhere.
  * COVERS:  index.html (meta description, hero quick-link bar, #gather "When we gather" rows,
  *          #join "In person" and "On the radio" columns),
- *          visit.html times rows (once Task 4 of the design overhaul adds them), and the footer
+ *          visit.html #gather rows, and the footer
  *          "Sundays" column on every page (index, beliefs, sermons, visit)
  * WHY:     The times are repeated in several places by hand. Changing one and missing another
  *          would tell visitors two different times.
@@ -62,11 +62,9 @@ test('home page "In person" column states the same times', async ({ page }) => {
   await expect(page.locator('#join .cols > *', { hasText: 'On the radio' }).locator('.freq')).toHaveText(`${EXPECTED.radio} FM`);
 });
 
-// TODO(Task 4 of the design overhaul): visit.html is still a placeholder. Task 4 adds its
-// times rows; it removes this skip and adjusts the selectors to its markup.
-test.skip('visit page rows list the same times', async ({ page }) => {
+test('visit page rows list the same times', async ({ page }) => {
   await page.goto('visit.html');
-  const rows = page.locator('main .rows');
+  const rows = page.locator('#gather .rows');
   const s = EXPECTED.schoolYear;
   await expect(rows).toContainText(`${s.service} am`);
   await expect(rows).toContainText(`${s.sundaySchool} am`);
