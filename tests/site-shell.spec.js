@@ -20,9 +20,12 @@ const PAGES = [
 const NAV = ['Plan your visit', 'Sermons', 'What we believe', 'Contact'];
 const NAV_HREFS = ['visit.html', 'sermons.html', 'beliefs.html', '#contact'];
 
-test('home page "Browse sermons" button goes to the Sermons page', async ({ page }) => {
+// The home page used to have a "Browse sermons" button; the redesigned home page reaches the
+// Sermons page through the header nav and the footer "Watch" column.
+test('home page footer "Watch" column links to the Sermons page', async ({ page }) => {
   await page.goto('index.html');
-  await expect(page.getByRole('link', { name: 'Browse sermons' })).toHaveAttribute('href', 'sermons.html');
+  const watch = page.locator('footer.site .foot-cols section', { hasText: 'Watch' });
+  await expect(watch.getByRole('link', { name: 'Sermons', exact: true })).toHaveAttribute('href', 'sermons.html');
 });
 
 for (const p of PAGES) {

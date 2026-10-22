@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>South Clackamas Community Church</title>
     <meta name="description"
-        content="Join us Sundays: Sunday School at 9:30 am, worship at 10:30 am. In person, on 96.7 FM, or online.">
+        content="Non-denominational church near Molalla, Oregon. Sundays 10:30 am (Sunday School 9:30 am, September – early June); summer 9:30 am. In person, on 96.7 FM, or online.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,71 +34,102 @@
         </div>
     </header>
     <main>
-        <div class="hero">
+        <div class="photo-hero home-hero">
+            <picture>
+                <source type="image/webp" sizes="100vw"
+                    srcset="assets/img/photos/hood-sunset-960.webp 960w, assets/img/photos/hood-sunset-1600.webp 1600w, assets/img/photos/hood-sunset-2400.webp 2400w">
+                <img src="assets/img/photos/hood-sunset-1600.jpg" width="2400" height="1600" alt="" fetchpriority="high">
+            </picture>
             <div class="wrap">
-                <p class="eyebrow">Welcome to South Clackamas Community Church</p>
-                <h1>“I was glad when they said unto me, Let us go into <em>the house of the Lord.</em>”</h1>
-                <p class="verse-ref">Psalm 122:1 (KJV)</p>
-                <p class="lead">Join us on Sunday morning. Worship in person, listen on the radio, or watch online.</p>
-                <div class="cta"><a class="btn btn-primary"
-                        href="#watch">▶ Watch the latest
-                        service</a><a class="btn btn-outline"
-                        href="sermons.html">Browse sermons</a></div>
-                <div class="times">
-                    <div class="time"><b>9:30<small class="ampm">am</small></b><span>Sunday School</span></div>
-                    <div class="time"><b>10:30<small class="ampm">am</small></b><span>Church service</span></div>
-                </div>
+                <p class="eyebrow">Non-denominational · Near Molalla, Oregon</p>
+                <h1>South Clackamas Community Church</h1>
+                <figure class="verse" aria-live="off">
+                    <blockquote><p>“I was glad when they said unto me, Let us go into the house of the LORD.”</p></blockquote>
+                    <figcaption>Psalm 122:1</figcaption>
+                    <button class="verse-pause" type="button" aria-pressed="false" aria-label="Pause verses" hidden>❚❚</button>
+                </figure>
+                <!-- Verses the hero rotates through (KJV), in order. "partial": true marks a verse
+                     quoted only in part. Checked against bible-api.com by tests/live/verses.spec.js. -->
+                <script type="application/json" id="hero-verses">
+                [
+                    { "ref": "Psalm 122:1", "text": "I was glad when they said unto me, Let us go into the house of the LORD." },
+                    { "ref": "Psalm 121:1-2", "text": "I will lift up mine eyes unto the hills, from whence cometh my help. My help cometh from the LORD, which made heaven and earth." },
+                    { "ref": "Psalm 95:6", "text": "O come, let us worship and bow down: let us kneel before the LORD our maker." },
+                    { "ref": "Psalm 100:4", "text": "Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name." },
+                    { "ref": "Matthew 11:28", "text": "Come unto me, all ye that labour and are heavy laden, and I will give you rest." },
+                    { "ref": "Psalm 133:1", "text": "Behold, how good and how pleasant it is for brethren to dwell together in unity!" },
+                    { "ref": "Isaiah 2:3", "text": "Come ye, and let us go up to the mountain of the LORD, to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths.", "partial": true },
+                    { "ref": "Psalm 34:8", "text": "O taste and see that the LORD is good: blessed is the man that trusteth in him." },
+                    { "ref": "Romans 15:7", "text": "Wherefore receive ye one another, as Christ also received us to the glory of God." },
+                    { "ref": "Hebrews 10:24-25", "text": "And let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together.", "partial": true }
+                ]
+                </script>
             </div>
+            <nav class="quick" aria-label="Quick links">
+                <ul>
+                    <li><a href="visit.html"><b>Plan your visit</b><span>What to expect</span></a></li>
+                    <li><a href="#gather"><b>Sundays 10:30 am</b><span>Summer 9:30 am</span></a></li>
+                    <li><a href="#watch"><b>Watch the latest service</b><span>Live or recorded</span></a></li>
+                </ul>
+            </nav>
         </div>
+
+        <section id="gather">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Sundays &amp; Thursdays</p>
+                    <h2>When we gather</h2>
+                </div>
+                <ul class="rows gather">
+                    <li><span class="time">10:30 am</span><span class="what">Worship service</span><span class="when">Sundays, September – early June</span></li>
+                    <li><span class="time">9:30 am</span><span class="what">Sunday School <span class="muted">(an hour, before the service)</span></span><span class="when">September – early June</span></li>
+                    <li><span class="time">9:30 am</span><span class="what">Worship service <span class="muted">(no Sunday School)</span></span><span class="when">Sundays in summer</span></li>
+                    <li><span class="time">6:30 pm</span><span class="what">Men&rsquo;s and women&rsquo;s Bible studies <span class="muted">(<a href="tel:+15036513707">ask us for the location</a>)</span></span><span class="when">1st &amp; 3rd Thursdays</span></li>
+                </ul>
+                <p class="note">The service is also broadcast on <span class="nb">96.7 FM</span> for listening from your car in the parking lot, and streamed live on YouTube.</p>
+            </div>
+        </section>
 
         <section id="join">
             <div class="wrap">
-                <div class="head">
+                <div class="section-head">
                     <p class="eyebrow">Three ways to join</p>
                     <h2>Gather with us on the Lord&rsquo;s&nbsp;Day.</h2>
                 </div>
-                <div class="cards">
-                    <article class="card">
-                        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 11l9-8 9 8" />
-                                <path d="M5 10v10h14V10" />
-                                <path d="M10 20v-6h4v6" />
-                            </svg></div>
+                <div class="cols">
+                    <article>
                         <h3>In person</h3>
-                        <p>There is seating inside. Sunday School begins at 9:30&nbsp;am, and the church service starts at
-                            10:30&nbsp;am.</p><a class="link" href="https://maps.google.com/?cid=1658989575399774330">Get
-                            directions →</a>
+                        <p>There is seating inside. The worship service starts at <span class="nb">10:30 am</span>, with Sunday School at <span class="nb">9:30 am</span> (September – early June). In summer, worship starts at <span class="nb">9:30 am</span>.</p>
+                        <a href="https://maps.google.com/?cid=1658989575399774330">Get directions →</a>
                     </article>
-                    <article class="card">
-                        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="2" />
-                                <path
-                                    d="M16.2 7.8a6 6 0 010 8.4M7.8 16.2a6 6 0 010-8.4M19 5a10 10 0 010 14M5 19A10 10 0 015 5" />
-                            </svg></div>
+                    <article>
                         <h3>On the radio</h3>
                         <p>Our short-range radio broadcast lets you listen to the service from your car, parked outside the church.</p>
-                        <div class="freq">96.7&nbsp;FM</div>
+                        <p class="freq">96.7&nbsp;FM</p>
                     </article>
-                    <article class="card">
-                        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="4" width="20" height="14" rx="2" />
-                                <path d="M10 9l5 3-5 3z" />
-                                <path d="M8 21h8" />
-                            </svg></div>
+                    <article>
                         <h3>Online</h3>
-                        <p>Watch live, or catch a past service, on our YouTube channel.</p><a class="link"
-                            href="https://www.youtube.com/channel/UC1Svz8uLW3raCDDP9I1eg_A/">SCCC YouTube Channel →</a>
+                        <p>Watch live, or catch a past service, on our YouTube channel.</p>
+                        <a href="https://www.youtube.com/channel/UC1Svz8uLW3raCDDP9I1eg_A/">Watch live or catch a past service →</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="watch" style="padding-top:0">
+        <section id="first-time">
             <div class="wrap">
-                <div class="head">
+                <div class="section-head first-time">
+                    <p class="eyebrow">Plan your visit</p>
+                    <h2>Coming for the first time?</h2>
+                    <p>Here&rsquo;s what to wear, how long the service runs, and what happens on a Sunday morning.</p>
+                    <a class="btn" href="visit.html">Plan your visit</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="watch">
+            <div class="wrap">
+                <div class="section-head">
                     <p class="eyebrow">Latest service</p>
                     <h2>Watch our most recent service.</h2>
                     <p>This plays our newest service, live or recorded. <a href="https://www.youtube.com/@southclackamascommunitychu1171/streams">Watch on YouTube</a> if the player doesn't load.</p>
@@ -109,39 +140,7 @@
                         allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
                         referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
-            </div>
-        </section>
-
-        <section style="padding-top:0">
-            <div class="wrap">
-                <div class="band">
-                    <div>
-                        <h2>Watch on your TV</h2>
-                        <p>If you have a Chromecast, Roku, or Apple TV, open the service in the YouTube app, tap the
-                            cast icon, and choose your TV from the list.</p>
-                    </div>
-                    <a class="btn" href="https://www.youtube.com/channel/UC1Svz8uLW3raCDDP9I1eg_A/">Open our YouTube
-                        channel</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="visit">
-            <div class="wrap visit">
-                <div class="head" style="margin:0">
-                    <p class="eyebrow">Get in touch</p>
-                    <h2>We would love to hear from you.</h2>
-                    <p>Questions about Sunday, or about what we believe? Reach out any time.</p>
-                </div>
-                <ul class="list">
-                    <li><span>Phone</span><a href="tel:+15036513707">(503) 651-3707</a></li>
-                    <li><span>Location</span><a href="https://maps.google.com/?cid=1658989575399774330">Open in Google
-                            Maps</a></li>
-                    <li><span>Facebook</span><a
-                            href="https://www.facebook.com/South-Clackamas-Community-Church-301109009916380/">Follow
-                            along</a></li>
-                    <li><span>Beliefs</span><a href="beliefs.html">Statement of Faith</a></li>
-                </ul>
+                <p class="tv-tip">Watching on a TV? Open the service in the YouTube app on your Chromecast, Roku, or Apple TV.</p>
             </div>
         </section>
     </main>

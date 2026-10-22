@@ -16,8 +16,8 @@ const PAIRS = [
   { name: 'body text on --bg', selector: 'footer.site .foot-cols p:not(.eyebrow) >> nth=0' },
   { name: 'muted text on --bg', selector: 'footer.site .muted' },
   { name: 'link (--brand) on --bg', selector: 'footer.site .foot-cols a >> nth=0' },
-  { name: '.btn text on its background', selector: '.cta a.btn:not(.btn-outline) >> nth=0' },
-  { name: '.btn-outline text on --bg', selector: 'a.btn-outline >> nth=0' },
+  { name: '.btn text on its background', selector: 'main a.btn:not(.btn-outline) >> nth=0' },
+  { name: '.btn-outline text on --bg', selector: 'main a.btn-outline >> nth=0' },
   { name: 'eyebrow on --bg', selector: 'footer.site .eyebrow >> nth=0' },
 ];
 
@@ -61,6 +61,12 @@ for (const mode of MODES) {
     await page.emulateMedia({ colorScheme: mode.scheme });
     await page.goto('index.html');
     if (mode.theme) await page.evaluate((t) => { document.documentElement.dataset.theme = t; }, mode.theme);
+    // The home page has no outline button since the redesign, so add one to the main
+    // content to measure that style on the page background.
+    await page.evaluate(() => {
+      const a = Object.assign(document.createElement('a'), { className: 'btn btn-outline', href: '#', textContent: 'Sample' });
+      document.querySelector('main section').prepend(a);
+    });
     // Measured ratios are attached to the test report, to help when adjusting colors.
     const report = [];
     for (const pair of PAIRS) {

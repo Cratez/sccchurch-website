@@ -1,7 +1,9 @@
 /**
  * FEATURE: "Latest service" YouTube embed on the home page, and its fallback message when
  *          the page is opened straight from a file (YouTube refuses to play there: "Error 153").
- * COVERS:  index.html (#watch section), assets/js/home.js, the .video styles in assets/css/home.css
+ * COVERS:  index.html (#watch section, and the "Watch the latest service" link in the hero
+ *          quick-link bar), the file:// fallback in assets/js/home.js, the .video styles in
+ *          assets/css/home.css
  * WHY:     The embed must use the channel's uploads playlist so the newest service plays without
  *          weekly edits, and double-clicking index.html should explain why the video is missing.
  * UPDATE WHEN: the channel or playlist changes, or the video section is redesigned.
@@ -18,12 +20,12 @@ test('embeds the channel uploads playlist, with a YouTube link as backup', async
   const iframe = page.locator('#watch .video iframe');
   await expect(iframe).toHaveAttribute('src', `https://www.youtube.com/embed/videoseries?list=${PLAYLIST}`);
   await expect(iframe).toHaveAttribute('title', /latest service/);
-  await expect(page.locator('#watch .head a', { hasText: 'Watch on YouTube' })).toHaveAttribute('href', /youtube\.com/);
+  await expect(page.locator('#watch .section-head a', { hasText: 'Watch on YouTube' })).toHaveAttribute('href', /youtube\.com/);
 });
 
-test('"Watch the latest service" button jumps to the video', async ({ page }) => {
+test('"Watch the latest service" in the hero bar jumps to the video', async ({ page }) => {
   await page.goto('index.html');
-  await page.getByRole('link', { name: /Watch the latest/ }).click();
+  await page.locator('.home-hero nav.quick').getByRole('link', { name: /Watch the latest service/ }).click();
   await expect(page).toHaveURL(/#watch$/);
   await expect(page.locator('#watch .video')).toBeInViewport();
 });

@@ -8,7 +8,7 @@ There is no framework, no build step, and nothing to install to run the site. Th
 
 | Page | File | What it contains |
 | --- | --- | --- |
-| Home | `index.html` | Welcome verse, service times, ways to join (in person / radio / online), latest-service video, TV casting help, contact info |
+| Home | `index.html` | Mt. Hood photo hero with rotating verse and quick links, "When we gather" times, ways to join (in person / radio / online), first-visit teaser, latest-service video with TV tip |
 | Sermons | `sermons.html` | The 6 most recent service recordings, and past sermon series with notes, audio, and video links (built from `data/sermons.json`; see "Sermon data") |
 | What We Believe | `beliefs.html` | The Statement of Faith, with clickable scripture references that load the verse text |
 
@@ -50,12 +50,12 @@ sccchurch-website/
     │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
     ├── css/
     │   ├── base.css        Shared: colors, fonts, header, buttons, footer (loaded on every page)
-    │   ├── home.css        Home page only (hero, join cards, video, contact)
+    │   ├── home.css        Home page only (photo hero, verse, quick links, times, video)
     │   ├── sermons.css     Sermons page only
     │   └── beliefs.css     Statement of Faith page only
     └── js/
         ├── site.js         Every page: phone menu, light/dark toggle, footer easter egg (original logo pop-up)
-        ├── home.js         Home page: friendly fallback when the video can't play from a local file
+        ├── home.js         Home page: rotating hero verse, and a friendly fallback when the video can't play from a local file
         ├── sermons.js      Sermons page: builds the cards and series list from data/sermons.json
         └── beliefs.js      Reading-progress bar, sidebar highlighting, scripture lookups
 ```
@@ -89,7 +89,7 @@ npx playwright install chromium
 | Command | What it does |
 | --- | --- |
 | `npm test` | Runs all normal tests (a few seconds). Outside services like bible-api.com and YouTube are faked, so these never fail because a service is down. |
-| `npm run test:live` | Checks every scripture reference against the real bible-api.com (about 2.5 minutes), and, if `GOOGLE_API_KEY` is set, that every sermon series folder and the YouTube channel can be read. Run it after changing references or `data/series.json`. |
+| `npm run test:live` | Checks every scripture reference and every home page hero verse against the real bible-api.com (about 3 minutes), and, if `GOOGLE_API_KEY` is set, that every sermon series folder and the YouTube channel can be read. Run it after changing references or `data/series.json`. |
 | `npm run test:report` | Opens the results of the last run in a browser, with screenshots of any failures. |
 
 **On GitHub:** tests run automatically on every push (the "Tests" workflow in the repo's **Actions** tab). A red X next to a commit means a test failed; the run's page has a downloadable report.
@@ -102,13 +102,13 @@ npx playwright install chromium
 
 | I want to change... | Edit this |
 | --- | --- |
-| Service times | `index.html`: the `<meta name="description">` in the `<head>`, the `.times` block in the hero, the "In person" card, and the footer "Sundays" column, which is repeated in every page's footer. Then update `EXPECTED` at the top of `tests/service-times.spec.js`. |
-| Phone, Facebook, Google Maps links | `index.html`, in the "Get in touch" list and the "In person" card, plus the footer on every page |
-| Welcome verse | `index.html`, the `<h1>` in the hero and the `.verse-ref` line under it |
+| Service times | `index.html`: the `<meta name="description">` in the `<head>`, the "Sundays 10:30 am" link in the hero's quick-link bar, the "When we gather" rows (`#gather`), the "In person" column, and the footer "Sundays" column, which is repeated in every page's footer. Then update `EXPECTED` at the top of `tests/service-times.spec.js`. |
+| Phone, Facebook, Google Maps links | `index.html`, in the "When we gather" rows (phone) and the "In person" column (Maps), plus the footer on every page |
+| Hero verses | `index.html`: the list in `<script type="application/json" id="hero-verses">` (KJV text; add `"partial": true` when quoting only part of a verse). The first one is also written into the `<figure class="verse">` above it, for visitors without JavaScript. Run `npm run test:live` to check the wording against the KJV. |
 | Colors | The `:root { ... }` block at the top of `assets/css/base.css`. The dark set is written twice just below it (`[data-theme="dark"]` for visitors who chose dark with the footer toggle, and the `prefers-color-scheme: dark` block for devices set to dark); keep the two the same. `tests/contrast.spec.js` checks that text stays readable. |
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
 | Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
-| Hero sun glow | `assets/css/home.css`, the `.hero::after` rule |
+| Home hero photo | `index.html`, the `<picture>` in `.home-hero`; the overlay and crop are `.photo-hero` in `assets/css/base.css` |
 | Add or change a sermon series | `data/series.json` (see "Sermon data") |
 | Sermons page look | `assets/css/sermons.css` for styling, `assets/js/sermons.js` for what each card shows. Then update `tests/sermons-page.spec.js`. |
 
