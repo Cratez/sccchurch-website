@@ -36,7 +36,6 @@ sccchurch-website/
 ├── scripts/video-notes/    Downloads service captions for the summarize-services skill
 ├── scripts/images/         build-photos.js: makes the website photos from the originals (see "Photos")
 ├── .claude/skills/         Claude Code skills for this repo (summarize-services)
-├── plans/                  Design plans for larger features
 ├── .github/workflows/
 │   ├── tests.yml           Runs the tests on GitHub for every push
 │   └── update-sermons.yml  Runs the sermon data job daily
@@ -49,9 +48,7 @@ sccchurch-website/
     ├── favicon.svg         Mountain mark: three rose peaks and fir trees in a round sky badge (tab icon and header mark)
     ├── img/
     │   ├── photos/         Website photos (hood-sunset-*, trillium-*, hood-summit-*, trillium-kayak-*) and CREDITS.md
-    │   ├── logo-options/   Other mark designs kept for future use (see "Logos")
-    │   ├── original-logo.webp   Original watercolor mountain logo (footer easter egg)
-    │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
+    │   └── original-logo.webp   Original watercolor mountain logo (footer easter egg)
     ├── css/
     │   ├── base.css        Shared: color tokens (light and dark), fonts, header, buttons, headings, rows/columns, photo hero, footer (loaded on every page)
     │   ├── home.css        Home page only (verse, quick links, times, ways to join, video)
@@ -261,7 +258,7 @@ Things to know:
 
 ### Changing the data format
 
-`data/sermons.json` is the contract between the job (`scripts/build-sermons/`) and the page (`assets/js/sermons.js`). The format is checked by `scripts/build-sermons/validate.js`. Change all of them together, with tests. The original design is in `plans/sermons-page.md`.
+`data/sermons.json` is the contract between the job (`scripts/build-sermons/`) and the page (`assets/js/sermons.js`). The format is checked by `scripts/build-sermons/validate.js`. Change all of them together, with tests.
 
 ## Adding a page
 
@@ -354,9 +351,7 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - **Rotating verse:** the home hero fades between King James verses about every 10 seconds, with a pause button. Visitors who ask their device for reduced motion see one verse per day instead of a rotation, and with JavaScript off they see the first verse (written into the page).
 - **Logos:**
   - Header / tab icon: three rose, snow-capped peaks (after the original logo) with fir trees in front, in a round pale-blue sky badge (`assets/favicon.svg`). The badge has its own background, so it shows up in both light and dark mode.
-  - Other mark designs, not shown on the site (`assets/img/logo-options/`): `rose-peaks.svg` (the same badge without trees), `fir-peaks.svg` (one-color dark green peaks), and `fir-peaks-cross.svg` (the previous mark, with a cross). To switch, copy one over `assets/favicon.svg`. The two dark green ones have no background and disappear in dark mode, so they would also need a light square behind them in dark mode (CSS on `.brand img` in `assets/css/base.css`).
   - Original logo: watercolor three-peak mark (`assets/img/original-logo.webp`), shown by the footer easter egg.
-  - Newer logo: modern mountain + trees illustration (`assets/img/new-logo-v1.jpg`). Kept in the repo for possible future use (e.g. about page, print materials, or a refined favicon). Not currently shown on the live pages.
 - **Easter egg:** the small mountain icon after the copyright line in the footer opens a pop-up with the original logo (built in `assets/js/site.js`). It is intentionally unlabeled on screen; screen readers announce it as "See our original logo".
 - **Responsive:** layouts collapse to a single column on phones.
 - **Why plain CSS:** the site is small, one person can maintain it, and there is nothing to install or break. A utility framework such as Tailwind would add a build step without much benefit at this size.

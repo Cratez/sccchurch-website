@@ -26,7 +26,7 @@ Tests are a tool for proving that a change actually does what was asked, and for
 
 ## Sermon data
 
-`data/sermons.json` is generated daily by `scripts/build-sermons/` (workflow `.github/workflows/update-sermons.yml`). Never hand-edit it; series changes go in `data/series.json`. The JSON format is a contract between the job and `assets/js/sermons.js`, enforced by `scripts/build-sermons/validate.js`. Change all of them together with their tests, and bump `version` for breaking changes. Design history: `plans/sermons-page.md`.
+`data/sermons.json` is generated daily by `scripts/build-sermons/` (workflow `.github/workflows/update-sermons.yml`). Never hand-edit it; series changes go in `data/series.json`. The JSON format is a contract between the job and `assets/js/sermons.js`, enforced by `scripts/build-sermons/validate.js`. Change all of them together with their tests, and bump `version` for breaking changes.
 
 `data/video-notes.json` holds service titles/summaries written from YouTube auto-captions by the project skill `.claude/skills/summarize-services/` (run locally; uses `scripts/video-notes/transcripts.js` and yt-dlp). The job merges them: overrides in `data/series.json`, then notes-PDF titles, then caption titles.
 
