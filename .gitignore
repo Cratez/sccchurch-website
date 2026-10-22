@@ -11,3 +11,7 @@ Thumbs.db
 # Local environment / logs
 .env
 *.log
+# Test tooling
+node_modules/
+test-results/
+playwright-report/

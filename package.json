@@ -1,0 +1,13 @@
+{
+  "name": "sccchurch-website",
+  "private": true,
+  "description": "Test tooling only. The website itself has no build step; see README.md.",
+  "scripts": {
+    "test": "playwright test --project=desktop --project=mobile",
+    "test:live": "playwright test --project=live",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0"
+  }
+}

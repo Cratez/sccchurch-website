@@ -17,7 +17,13 @@
     '<p>Our original logo</p><button type="button" class="btn btn-ghost">Close</button>';
 
   btn.addEventListener('click', () => dlg.showModal());
-  dlg.addEventListener('click', e => { if (e.target === dlg || e.target.tagName === 'BUTTON') dlg.close(); });
+  // Close on the Close button, or on a click outside the box (the backdrop).
+  // Clicks on the dialog's own padding also target the dialog, so check the position.
+  dlg.addEventListener('click', e => {
+    const r = dlg.getBoundingClientRect();
+    const outside = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    if (e.target.tagName === 'BUTTON' || (e.target === dlg && outside)) dlg.close();
+  });
 
   first.append(btn);
   document.body.append(dlg);
