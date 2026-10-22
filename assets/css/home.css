@@ -192,10 +192,10 @@
   margin: 0
 }
 
-.tv-tip {
-  color: var(--muted);
+/* Subtle one-line tip under the "Latest service" heading */
+.section-head p.tv-tip {
   font-size: .95rem;
-  margin: 16px 0 0
+  max-width: none /* short enough to stay on one line on desktop */
 }
 
 /* ---- Phones ---- */

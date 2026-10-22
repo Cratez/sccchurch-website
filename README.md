@@ -158,7 +158,7 @@ The home page embeds the channel's **uploads playlist** (`UU1Svz8uLW3raCDDP9I1eg
 
 - If the player shows **"Error 153"**, the page was probably opened as a local file or without a referrer. YouTube requires embeds to be loaded from a real web address. Test on the deployed site or a local server.
 - If the video shows an old service, the channel has not had a newer upload or stream.
-- A "Watch on YouTube" link sits above the player as a backup.
+- A one-line tip under the heading explains how to watch on a TV. If the player won't load, visitors can use the YouTube links in the hero bar and the "Online" column.
 
 ## Sermon data
 

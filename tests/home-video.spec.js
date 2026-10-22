@@ -15,12 +15,15 @@ const { test, expect } = require('./support/fixtures');
 
 const PLAYLIST = 'UU1Svz8uLW3raCDDP9I1eg_A';
 
-test('embeds the channel uploads playlist, with a YouTube link as backup', async ({ page }) => {
+test('embeds the channel uploads playlist, with the TV tip under the heading', async ({ page }) => {
   await page.goto('index.html');
   const iframe = page.locator('#watch .video iframe');
   await expect(iframe).toHaveAttribute('src', `https://www.youtube.com/embed/videoseries?list=${PLAYLIST}`);
   await expect(iframe).toHaveAttribute('title', /latest service/);
-  await expect(page.locator('#watch .section-head a', { hasText: 'Watch on YouTube' })).toHaveAttribute('href', /youtube\.com/);
+  // The tip sits between the heading and the player (the old "Watch on YouTube if the player
+  // doesn't load" line was removed on purpose; YouTube is linked from the hero bar and "Online").
+  await expect(page.locator('#watch .section-head .tv-tip')).toHaveText(/^Watching on a TV\?.*Chromecast, Roku, or Apple TV\.$/);
+  await expect(page.locator('#watch .section-head')).not.toContainText("if the player doesn't load");
 });
 
 test('"Watch the latest service" in the hero bar jumps to the video', async ({ page }) => {
