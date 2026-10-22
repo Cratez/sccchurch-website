@@ -409,3 +409,7 @@ CLAUDE.md: add a short "Sermon data" note: `data/sermons.json` is generated; nev
 - Gospel of John folder sharing: someone with access must make it public, then add it to `data/series.json`.
 - Whether the bot commit triggers the Pages deploy: verify on first run (see Workflow).
 - Possible later uses of `data/sermons.json`: e.g. showing the current series on the home page.
+
+## Changes after the first real run (October 2026)
+
+The first workflow run surfaced naming variants in the James folder. The job now accepts split-sermon letters (`032 A 12-04-22` → key `032A 12-04-22`, number `32A`), part suffixes (`024 07-24-22 (part 1)`), and small date typos (`05-29=22`, `02-27 -22`, double spaces; warned so they get renamed). Audio/PDF files with no number and date (e.g. `Intro to Author`) are kept as undated extras listed first in their series, which made `number` and `date` nullable: data `version` is now 2 (the page reads 1 and 2). The PDF header reader accepts `Text-` and numeric dates (`3-6-22`), and the cache records `parser` so older entries are re-read after parser changes.

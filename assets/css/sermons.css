@@ -62,9 +62,46 @@
   flex-direction: column
 }
 
+.video-card .media {
+  position: relative
+}
+
 .video-card .thumb {
   display: block;
   background: var(--line)
+}
+
+/* Summary shown over the thumbnail (toggled by the "Summary" button), so it never changes the card's size */
+.video-card .summary {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 16px 22px;
+  overflow-y: auto;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line)
+}
+
+.video-card .summary p {
+  margin: auto 0;
+  font-size: .95rem;
+  line-height: 1.55
+}
+
+.summary-toggle {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer
+}
+
+.summary-toggle[aria-expanded="true"] {
+  color: var(--accent)
 }
 
 .video-card img {
@@ -79,7 +116,6 @@
 .video-card h3,
 .video-card .passage-ref,
 .video-card .from,
-.video-card .summary,
 .video-card .links {
   margin: 0;
   padding: 0 22px
@@ -99,11 +135,6 @@
 .video-card .passage-ref,
 .video-card .from {
   color: var(--muted);
-  font-size: .95rem
-}
-
-.video-card .summary {
-  margin-top: 10px;
   font-size: .95rem
 }
 
@@ -189,19 +220,24 @@
   font-size: .95rem
 }
 
+/* The list is a table-like grid: number | date | title (passage underneath) | links.
+   Each row shares the list's columns (subgrid), so every column is as wide as its widest
+   entry and all titles start at the same place, whatever the date or number width. */
 .sermon-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line)
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  column-gap: 16px
 }
 
 .sermon-list li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
   align-items: baseline;
-  gap: 4px 20px;
   padding: 12px 0;
   border-bottom: 1px solid var(--line)
 }
@@ -210,19 +246,38 @@
   border-bottom: 0
 }
 
+/* Number, date, and text become cells of the row's grid. */
 .sermon-list .info {
+  display: contents
+}
+
+.sermon-list .text {
+  grid-column: 3;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2px 14px;
+  flex-direction: column;
+  gap: 2px;
   min-width: 0
+}
+
+/* Undated extras (e.g. "Intro to Author") have no number or date: use that space too. */
+.sermon-list .extra .text {
+  grid-column: 1 / 4
+}
+
+.sermon-list .links {
+  grid-column: 4;
+  justify-self: end
+}
+
+.sermon-list .num,
+.sermon-list .when {
+  white-space: nowrap
 }
 
 .sermon-list .num {
   font-family: var(--serif);
   font-weight: 600;
-  color: var(--accent);
-  min-width: 2.5em
+  color: var(--accent)
 }
 
 .sermon-list .when {
@@ -267,5 +322,23 @@
 
   .series-body {
     padding: 0 20px 18px
+  }
+
+  /* Phones: number and date on one line, title and passage below, then the links. */
+  .sermon-list {
+    display: block
+  }
+
+  .sermon-list li {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 4px
+  }
+
+  .sermon-list .text,
+  .sermon-list .extra .text,
+  .sermon-list .links {
+    grid-column: 1 / -1;
+    justify-self: start
   }
 }

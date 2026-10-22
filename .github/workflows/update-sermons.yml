@@ -31,6 +31,6 @@ jobs:
           if git diff --quiet -- data/; then echo "No changes"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git add data/sermons.json data/cache/pdf-headers.json
+          git add data/sermons.json data/cache/
           git commit -m "Update sermon data"
           git push

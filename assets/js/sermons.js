@@ -41,16 +41,18 @@ function videoCard(v) {
   const s = v.sermon;
   const card = el('article', 'video-card');
 
+  const media = el('div', 'media');
   const thumb = link('', v.url, 'thumb');
   thumb.setAttribute('aria-label', `Watch the ${formatDate(v.date)} service on YouTube`);
   const img = el('img');
   img.src = v.thumbnail; img.alt = ''; img.loading = 'lazy'; img.width = 480; img.height = 360;
   thumb.append(img);
-  card.append(thumb);
+  media.append(thumb);
+  card.append(media);
 
   const date = el('p', 'date', formatDate(v.date));
   if (v.live) date.append(' ', el('span', 'badge', 'Live now'));
-  card.append(date, el('h3', '', (s && s.title) || 'Sunday service'));
+  card.append(date, el('h3', '', v.title || (s && s.title) || 'Sunday service'));
 
   if (s && s.passage) card.append(el('p', 'passage-ref', s.passage));
   if (s) {
@@ -58,8 +60,29 @@ function videoCard(v) {
     from.append(link(`${s.seriesTitle} series`, `#series-${s.seriesId}`));
     card.append(from);
   }
-  if (v.summary) card.append(el('p', 'summary', v.summary));
-  card.append(linkRow([['Watch on YouTube', v.url], ['Notes', s && s.notesUrl], ['Audio', s && s.audioUrl]]));
+  const links = linkRow([['Watch on YouTube', v.url], ['Notes', s && s.notesUrl], ['Audio', s && s.audioUrl]]);
+  // The summary opens over the thumbnail instead of in the card, so every card stays the same size.
+  if (v.summary) {
+    const panel = el('div', 'summary');
+    panel.id = `summary-${v.videoId}`;
+    panel.hidden = true;
+    panel.append(el('p', '', v.summary));
+    media.append(panel);
+    const toggle = el('button', 'summary-toggle', 'Summary');
+    toggle.type = 'button';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', panel.id);
+    const show = (open) => {
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => show(panel.hidden));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !panel.hidden) { show(false); toggle.focus(); }
+    });
+    links.append(' · ', toggle);
+  }
+  card.append(links);
   return card;
 }
 
@@ -71,9 +94,11 @@ function seriesCard(s) {
   const head = el('summary');
   const title = el('h3', '', s.title);
   if (s.current) title.append(' ', el('span', 'badge', 'Current series'));
-  const count = `${s.sermons.length} ${s.sermons.length === 1 ? 'sermon' : 'sermons'}`;
+  // Undated extras (like a series introduction) aren't counted as sermons.
+  const dated = s.sermons.filter((m) => m.date).length;
+  const count = `${dated} ${dated === 1 ? 'sermon' : 'sermons'}`;
   const range = s.firstDate && s.lastDate ? `${formatDate(s.firstDate, 'short')} – ${formatDate(s.lastDate, 'short')} · ` : '';
-  head.append(title, el('p', 'meta', s.sermons.length ? range + count : 'No sermons listed yet'));
+  head.append(title, el('p', 'meta', dated ? range + count : 'No sermons listed yet'));
   box.append(head);
 
   const body = el('div', 'series-body');
@@ -83,9 +108,15 @@ function seriesCard(s) {
   for (const m of s.sermons) {
     const row = el('li');
     const info = el('div', 'info');
-    info.append(el('span', 'num', `#${m.number}`), el('span', 'when', formatDate(m.date, 'short')));
-    if (m.title) info.append(el('span', 'title', m.title));
-    if (m.passage) info.append(el('span', 'passage-ref', m.passage));
+    if (m.date) info.append(el('span', 'num', `#${m.number}`), el('span', 'when', formatDate(m.date, 'short')));
+    else row.className = 'extra'; // e.g. "Intro to Author": no number or date
+    // Title with the passage on its own line underneath.
+    if (m.title || m.passage) {
+      const text = el('div', 'text');
+      if (m.title) text.append(el('span', 'title', m.title));
+      if (m.passage) text.append(el('span', 'passage-ref', m.passage));
+      info.append(text);
+    }
     row.append(info, linkRow([['Notes', m.notesUrl], ['Audio', m.audioUrl], ['Video', m.videoUrl]]));
     list.append(row);
   }
@@ -109,7 +140,8 @@ async function init() {
     const res = await fetch('data/sermons.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error(res.status);
     data = await res.json();
-    if (!data || data.version !== 1 || !Array.isArray(data.recent) || !Array.isArray(data.series)) throw new Error('format');
+    // Version 2 added undated extras; version 1 data is still readable.
+    if (!data || ![1, 2].includes(data.version) || !Array.isArray(data.recent) || !Array.isArray(data.series)) throw new Error('format');
   } catch (err) {
     showError(recentBox, seriesBox);
     return;

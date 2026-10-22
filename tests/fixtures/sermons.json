@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "generatedAt": "2026-10-25T22:00:00.000Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
@@ -9,6 +9,7 @@
       "thumbnail": "https://i.ytimg.com/vi/live0000001/hqdefault.jpg",
       "date": "2026-10-25",
       "youtubeTitle": "SCCC 10/25/2026",
+      "title": null,
       "live": true,
       "summary": null,
       "sermon": null
@@ -19,6 +20,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vid00001018/hqdefault.jpg",
       "date": "2026-10-18",
       "youtubeTitle": "SCCC 10/18/2026",
+      "title": "Waiting for the Promise",
       "live": false,
       "summary": "Paul greets the church and gives thanks.",
       "sermon": {
@@ -37,6 +39,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vid00001011/hqdefault.jpg",
       "date": "2026-10-11",
       "youtubeTitle": "SCCC 10/11/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -47,6 +50,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vid00001004/hqdefault.jpg",
       "date": "2026-10-04",
       "youtubeTitle": "SCCC 10/04/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -57,6 +61,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vid00000927/hqdefault.jpg",
       "date": "2026-09-27",
       "youtubeTitle": "SCCC 09/27/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -67,6 +72,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vid00000301/hqdefault.jpg",
       "date": "2026-03-01",
       "youtubeTitle": "SCCC 03/01/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -115,6 +121,17 @@
       "firstDate": "2022-01-09",
       "lastDate": "2022-01-09",
       "sermons": [
+        {
+          "key": "Intro to Author",
+          "number": null,
+          "date": null,
+          "title": "Intro to Author",
+          "passage": null,
+          "notesUrl": "https://drive.google.com/file/d/jamesintropdf/view",
+          "audioUrl": "https://drive.google.com/file/d/jamesintromp3/view",
+          "videoUrl": null,
+          "summary": null
+        },
         {
           "key": "001 01-09-22",
           "number": "1",

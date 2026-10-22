@@ -2,6 +2,8 @@
 // Returns a list of problems; an empty list means the data is valid.
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const MAX_RECENT = 6;
+// Version 2: undated extras (e.g. a series introduction) have number and date set to null.
+const DATA_VERSION = 2;
 
 function validateSermons(data) {
   const errors = [];
@@ -26,7 +28,7 @@ function validateSermons(data) {
   };
 
   if (!isObj(data)) return ['data should be an object'];
-  check(data.version === 1, 'version should be 1');
+  check(data.version === DATA_VERSION, `version should be ${DATA_VERSION}`);
   fields(data, 'data', {
     generatedAt: [str, 'a string'],
     streamsUrl: [url, 'an https URL'],
@@ -44,6 +46,7 @@ function validateSermons(data) {
         thumbnail: [url, 'an https URL'],
         date: [date, 'a YYYY-MM-DD date'],
         youtubeTitle: [str, 'a string'],
+        title: [strOrNull, 'a string or null'],
         live: [(x) => typeof x === 'boolean', 'true or false'],
         summary: [strOrNull, 'a string or null'],
         sermon: [(x) => x === null || isObj(x), 'an object or null'],
@@ -83,8 +86,8 @@ function validateSermons(data) {
       if (isObj(s) && Array.isArray(s.sermons)) {
         s.sermons.forEach((m, j) => fields(m, `${p}.sermons[${j}]`, {
           key: [str, 'a string'],
-          number: [str, 'a string'],
-          date: [date, 'a YYYY-MM-DD date'],
+          number: [strOrNull, 'a string or null'],
+          date: [dateOrNull, 'a YYYY-MM-DD date or null'],
           title: [strOrNull, 'a string or null'],
           passage: [strOrNull, 'a string or null'],
           notesUrl: [urlOrNull, 'an https URL or null'],
@@ -98,4 +101,4 @@ function validateSermons(data) {
   return errors;
 }
 
-module.exports = { validateSermons, MAX_RECENT };
+module.exports = { validateSermons, MAX_RECENT, DATA_VERSION };

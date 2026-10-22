@@ -28,4 +28,6 @@ Every change that adds or changes behavior, content structure, or layout must co
 
 `data/sermons.json` is generated daily by `scripts/build-sermons/` (workflow `.github/workflows/update-sermons.yml`). Never hand-edit it; series changes go in `data/series.json`. The JSON format is a contract between the job and `assets/js/sermons.js`, enforced by `scripts/build-sermons/validate.js`. Change all of them together with their tests, and bump `version` for breaking changes. Design history: `plans/sermons-page.md`.
 
+`data/video-notes.json` holds service titles/summaries written from YouTube auto-captions by the project skill `.claude/skills/summarize-services/` (run locally; uses `scripts/video-notes/transcripts.js` and yt-dlp). The job merges them: overrides in `data/series.json`, then notes-PDF titles, then caption titles.
+
 Commands: `npm install` and `npx playwright install chromium` once; then `npm test`, `npm run test:live`, `npm run test:report` (opens the last results in a browser). Tests also run on GitHub for every push (`.github/workflows/tests.yml`).

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "generatedAt": "2026-10-22T02:15:50.000Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
@@ -9,6 +9,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6zuVPimQvxU/hqdefault.jpg",
       "date": "2026-10-18",
       "youtubeTitle": "SCCC 10/18/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -19,6 +20,7 @@
       "thumbnail": "https://i.ytimg.com/vi/V4V7DZmF-zk/hqdefault.jpg",
       "date": "2026-10-11",
       "youtubeTitle": "SCCC 10/11/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -29,8 +31,9 @@
       "thumbnail": "https://i.ytimg.com/vi/bBLv6JDgdpo/hqdefault.jpg",
       "date": "2026-10-04",
       "youtubeTitle": "SCCC 10/04/2026",
+      "title": "Noah: The Work of Faith",
       "live": false,
-      "summary": null,
+      "summary": "From Hebrews 11:1-7 and Genesis 6, a look at Noah, who believed God's warning of a flood no one had ever seen and built the ark. Real faith shows in what we do: don't just walk with God, work for God.",
       "sermon": null
     },
     {
@@ -39,6 +42,7 @@
       "thumbnail": "https://i.ytimg.com/vi/C6925R5FDTM/hqdefault.jpg",
       "date": "2026-09-27",
       "youtubeTitle": "SCCC 09/27/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -49,6 +53,7 @@
       "thumbnail": "https://i.ytimg.com/vi/CXhfA9HoQsU/hqdefault.jpg",
       "date": "2026-09-20",
       "youtubeTitle": "SCCC 09/20/2026",
+      "title": null,
       "live": false,
       "summary": null,
       "sermon": null
@@ -59,8 +64,9 @@
       "thumbnail": "https://i.ytimg.com/vi/wDxOt9zxxdg/hqdefault.jpg",
       "date": "2026-09-13",
       "youtubeTitle": "SCCC 09/13/2026",
+      "title": "A Jet Tour of Isaiah, Part 1",
       "live": false,
-      "summary": null,
+      "summary": "The first of three messages surveying Isaiah: the prophet, the kings of Judah he served, and chapters 1-22 traced to their New Testament quotations, showing his prophecies about Israel will be literally fulfilled.",
       "sermon": null
     }
   ],

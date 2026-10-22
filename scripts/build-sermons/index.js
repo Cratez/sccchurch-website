@@ -6,8 +6,9 @@ const path = require('path');
 const { listStreams } = require('./youtube');
 const { folderId, listFolder, download } = require('./drive');
 const { firstPageText } = require('./pdf');
-const { assemble, parseFileName, parseNotesHeader } = require('./build');
+const { assemble, parseFileName, parseNotesHeader, HEADER_PARSER_VERSION } = require('./build');
 const { validateSermons } = require('./validate');
+const { snapshot } = require('../video-notes/apply');
 
 const readJson = (file, fallback) => {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (err) {
@@ -28,6 +29,7 @@ async function run({ key, fetchImpl = fetch, rootDir = path.resolve(__dirname, '
 
   const config = readJson(path.join(dataDir, 'series.json'));
   const cache = readJson(cacheFile, {});
+  const videoNotes = readJson(path.join(dataDir, 'video-notes.json'), {});
   const warnings = [];
 
   const streams = await listStreams(key, fetchImpl);
@@ -41,18 +43,21 @@ async function run({ key, fetchImpl = fetch, rootDir = path.resolve(__dirname, '
       const parsed = parseFileName(f.name);
       if (!parsed || parsed.kind !== 'notes') continue;
       const cached = cache[f.id];
-      if (cached && cached.modifiedTime === f.modifiedTime) { newCache[f.id] = cached; continue; }
+      if (cached && cached.modifiedTime === f.modifiedTime && cached.parser === HEADER_PARSER_VERSION) {
+        newCache[f.id] = cached;
+        continue;
+      }
       let header = { title: null, passage: null };
       try {
         header = parseNotesHeader(await firstPageText(await download(f.id, key, fetchImpl)));
       } catch (err) {
         warnings.push(`Couldn't read "${f.name}" in ${s.title}: ${err.message}`);
       }
-      newCache[f.id] = { modifiedTime: f.modifiedTime, ...header };
+      newCache[f.id] = { modifiedTime: f.modifiedTime, parser: HEADER_PARSER_VERSION, ...header };
     }
   }
 
-  const built = assemble({ config, streams, folders, headers: newCache });
+  const built = assemble({ config, streams, folders, headers: newCache, videoNotes });
   warnings.push(...built.warnings);
 
   // Keep the old timestamp when nothing else changed, so the daily run doesn't commit for nothing.
@@ -69,6 +74,8 @@ async function run({ key, fetchImpl = fetch, rootDir = path.resolve(__dirname, '
 
   writeJson(outFile, output);
   writeJson(cacheFile, newCache);
+  // Record which video notes this data includes (see scripts/video-notes/apply.js).
+  writeJson(path.join(dataDir, 'cache', 'applied-video-notes.json'), snapshot(videoNotes));
 
   log(`Wrote ${path.relative(rootDir, outFile)}: ${output.recent.length} recent services, `
     + `${output.series.map((s) => `${s.title} (${s.sermons.length})`).join(', ')}`);

@@ -100,6 +100,17 @@ test('a full run writes valid data with streams matched to sermons', async () =>
   expect(fs.readFileSync(path.join(root, 'data', 'sermons.json'), 'utf8')).not.toContain('key=');
 });
 
+test('merges saved video notes and records which ones it applied', async () => {
+  const root = tempSite();
+  fs.writeFileSync(path.join(root, 'data', 'video-notes.json'), JSON.stringify({
+    vid2: { date: '2022-01-16', title: 'Count It All Joy', summary: 'On trials.', source: 'youtube-auto-captions' },
+  }));
+  await run({ key: 'k', fetchImpl: fakeGoogle().fetchImpl, rootDir: root, log: quiet });
+  expect(readOut(root).recent[0]).toMatchObject({ videoId: 'vid2', title: 'Count It All Joy', summary: 'On trials.' });
+  expect(JSON.parse(fs.readFileSync(path.join(root, 'data', 'cache', 'applied-video-notes.json'), 'utf8')))
+    .toEqual({ vid2: { title: 'Count It All Joy', summary: 'On trials.' } });
+});
+
 test('a second run reuses cached PDF headers and keeps the timestamp when nothing changed', async () => {
   const root = tempSite();
   await run({ key: 'k', fetchImpl: fakeGoogle().fetchImpl, rootDir: root, now: new Date('2026-10-21T22:00:00Z'), log: quiet });
@@ -108,6 +119,18 @@ test('a second run reuses cached PDF headers and keeps the timestamp when nothin
 
   expect(second.calls.some((u) => u.includes('/files/pdf1'))).toBe(false);
   expect(readOut(root).generatedAt).toBe('2026-10-21T22:00:00.000Z');
+  expect(readOut(root).series[0].sermons[0].title).toBe('You Can Have Joy No Matter What');
+});
+
+test('PDFs read by an older version of the header reader are read again', async () => {
+  const root = tempSite();
+  fs.mkdirSync(path.join(root, 'data', 'cache'));
+  fs.writeFileSync(path.join(root, 'data', 'cache', 'pdf-headers.json'), JSON.stringify({
+    pdf1: { modifiedTime: '2022-01-09T00:00:00Z', title: null, passage: null }, // no "parser" version: old
+  }));
+  const { fetchImpl, calls } = fakeGoogle();
+  await run({ key: 'k', fetchImpl, rootDir: root, log: quiet });
+  expect(calls.some((u) => u.includes('/files/pdf1'))).toBe(true);
   expect(readOut(root).series[0].sermons[0].title).toBe('You Can Have Joy No Matter What');
 });
 

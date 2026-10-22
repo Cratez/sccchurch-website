@@ -27,8 +27,12 @@ sccchurch-website/
 ├── data/
 │   ├── series.json         Hand-edited list of sermon series (see "Sermon data")
 │   ├── sermons.json        Generated daily by the sermon data job; don't edit by hand
+│   ├── video-notes.json    Service titles/summaries written from YouTube captions (editable)
+│   │                       (copied into sermons.json by scripts/video-notes/apply.js)
 │   └── cache/              Generated: titles already read from notes PDFs
 ├── scripts/build-sermons/  The sermon data job (reads YouTube and Google Drive)
+├── scripts/video-notes/    Downloads service captions for the summarize-services skill
+├── .claude/skills/         Claude Code skills for this repo (summarize-services)
 ├── plans/                  Design plans for larger features
 ├── .github/workflows/
 │   ├── tests.yml           Runs the tests on GitHub for every push
@@ -203,6 +207,11 @@ The job only understands files named **`NNN MM-DD-YY`** plus the extension, usin
 - `001 01-09-22.mp3`: audio (`.mp3`, `.m4a`, or `.wav`)
 - `001 01-09-22.pdf`: notes
 - In-between numbers like `001.5 01-31-21.pdf` are fine.
+- One sermon spread over several Sundays: either a letter after the number (`032 A 12-04-22.pdf`, `032 B 12-11-22.pdf`, shown as #32A and #32B) or a part after the date (`024 07-24-22 (part 1).pdf`, shown as #24 (part 1)).
+- Audio or PDF files with no number and date (e.g. `Intro to Author.pdf` and `Intro to Author.mp3`) are listed at the top of the series, titled by their file name.
+- Small typos in the date (`05-29=22`, `02-27 -22`, extra spaces) are still understood, and the job suggests renaming those files in its warnings.
+
+To fix a title with `overrides`, use the sermon's `key` exactly as it appears in `data/sermons.json` (e.g. `"032A 12-04-22"` or `"024 07-24-22 (part 1)"`).
 
 For the title and passage to show, the notes PDF should start like this:
 
@@ -213,7 +222,9 @@ January 9, 2022
 Text: James 1:1-4
 ```
 
-Files with other names are skipped. The job lists them as warnings on the run's page (Actions tab, open the run, see the summary), so a misnamed upload is easy to spot.
+Some PDFs have no title line (just `James #6`, the date, and `Text:`), and a few are scanned images with no readable text; those sermons show only their number, date, and links. `Text-` works as well as `Text:`. Add a title with `overrides` if you want one.
+
+Other files (e.g. Word documents) are skipped. The job lists them as warnings on the run's page (Actions tab, open the run, see the summary), so a misnamed upload is easy to spot.
 
 ### Running it yourself
 
@@ -222,6 +233,22 @@ GOOGLE_API_KEY=your-key npm run sermons
 ```
 
 (On Windows PowerShell: `$env:GOOGLE_API_KEY="your-key"; npm run sermons`.) This rewrites `data/sermons.json` locally; commit it if you want it published.
+
+### Service titles from captions
+
+YouTube names the streams only by date (`SCCC 10/18/2026`), so a recent service that doesn't match a sermon in Drive would just say "Sunday service". To give those a real title and a short summary, there's a Claude Code skill that reads YouTube's **automatic captions**:
+
+1. Open this repo in Claude Code and run `/summarize-services` (or ask Claude to "summarize the recent services").
+2. It downloads the captions for recent services that don't have notes yet (with [yt-dlp](https://github.com/yt-dlp/yt-dlp), on your computer), reads each transcript, saves a title and a 1-2 sentence summary to `data/video-notes.json`, and copies them into `data/sermons.json` (`node scripts/video-notes/apply.js`), so the page shows them right away.
+3. Commit and push to put them on the live site. The daily job keeps them in place on every rebuild.
+
+Things to know:
+
+- **Only about half of the services have automatic captions.** The others stay as "Sunday service". Running the skill again later picks up any that gain captions.
+- **A title from the sermon's notes PDF still wins.** The caption title is used only when there's no PDF title; the summary is shown either way. A title or summary in `data/series.json` `overrides` beats both.
+- **Generated text can be wrong.** Edit or delete any entry in `data/video-notes.json` by hand, then run `node scripts/video-notes/apply.js` to update the page data (`npm test` reminds you if you forget). To regenerate one, ask Claude to redo it (the script takes `--video <id>`).
+- **Why it runs locally:** YouTube usually blocks caption downloads from cloud servers like GitHub's, and running it in Claude Code means no extra API key or cost.
+- **Setup:** yt-dlp must be installed (`winget install yt-dlp.yt-dlp`) and kept current (`yt-dlp -U`). Errors like "The page needs to be reloaded" mean it's out of date. Node.js is also needed (already required for the tests).
 
 ### Changing the data format
 
@@ -329,12 +356,12 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
 - **Sermon data job, first run:** after adding the `GOOGLE_API_KEY` secret and running "Update sermon data", confirm that the bot's commit also triggers a GitHub Pages deploy ("pages build and deployment" in the Actions tab). If it doesn't, switch Pages to deploy with GitHub Actions or add a deploy step to the workflow, and update this README.
 - **Gospel of John series:** its Drive folder (`0B-mo4R1ry-JBakM1N3ZYUFAwams`) is private, so it isn't on the Sermons page. Make it "Anyone with the link can view" and add it to `data/series.json`. (Note: on the old Wix "Sermon Lists" page, each series' link pointed at the *next* series' folder. `data/series.json` uses the correct folders.)
-- **Sermon summaries:** deferred. Every video, sermon, and series in `data/sermons.json` has a `summary` field (currently empty) that the page already displays. Summaries could be hand-written (series `summary` and per-sermon `overrides` in `data/series.json`) or generated later by AI from the notes PDFs or YouTube transcripts.
+- **Sermon summaries:** recent services can get summaries from their captions (see "Service titles from captions"). Older series sermons and the series themselves only have summaries if hand-written (series `summary` and per-sermon `overrides` in `data/series.json`).
 - **Header on phones:** at about 390px wide, the nav links wrap onto two lines and crowd the logo. Consider a shorter layout or a menu button for small screens.
 
 ## Privacy and security
 
-Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The site makes requests to these outside services: Google Fonts, YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
+Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The summarize-services skill sends service transcripts to Claude (through your Claude Code session) to write titles and summaries; it's told to leave out names and private details from announcements and prayer requests. The site makes requests to these outside services: Google Fonts, YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
 
 ## License
 

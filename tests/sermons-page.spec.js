@@ -53,6 +53,63 @@ test.describe('with data', () => {
     await expect(links.nth(1)).toHaveAttribute('rel', 'noopener');
   });
 
+  test('a service titled from its captions (no sermon match) shows that title', async ({ page }) => {
+    const data = structuredClone(FIXTURE);
+    Object.assign(data.recent[3], { title: 'Love One Another', summary: 'A sermon on love.' });
+    await serve(page, data);
+    await page.reload();
+    const card = page.locator('#recent .video-card').nth(3);
+    await expect(card.locator('h3')).toHaveText('Love One Another');
+    await expect(card.locator('.summary')).toHaveText('A sermon on love.');
+    await expect(card.locator('.links a')).toHaveText(['Watch on YouTube']);
+  });
+
+  // Summaries used to sit in the card and made every card in the grid as tall as the longest one.
+  test('a summary stays hidden until "Summary" is clicked, and shows over the thumbnail', async ({ page }) => {
+    const card = page.locator('#recent .video-card').nth(1);
+    const panel = card.locator('.summary');
+    const toggle = card.getByRole('button', { name: 'Summary' });
+    await expect(panel).toBeHidden();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+
+    await toggle.click();
+    await expect(panel).toBeVisible();
+    await expect(panel).toHaveText('Paul greets the church and gives thanks.');
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    const [p, img] = [await panel.boundingBox(), await card.locator('img').boundingBox()];
+    expect(Math.abs(p.y - img.y) + Math.abs(p.height - img.height), 'panel covers the thumbnail').toBeLessThanOrEqual(2);
+
+    await toggle.click();
+    await expect(panel).toBeHidden();
+    await toggle.click();
+    await page.keyboard.press('Escape');
+    await expect(panel).toBeHidden();
+    await expect(toggle).toBeFocused();
+  });
+
+  test('cards without a summary have no Summary button', async ({ page }) => {
+    await expect(page.locator('#recent .video-card').nth(2).locator('.summary-toggle, .summary')).toHaveCount(0);
+  });
+
+  test('a summary doesn\'t make cards taller, open or closed', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'One column on phones: cards are naturally different heights.');
+    const heights = () => page.locator('#recent .video-card').evaluateAll((cards) => cards.map((c) => Math.round(c.getBoundingClientRect().height)));
+    const load = async (summary) => {
+      const data = structuredClone(FIXTURE);
+      data.recent.forEach((r) => { r.summary = null; });
+      data.recent[3].summary = summary;
+      await serve(page, data);
+      await page.reload();
+      await page.locator('#recent .video-card').first().waitFor();
+      return heights();
+    };
+    const without = await load(null);
+    const withLong = await load('A long summary of the sermon. '.repeat(10).trim());
+    expect(withLong, 'same card heights with and without a summary').toEqual(without);
+    await page.locator('#recent .video-card').nth(3).getByRole('button', { name: 'Summary' }).click();
+    expect(await heights(), 'opening it changes nothing either').toEqual(without);
+  });
+
   test('an unmatched service shows "Sunday service" and only the YouTube link', async ({ page }) => {
     const card = page.locator('#recent .video-card').nth(2);
     await expect(card.locator('h3')).toHaveText('Sunday service');
@@ -76,9 +133,15 @@ test.describe('with data', () => {
     await james.locator('summary').click();
     await expect(james.locator('.summary')).toHaveText('A practical letter about living out real faith.');
     await expect(james.locator('.folder')).toHaveAttribute('href', 'https://drive.google.com/drive/folders/JAMES');
-    const row = james.locator('.sermon-list li');
-    await expect(row.locator('.info')).toHaveText(/#1\s*Jan 9, 2022\s*You Can Have Joy No Matter What\s*James 1:1-4/);
-    await expect(row.locator('.links a')).toHaveText(['Notes', 'Audio']);
+    const rows = james.locator('.sermon-list li');
+    await expect(rows).toHaveCount(2);
+    // Undated extras (a series introduction) come first, with no number or date.
+    await expect(rows.nth(0)).toHaveClass('extra');
+    await expect(rows.nth(0).locator('.info')).toHaveText('Intro to Author');
+    await expect(rows.nth(0).locator('.num, .when')).toHaveCount(0);
+    await expect(rows.nth(0).locator('.links a')).toHaveText(['Notes', 'Audio']);
+    await expect(rows.nth(1).locator('.info')).toHaveText(/#1\s*Jan 9, 2022\s*You Can Have Joy No Matter What\s*James 1:1-4/);
+    await expect(rows.nth(1).locator('.links a')).toHaveText(['Notes', 'Audio']);
 
     const acts = page.locator('#series-acts .sermon-list li');
     await expect(acts.nth(0).locator('.links a')).toHaveText(['Notes', 'Video']);
@@ -99,6 +162,54 @@ test.describe('with data', () => {
   });
 });
 
+// Long titles and passages used to sit on one line and push the links onto a line of their own.
+test('a sermon\'s passage sits under its title; links stay beside it on desktop and below it on phones', async ({ page, isMobile }) => {
+  const data = structuredClone(FIXTURE);
+  Object.assign(data.series[1].sermons[1], {
+    title: '“… not my will, but Thine be done.” (Luke 22:42)',
+    passage: 'James 4:13-15; Matt. 6:9-13; Matt. 12:46-50',
+  });
+  await serve(page, data);
+  await page.goto('sermons.html#series-james');
+  // Measure everything in one go: the page may still be smooth-scrolling to the series.
+  const { num, title, passage, links } = await page.locator('#series-james .sermon-list li').nth(1).evaluate((li) => {
+    const r = (sel) => li.querySelector(sel).getBoundingClientRect().toJSON();
+    return { num: r('.num'), title: r('.title'), passage: r('.passage-ref'), links: r('.links') };
+  });
+
+  expect(passage.y, 'passage starts below the title').toBeGreaterThanOrEqual(title.y + title.height - 1);
+  expect(Math.abs(passage.x - title.x), 'passage lines up with the title').toBeLessThanOrEqual(1);
+  if (isMobile) {
+    expect(links.y, 'links go below the passage on phones').toBeGreaterThanOrEqual(passage.y + passage.height - 1);
+  } else {
+    expect(Math.abs(links.y - num.y), 'links stay on the first line on desktop').toBeLessThanOrEqual(8);
+    expect(links.x, 'links stay to the right of the title').toBeGreaterThanOrEqual(title.x + title.width);
+  }
+});
+
+// Titles used to start right after each date, so "Jan 9, 2022" and "Feb 13, 2022" rows didn't line up.
+test('titles and passages line up in one column, whatever the number or date width', async ({ page, isMobile }) => {
+  const data = structuredClone(FIXTURE);
+  const base = data.series[1].sermons[1];
+  data.series[1].sermons.push(
+    { ...base, key: '005 02-06-22', number: '5', date: '2022-02-06', title: null, passage: 'James 1:13' },
+    { ...base, key: '006 02-13-22', number: '6', date: '2022-02-13', title: 'A title', passage: 'James 1:16-18' },
+    { ...base, key: '024 07-24-22 (part 1)', number: '24 (part 1)', date: '2022-07-24', title: 'The Problem of War Within', passage: 'James 4:1-3' },
+  );
+  await serve(page, data);
+  await page.goto('sermons.html#series-james');
+  const { texts, links } = await page.locator('#series-james .sermon-list').evaluate((list) => {
+    const rows = [...list.querySelectorAll('li:not(.extra)')];
+    return {
+      texts: rows.map((li) => Math.round(li.querySelector('.text').getBoundingClientRect().left)),
+      links: rows.map((li) => Math.round(li.querySelector('.links').getBoundingClientRect().right)),
+    };
+  });
+  expect(texts).toHaveLength(4);
+  expect(new Set(texts).size, `title/passage left edges: ${texts.join(', ')}`).toBe(1);
+  if (!isMobile) expect(new Set(links).size, `link right edges: ${links.join(', ')}`).toBe(1);
+});
+
 test('a link straight to a series opens it', async ({ page }) => {
   await serve(page, FIXTURE);
   await page.goto('sermons.html#series-james');
@@ -109,7 +220,7 @@ test('a link straight to a series opens it', async ({ page }) => {
 for (const [name, body, status] of [
   ['the data fails to load', 'Server error', 500],
   ['the data is not valid JSON', '{ not json', 200],
-  ['the data is a newer, unknown format', JSON.stringify({ ...FIXTURE, version: 2 }), 200],
+  ['the data is a newer, unknown format', JSON.stringify({ ...FIXTURE, version: 3 }), 200],
 ]) {
   test(`when ${name}, shows friendly messages and a YouTube link`, async ({ page, expectedLocalErrors }) => {
     expectedLocalErrors.push(/data\/sermons\.json/);
@@ -120,6 +231,14 @@ for (const [name, body, status] of [
     await expect(page.locator('#series .status')).toContainText('We couldn’t load sermon series');
   });
 }
+
+test('still reads version 1 data (from before undated extras existed)', async ({ page }) => {
+  const v1 = { ...FIXTURE, version: 1, series: FIXTURE.series.map((s) => ({ ...s, sermons: s.sermons.filter((m) => m.date) })) };
+  await serve(page, v1);
+  await page.goto('sermons.html');
+  await expect(page.locator('#recent .video-card')).toHaveCount(6);
+  await expect(page.locator('#series details.series')).toHaveCount(3);
+});
 
 test('with no services or series yet, shows empty-state messages', async ({ page }) => {
   await serve(page, { ...FIXTURE, recent: [], series: [] });

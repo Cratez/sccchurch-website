@@ -42,8 +42,8 @@ test('the committed data/sermons.json is valid and lists every configured series
 
 test.describe('validateSermons catches broken data', () => {
   const good = () => ({
-    version: 1, generatedAt: 'x', streamsUrl: 'https://www.youtube.com/x',
-    recent: [{ videoId: 'v', url: 'https://youtu.be/v', thumbnail: 'https://i.ytimg.com/v', date: '2026-10-18', youtubeTitle: 'SCCC', live: false, summary: null, sermon: null }],
+    version: 2, generatedAt: 'x', streamsUrl: 'https://www.youtube.com/x',
+    recent: [{ videoId: 'v', url: 'https://youtu.be/v', thumbnail: 'https://i.ytimg.com/v', date: '2026-10-18', youtubeTitle: 'SCCC', title: null, live: false, summary: null, sermon: null }],
     series: [{ id: 'a', title: 'A', current: false, folderUrl: 'https://drive.google.com/x', summary: null, firstDate: null, lastDate: null,
       sermons: [{ key: '001 01-09-22', number: '1', date: '2022-01-09', title: null, passage: null, notesUrl: null, audioUrl: null, videoUrl: null, summary: null }] }],
   });
@@ -59,7 +59,7 @@ test.describe('validateSermons catches broken data', () => {
       [(d) => { d.recent = Array(7).fill(d.recent[0]); }, /at most 6/],
       [(d) => { d.series.push({ ...d.series[0] }); }, /used more than once/],
       [(d) => { d.series[0].folderUrl = 'http://drive.google.com/x'; }, /folderUrl should be an https URL/],
-      [(d) => { d.version = 2; }, /version/],
+      [(d) => { d.version = 3; }, /version/],
     ];
     for (const [breakIt, message] of cases) {
       const d = good();
