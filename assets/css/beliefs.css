@@ -5,37 +5,17 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--accent);
+    background: var(--brand);
     transform-origin: left;
     transform: scaleX(0);
     z-index: 20
-}
-
-.page-hero {
-    padding: 80px 0 40px;
-    max-width: 760px
-}
-
-.page-hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    margin: 14px 0 22px
-}
-
-.preamble {
-    font-family: var(--serif);
-    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
-    line-height: 1.6;
-    color: var(--muted);
-    border-left: 3px solid var(--accent);
-    padding-left: 24px;
-    margin: 0
 }
 
 .layout {
     display: grid;
     grid-template-columns: 230px 1fr;
     gap: 64px;
-    padding: 48px 0 96px
+    padding: 56px 0 96px
 }
 
 .toc {
@@ -72,7 +52,7 @@
 .toc a.on {
     color: var(--ink);
     font-weight: 600;
-    border-left-color: var(--accent)
+    border-left-color: var(--brand)
 }
 
 .tenet {
@@ -88,16 +68,17 @@
 }
 
 .num {
-    font-family: var(--serif);
-    font-size: 1rem;
+    display: block;
+    font-family: var(--sans);
+    font-size: .78rem;
     font-weight: 600;
-    color: var(--brand);
-    letter-spacing: .08em
+    letter-spacing: .14em;
+    color: var(--brand)
 }
 
 .tenet h2 {
     font-size: clamp(1.9rem, 4vw, 2.7rem);
-    margin: 6px 0 20px
+    margin: 10px 0 20px
 }
 
 .tenet p.body {
@@ -109,10 +90,8 @@
 
 .key {
     margin: 28px 0 0;
-    padding: 18px 22px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 14px;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--line);
     max-width: 62ch
 }
 
@@ -129,6 +108,7 @@
 
 .key .label {
     margin: 0 0 12px;
+    font-family: var(--sans);
     font-size: .78rem;
     font-weight: 600;
     letter-spacing: .14em;
@@ -145,35 +125,27 @@
     gap: 8px
 }
 
-.refs li {
-    font-size: .9rem;
-    padding: 5px 12px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--muted);
-    background: var(--bg)
-}
-
 .tenet h2 {
     text-transform: none
 }
 
 /* Clickable references + passage panel */
 .refs .ref {
-    font: inherit;
-    font-size: .9rem;
+    font-family: var(--sans);
+    font-size: .85rem;
+    font-weight: 500;
     padding: 5px 12px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--muted);
-    background: var(--bg);
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    color: var(--ink);
+    background: transparent;
     cursor: pointer;
     transition: border-color .15s, color .15s
 }
 
 .refs .ref:hover {
-    border-color: var(--accent);
-    color: var(--ink)
+    border-color: var(--brand);
+    color: var(--brand)
 }
 
 .refs .ref[aria-expanded="true"] {
@@ -182,18 +154,11 @@
     color: var(--brand-ink)
 }
 
-.refs li {
-    padding: 0;
-    border: 0;
-    background: none
-}
-
 .passage {
     margin-top: 16px;
     padding: 18px 20px;
-    border-left: 3px solid var(--accent);
-    background: var(--bg);
-    border-radius: 0 12px 12px 0
+    border-left: 3px solid var(--brand);
+    background: var(--surface)
 }
 
 .passage .ph {
@@ -215,6 +180,7 @@
     background: none;
     color: var(--muted);
     cursor: pointer;
+    font-family: var(--sans);
     font-size: .85rem;
     font-weight: 600
 }
@@ -247,6 +213,3 @@
     color: var(--muted)
 }
 
-.passage .pf a {
-    color: var(--brand)
-}
