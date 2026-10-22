@@ -1,21 +1,24 @@
 /**
  * FEATURE: Shared page shell (header nav, footer, links, mobile layout) on every page.
- * COVERS:  index.html, beliefs.html, sermons.html, assets/css/base.css
+ * COVERS:  index.html, beliefs.html, sermons.html, visit.html (header and footer markup),
+ *          assets/css/base.css
  * WHY:     The header and footer are copied into each HTML file by hand, so they can drift
  *          apart or link to something that no longer exists.
  * UPDATE WHEN: a page is added or removed (edit PAGES below), or the nav links change.
+ *          (The phone menu itself is tested in nav-menu.spec.js.)
  * REMOVE WHEN: never, as long as the site has pages; update instead.
  */
 const { test, expect } = require('./support/fixtures');
 
 const PAGES = [
   { path: 'index.html', title: 'South Clackamas Community Church' },
-  { path: 'beliefs.html', title: 'Statement of Faith · South Clackamas Community Church', current: 'What We Believe' },
+  { path: 'visit.html', title: 'Plan your visit · South Clackamas Community Church', current: 'Plan your visit' },
+  { path: 'beliefs.html', title: 'Statement of Faith · South Clackamas Community Church', current: 'What we believe' },
   { path: 'sermons.html', title: 'Sermons · South Clackamas Community Church', current: 'Sermons' },
 ];
 
-const NAV = ['Join Us', 'Sermons', 'What We Believe', 'Contact'];
-const NAV_HREFS = ['index.html#join', 'sermons.html', 'beliefs.html', 'index.html#visit'];
+const NAV = ['Plan your visit', 'Sermons', 'What we believe', 'Contact'];
+const NAV_HREFS = ['visit.html', 'sermons.html', 'beliefs.html', '#contact'];
 
 test('home page "Browse sermons" button goes to the Sermons page', async ({ page }) => {
   await page.goto('index.html');
@@ -31,6 +34,8 @@ for (const p of PAGES) {
       for (const [i, href] of NAV_HREFS.entries()) {
         await expect(page.locator('header.site nav ul a').nth(i)).toHaveAttribute('href', href);
       }
+      // "Contact" in the nav jumps to the footer, so every page needs footer#contact.
+      await expect(page.locator('footer#contact.site')).toHaveCount(1);
       await expect(page.locator('footer.site')).toContainText('© 2026 South Clackamas Community Church');
     });
 
@@ -62,14 +67,16 @@ for (const p of PAGES) {
       expect(overflow).toBeLessThanOrEqual(0);
     });
 
-    test('nav stays on one row and fits inside the header', async ({ page }) => {
+    test('does not scroll sideways at 360px wide, with the phone menu open', async ({ page }) => {
+      await page.setViewportSize({ width: 360, height: 740 });
       await page.goto(p.path);
-      const nav = await page.locator('header.site nav').boundingBox();
-      for (const a of await page.locator('header.site nav ul a').all()) {
-        const box = await a.boundingBox();
-        expect(box.y + box.height, `"${await a.textContent()}" should fit in the header`).toBeLessThanOrEqual(nav.y + nav.height);
-        expect(box.x + box.width).toBeLessThanOrEqual(nav.x + nav.width + 1);
-      }
+      await page.getByRole('button', { name: 'Menu' }).click();
+      await expect(page.locator('header.site nav')).toBeVisible();
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      expect(overflow).toBeLessThanOrEqual(0);
     });
+
+    // The old "nav stays on one row and fits inside the header" test was replaced on purpose:
+    // on phones the links now sit behind a Menu button (see nav-menu.spec.js).
   });
 }

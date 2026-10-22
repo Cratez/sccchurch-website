@@ -19,6 +19,7 @@ sccchurch-website/
 ├── index.html              Home page
 ├── sermons.html            Sermons page
 ├── beliefs.html            Statement of Faith
+├── visit.html              Plan your visit (placeholder until it is filled in)
 ├── README.md               This file
 ├── CLAUDE.md               Rules for AI assistants working on the site (including testing rules)
 ├── LICENSE
@@ -43,7 +44,7 @@ sccchurch-website/
 │   ├── live/               Opt-in checks against real outside services
 │   └── *.spec.js           One file per feature
 └── assets/
-    ├── favicon.svg         Simple cross mark (tab icon and header mark)
+    ├── favicon.svg         Mountain mark: three peaks and a cross (tab icon and header mark)
     ├── img/
     │   ├── original-logo.webp   Original watercolor mountain logo (footer easter egg)
     │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
@@ -53,7 +54,7 @@ sccchurch-website/
     │   ├── sermons.css     Sermons page only
     │   └── beliefs.css     Statement of Faith page only
     └── js/
-        ├── site.js         Every page: footer easter egg (original logo pop-up)
+        ├── site.js         Every page: phone menu, light/dark toggle, footer easter egg (original logo pop-up)
         ├── home.js         Home page: friendly fallback when the video can't play from a local file
         ├── sermons.js      Sermons page: builds the cards and series list from data/sermons.json
         └── beliefs.js      Reading-progress bar, sidebar highlighting, scripture lookups
@@ -101,10 +102,10 @@ npx playwright install chromium
 
 | I want to change... | Edit this |
 | --- | --- |
-| Service times | `index.html`: the `<meta name="description">` in the `<head>`, the `.times` block in the hero, the "In person" card, and the footer. Also `beliefs.html`'s footer. Then update `EXPECTED` at the top of `tests/service-times.spec.js`. |
-| Phone, Facebook, Google Maps links | `index.html`, in the "Get in touch" list and the "In person" card |
+| Service times | `index.html`: the `<meta name="description">` in the `<head>`, the `.times` block in the hero, the "In person" card, and the footer "Sundays" column, which is repeated in every page's footer. Then update `EXPECTED` at the top of `tests/service-times.spec.js`. |
+| Phone, Facebook, Google Maps links | `index.html`, in the "Get in touch" list and the "In person" card, plus the footer on every page |
 | Welcome verse | `index.html`, the `<h1>` in the hero and the `.verse-ref` line under it |
-| Colors | The `:root { ... }` block at the top of `assets/css/base.css`. There is also a dark-mode set in the `prefers-color-scheme: dark` block just below it. |
+| Colors | The `:root { ... }` block at the top of `assets/css/base.css`. The dark set is written twice just below it (`[data-theme="dark"]` for visitors who chose dark with the footer toggle, and the `prefers-color-scheme: dark` block for devices set to dark); keep the two the same. `tests/contrast.spec.js` checks that text stays readable. |
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
 | Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
 | Hero sun glow | `assets/css/home.css`, the `.hero::after` rule |
@@ -257,7 +258,7 @@ Things to know:
 ## Adding a page
 
 1. Copy `beliefs.html` (or `index.html`) to a new file, e.g. `about.html`, and replace the content inside `<main>`.
-2. Keep the header and footer. Set `aria-current="page"` on that page's nav link, and remove it from the page you copied.
+2. Keep the small theme `<script>` in the `<head>` (it must stay before the stylesheets), the header, and the footer. Set `aria-current="page"` on that page's nav link, and remove it from the page you copied.
 3. Add a link to the new page in the `<nav>` of **every** HTML file.
 4. If the page needs its own styles, add `assets/css/about.css` and link it after `base.css`. Reuse `base.css` colors and spacing so the look stays consistent.
 5. Add the new page to the page lists at the top of `tests/site-shell.spec.js` and `tests/easter-egg.spec.js`, and add tests for anything new the page does (see "Testing").
@@ -337,11 +338,13 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 
 ## Design notes
 
-- **Style:** warm cream and forest green with a copper accent, a serif for headings (Source Serif 4) and a clean sans for body text (Inter). Dark mode follows the visitor's system setting.
+- **Style:** pale mist background and douglas-fir green, with a rose accent taken from the original logo (decoration and large text only). EB Garamond (a classic book serif) for headings and reading text; Public Sans for labels, buttons, and menus. Square-cornered buttons and thin ruled lines instead of rounded cards.
+- **Light/dark:** follows the visitor's device setting until they press the sun/moon button in the footer. Their choice is saved in the browser (`localStorage`) and applied by a tiny script in each page's `<head>` before the page draws, so there is no white flash.
+- **Phone menu:** below 760px wide, the header links fold behind a "Menu" button. If JavaScript is off, the links simply stay visible.
 - **Accessibility:** semantic HTML, keyboard focus outlines, `prefers-reduced-motion` respected, and light/dark contrast chosen deliberately. Check any new color combination for contrast.
 - **Hero:** a soft copper sun glow sits in the top-right. It is decorative only and stays behind the text.
 - **Logos:**
-  - Header / tab icon: simple cross (`assets/favicon.svg`).
+  - Header / tab icon: three-peak mountain mark with a cross (`assets/favicon.svg`). In dark mode the header shows it on a light green square so it stays visible.
   - Original logo: watercolor three-peak mark (`assets/img/original-logo.webp`), shown by the footer easter egg.
   - Newer logo: modern mountain + trees illustration (`assets/img/new-logo-v1.jpg`). Kept in the repo for possible future use (e.g. about page, print materials, or a refined favicon). Not currently shown on the live pages.
 - **Easter egg:** the small mountain icon after the copyright line in the footer opens a pop-up with the original logo (built in `assets/js/site.js`). It is intentionally unlabeled on screen; screen readers announce it as "See our original logo".
@@ -352,12 +355,10 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 
 - Add the church's street address (the original site only linked to Google Maps).
 - Hero artwork (for example a mountain illustration echoing the logos) is planned but not designed yet. The hero currently has only the sun glow.
-- Optionally replace the cross favicon with a simplified mountain mark derived from `new-logo-v1.jpg` or the original logo.
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
 - **Sermon data job, first run:** after adding the `GOOGLE_API_KEY` secret and running "Update sermon data", confirm that the bot's commit also triggers a GitHub Pages deploy ("pages build and deployment" in the Actions tab). If it doesn't, switch Pages to deploy with GitHub Actions or add a deploy step to the workflow, and update this README.
 - **Gospel of John series:** its Drive folder (`0B-mo4R1ry-JBakM1N3ZYUFAwams`) is private, so it isn't on the Sermons page. Make it "Anyone with the link can view" and add it to `data/series.json`. (Note: on the old Wix "Sermon Lists" page, each series' link pointed at the *next* series' folder. `data/series.json` uses the correct folders.)
 - **Sermon summaries:** recent services can get summaries from their captions (see "Service titles from captions"). Older series sermons and the series themselves only have summaries if hand-written (series `summary` and per-sermon `overrides` in `data/series.json`).
-- **Header on phones:** at about 390px wide, the nav links wrap onto two lines and crowd the logo. Consider a shorter layout or a menu button for small screens.
 
 ## Privacy and security
 

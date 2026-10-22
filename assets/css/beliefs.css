@@ -91,7 +91,7 @@
     font-family: var(--serif);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--brand);
     letter-spacing: .08em
 }
 
@@ -133,7 +133,7 @@
     font-weight: 600;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--accent)
+    color: var(--brand)
 }
 
 .refs {
@@ -237,7 +237,7 @@
     font-family: var(--sans);
     font-size: .65em;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--brand);
     margin: 0 3px 0 6px
 }
 
@@ -248,5 +248,5 @@
 }
 
 .passage .pf a {
-    color: var(--accent)
+    color: var(--brand)
 }

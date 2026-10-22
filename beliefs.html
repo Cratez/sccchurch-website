@@ -7,10 +7,11 @@
     <title>Statement of Faith · South Clackamas Community Church</title>
     <meta name="description" content="What South Clackamas Community Church believes.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/beliefs.css">
@@ -20,14 +21,14 @@
     <div class="progress" aria-hidden="true"></div>
     <header class="site">
         <div class="wrap">
-            <nav aria-label="Main">
-                <a class="brand" href="index.html"><img src="assets/favicon.svg" alt=""><span>South Clackamas Community
-                        Church</span></a>
+            <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="30" height="30"><span>South Clackamas Community Church</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav" aria-label="Main">
                 <ul>
-                    <li><a href="index.html#join">Join Us</a></li>
+                    <li><a href="visit.html">Plan your visit</a></li>
                     <li><a href="sermons.html">Sermons</a></li>
-                    <li><a href="beliefs.html" aria-current="page">What We Believe</a></li>
-                    <li><a href="index.html#visit">Contact</a></li>
+                    <li><a href="beliefs.html" aria-current="page">What we believe</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -335,8 +336,20 @@
             </div>
         </div>
     </main>
-    <footer class="site">
-        <div class="wrap"><span>© 2026 South Clackamas Community Church</span><span><span class="nb">Sunday School 9:30&nbsp;am</span> · <span class="nb">Service 10:30&nbsp;am</span> · <span class="nb">96.7&nbsp;FM</span></span></div>
+    <footer class="site" id="contact">
+        <div class="wrap">
+            <div class="foot-cols">
+                <section><p class="eyebrow">Find us</p><p>Near Molalla, Oregon</p><p><a href="https://maps.google.com/?cid=1658989575399774330">Open in Google Maps</a></p></section>
+                <section><p class="eyebrow">Contact</p><p><a href="tel:+15036513707">(503) 651-3707</a></p><p><a href="https://www.facebook.com/South-Clackamas-Community-Church-301109009916380/">Facebook</a></p></section>
+                <section><p class="eyebrow">Sundays</p><p>10:30 am worship · 9:30 am Sunday School<br><span class="muted">September – early June</span></p><p>Summer: 9:30 am worship</p><p>96.7 FM in the parking lot</p></section>
+                <section><p class="eyebrow">Watch</p><p><a href="sermons.html">Sermons</a></p><p><a href="https://www.youtube.com/@southclackamascommunitychu1171/streams">YouTube</a></p></section>
+            </div>
+            <div class="foot-base">
+                <span>© 2026 South Clackamas Community Church</span><!-- easter egg button is appended here by site.js -->
+                <button class="theme-toggle" type="button" aria-label="Switch to dark theme"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+                <p class="credit">Photos by Aleksey Kuprikov on Pexels.</p>
+            </div>
+        </div>
     </footer>
     <script src="assets/js/site.js"></script>
     <script src="assets/js/beliefs.js"></script>

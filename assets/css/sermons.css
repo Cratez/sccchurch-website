@@ -41,7 +41,7 @@
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--brand);
   color: var(--brand-ink);
   white-space: nowrap
 }
@@ -56,7 +56,6 @@
 .video-card {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--r);
   overflow: hidden;
   display: flex;
   flex-direction: column
@@ -101,7 +100,7 @@
 }
 
 .summary-toggle[aria-expanded="true"] {
-  color: var(--accent)
+  color: var(--ink)
 }
 
 .video-card img {
@@ -158,7 +157,6 @@
 .series {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--r)
 }
 
 .series summary {
@@ -166,7 +164,6 @@
   list-style: none;
   padding: 22px 56px 22px 26px;
   position: relative;
-  border-radius: var(--r)
 }
 
 .series summary::-webkit-details-marker {
@@ -277,7 +274,7 @@
 .sermon-list .num {
   font-family: var(--serif);
   font-weight: 600;
-  color: var(--accent)
+  color: var(--brand)
 }
 
 .sermon-list .when {

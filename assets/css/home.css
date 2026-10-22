@@ -58,7 +58,6 @@
 .time {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: var(--r);
     padding: 22px 26px
 }
 
@@ -85,7 +84,6 @@
 .card {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: var(--r);
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -209,7 +207,6 @@
 /* Embedded YouTube player (16:9) */
 .video {
   aspect-ratio: 16 / 9;
-  border-radius: var(--r);
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--surface)
