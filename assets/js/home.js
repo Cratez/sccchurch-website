@@ -74,7 +74,7 @@ function startVerseRotator() {
   btn.addEventListener('click', () => {
     const paused = btn.getAttribute('aria-pressed') !== 'true';
     btn.setAttribute('aria-pressed', String(paused));
-    btn.setAttribute('aria-label', paused ? 'Play verses' : 'Pause verses');
+    // The label stays "Pause verses"; aria-pressed="true" means paused (toggle-button pattern).
     btn.textContent = paused ? '▶︎' : '❚❚'; // ︎: show ▶ as text, not an emoji
     setPaused('button', paused);
   });

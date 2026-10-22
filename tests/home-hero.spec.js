@@ -60,16 +60,17 @@ test.describe('verse rotation', () => {
     await expect(verseRef(page)).toHaveText(verses[2].ref);
   });
 
+  // Toggle-button pattern: the name stays "Pause verses"; aria-pressed="true" means paused.
+  // Only the visible symbol changes (pause bars while rotating, play triangle while paused).
   test('the pause button stops it, and pressing it again starts it', async ({ page }) => {
-    const btn = pauseBtn(page);
+    const btn = page.getByRole('button', { name: 'Pause verses', exact: true });
     await expect(btn).toBeVisible();
     await expect(btn).toHaveAttribute('aria-pressed', 'false');
-    await expect(btn).toHaveAttribute('aria-label', 'Pause verses');
+    await expect(btn).toHaveText('❚❚');
 
     await btn.click();
     await pointAway(page);
     await expect(btn).toHaveAttribute('aria-pressed', 'true');
-    await expect(btn).toHaveAttribute('aria-label', 'Play verses');
     await expect(btn).toHaveText('▶︎'); // play triangle, drawn as text (not an emoji)
     await page.clock.runFor(30_000);
     await expect(verseRef(page)).toHaveText('Psalm 122:1');
@@ -77,7 +78,7 @@ test.describe('verse rotation', () => {
     await btn.click();
     await pointAway(page);
     await expect(btn).toHaveAttribute('aria-pressed', 'false');
-    await expect(btn).toHaveAttribute('aria-label', 'Pause verses');
+    await expect(btn).toHaveText('❚❚');
     await page.clock.runFor(10_000);
     await expect(verseRef(page)).not.toHaveText('Psalm 122:1');
   });
