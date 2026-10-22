@@ -59,6 +59,27 @@ test.describe('phone', () => {
   });
 });
 
+test.describe('phone, before the page draws', () => {
+  test.skip(({ isMobile }) => !isMobile, 'phone-only behavior');
+
+  // If the "js" class only arrived with site.js (end of <body>), phones could first draw
+  // the no-JavaScript header (links wrapped under the name) and then jump to Menu.
+  for (const path of ['index.html', 'sermons.html', 'beliefs.html', 'visit.html']) {
+    test(`${path}: the menu is already collapsed when <body> starts`, async ({ page }) => {
+      await page.addInitScript(() => {
+        new MutationObserver((_, obs) => {
+          if (document.body) {
+            window.__jsAtBody = document.documentElement.classList.contains('js');
+            obs.disconnect();
+          }
+        }).observe(document, { childList: true, subtree: true });
+      });
+      await page.goto(path);
+      expect(await page.evaluate(() => window.__jsAtBody)).toBe(true);
+    });
+  }
+});
+
 test.describe('phone without JavaScript', () => {
   test.skip(({ isMobile }) => !isMobile, 'phone-only behavior');
   test.use({ javaScriptEnabled: false });

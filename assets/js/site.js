@@ -2,7 +2,8 @@
 // Loaded at the end of <body>, after the header and footer exist.
 
 // Tells the CSS that JavaScript is running, so the phone menu can hide its links
-// behind the Menu button (without JavaScript the links stay visible).
+// behind the Menu button (without JavaScript the links stay visible). The script in
+// each page's <head> already adds it before the page draws; this is a backstop.
 document.documentElement.classList.add('js');
 
 // Phone menu: the Menu button shows/hides the nav. Closes on Escape, on a link click,
