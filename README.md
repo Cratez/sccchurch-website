@@ -9,6 +9,7 @@ There is no framework, no build step, and nothing to install to run the site. Th
 | Page | File | What it contains |
 | --- | --- | --- |
 | Home | `index.html` | Mt. Hood photo hero with rotating verse and quick links, "When we gather" times, ways to join (in person / radio / online), first-visit teaser, latest-service video with TV tip |
+| Plan your visit | `visit.html` | Trillium Lake photo banner, common questions, what happens on a Sunday (step by step), "When we gather" times, where we are (near Molalla, with a Google Maps link and phone), and ways to join if you can't come in person |
 | Sermons | `sermons.html` | The 6 most recent service recordings, and past sermon series with notes, audio, and video links (built from `data/sermons.json`; see "Sermon data") |
 | What We Believe | `beliefs.html` | The Statement of Faith, with clickable scripture references that load the verse text |
 
@@ -19,7 +20,7 @@ sccchurch-website/
 ├── index.html              Home page
 ├── sermons.html            Sermons page
 ├── beliefs.html            Statement of Faith
-├── visit.html              Plan your visit (placeholder until it is filled in)
+├── visit.html              Plan your visit
 ├── README.md               This file
 ├── CLAUDE.md               Rules for AI assistants working on the site (including testing rules)
 ├── LICENSE
@@ -33,6 +34,7 @@ sccchurch-website/
 │   └── cache/              Generated: titles already read from notes PDFs
 ├── scripts/build-sermons/  The sermon data job (reads YouTube and Google Drive)
 ├── scripts/video-notes/    Downloads service captions for the summarize-services skill
+├── scripts/images/         build-photos.js: makes the website photos from the originals (see "Photos")
 ├── .claude/skills/         Claude Code skills for this repo (summarize-services)
 ├── plans/                  Design plans for larger features
 ├── .github/workflows/
@@ -46,11 +48,13 @@ sccchurch-website/
 └── assets/
     ├── favicon.svg         Mountain mark: three peaks and a cross (tab icon and header mark)
     ├── img/
+    │   ├── photos/         Website photos (hood-sunset-*, trillium-*) and CREDITS.md
     │   ├── original-logo.webp   Original watercolor mountain logo (footer easter egg)
     │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
     ├── css/
-    │   ├── base.css        Shared: colors, fonts, header, buttons, footer (loaded on every page)
-    │   ├── home.css        Home page only (photo hero, verse, quick links, times, video)
+    │   ├── base.css        Shared: color tokens (light and dark), fonts, header, buttons, headings, rows/columns, photo hero, footer (loaded on every page)
+    │   ├── home.css        Home page only (verse, quick links, times, ways to join, video)
+    │   ├── visit.css       Plan your visit page only
     │   ├── sermons.css     Sermons page only
     │   └── beliefs.css     Statement of Faith page only
     └── js/
@@ -102,13 +106,15 @@ npx playwright install chromium
 
 | I want to change... | Edit this |
 | --- | --- |
-| Service times | `index.html`: the `<meta name="description">` in the `<head>`, the "Sundays 10:30 am" link in the hero's quick-link bar, the "When we gather" rows (`#gather`), the "In person" column, and the footer "Sundays" column, which is repeated in every page's footer. Then update `EXPECTED` at the top of `tests/service-times.spec.js`. |
+| Service times | There are two seasons (school year: Sundays 10:30 am with Sunday School at 9:30, September – early June; summer: Sundays 9:30 am, no Sunday School) plus men's and women's Bible studies on 1st & 3rd Thursdays at 6:30 pm. The times are written by hand in every one of these places, so change all of them: `index.html` (the `<meta name="description">` in the `<head>`, the "Sundays 10:30 am" link in the hero's quick-link bar, the "When we gather" rows in `#gather`, and the "In person" column in `#join`), `visit.html` (the "When we gather" rows in `#gather`, plus the Sunday School answer in the questions list), and the footer "Sundays" column in **all four** pages. Then update the `EXPECTED` object at the top of `tests/service-times.spec.js`; the test fails if a place was missed. |
 | Phone, Facebook, Google Maps links | `index.html`, in the "When we gather" rows (phone) and the "In person" column (Maps), plus the footer on every page |
-| Hero verses | `index.html`: the list in `<script type="application/json" id="hero-verses">` (KJV text; add `"partial": true` when quoting only part of a verse). The first one is also written into the `<figure class="verse">` above it, for visitors without JavaScript. Run `npm run test:live` to check the wording against the KJV. |
-| Colors | The `:root { ... }` block at the top of `assets/css/base.css`. The dark set is written twice just below it (`[data-theme="dark"]` for visitors who chose dark with the footer toggle, and the `prefers-color-scheme: dark` block for devices set to dark); keep the two the same. `tests/contrast.spec.js` checks that text stays readable. |
+| Hero verses (the rotating verse on the home page) | `index.html`: the list in `<script type="application/json" id="hero-verses">` (KJV text; add `"partial": true` when quoting only part of a verse). The first one is also written into the `<figure class="verse">` above it, for visitors without JavaScript. Run `npm run test:live` (needs internet) to check every verse's wording against the KJV on bible-api.com; the normal `npm test` only checks that the rotation works. |
+| Colors | The `:root { ... }` block at the top of `assets/css/base.css`. The color "tokens" (named colors such as `--brand` and `--bg` that the whole site uses) live here, so one change updates every page. The dark set is written twice just below it (`[data-theme="dark"]` for visitors who chose dark with the footer toggle, and the `prefers-color-scheme: dark` block for devices set to dark); keep the two the same. `tests/contrast.spec.js` checks that text stays readable in both light and dark mode, so run `npm test` after changing a color. |
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
 | Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
 | Home hero photo | `index.html`, the `<picture>` in `.home-hero`; the overlay and crop are `.photo-hero` in `assets/css/base.css` |
+| Replace or add a photo | Put the originals in a folder on your computer and run `npm run photos -- <that folder>` (needs `npm install` once). It writes the resized WebP/JPG files into `assets/img/photos/`. The original file names it expects are listed at the top of `scripts/images/build-photos.js`. Update `assets/img/photos/CREDITS.md` with the photographer and source, and `tests/photos.spec.js` if file names or sizes change. The originals are not stored in the repo. |
+| Plan your visit questions and steps | `visit.html`: the questions are the `<div><dt>…</dt><dd>…</dd></div>` rows in `#questions`; the Sunday steps are the list items in `#sunday`. Copy a row to add one. If an answer mentions a time, see "Service times" above. Styles are in `assets/css/visit.css`. Then check `tests/visit.spec.js`. |
 | Add or change a sermon series | `data/series.json` (see "Sermon data") |
 | Sermons page look | `assets/css/sermons.css` for styling, `assets/js/sermons.js` for what each card shows. Then update `tests/sermons-page.spec.js`. |
 
@@ -342,9 +348,10 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - **Light/dark:** follows the visitor's device setting until they press the sun/moon button in the footer. Their choice is saved in the browser (`localStorage`) and applied by a tiny script in each page's `<head>` before the page draws, so there is no white flash.
 - **Phone menu:** below 760px wide, the header links fold behind a "Menu" button. If JavaScript is off, the links simply stay visible.
 - **Accessibility:** semantic HTML, keyboard focus outlines, `prefers-reduced-motion` respected, and light/dark contrast chosen deliberately. Check any new color combination for contrast.
-- **Hero:** a soft copper sun glow sits in the top-right. It is decorative only and stays behind the text.
+- **Photos:** the home page uses a Mt. Hood sunset and the Plan your visit page uses Mt. Hood over Trillium Lake, both by Aleksey Kuprikov (Pexels; see `assets/img/photos/CREDITS.md`). A dark overlay keeps the white text readable, and if a photo fails to load the green background still keeps the text readable.
+- **Rotating verse:** the home hero fades between King James verses about every 10 seconds, with a pause button. It does not rotate for visitors who ask their device for reduced motion, or if JavaScript is off (the first verse is written into the page).
 - **Logos:**
-  - Header / tab icon: three-peak mountain mark with a cross (`assets/favicon.svg`). In dark mode the header shows it on a light green square so it stays visible.
+  - Header / tab icon: three-peak mountain mark with a small cross (`assets/favicon.svg`). In dark mode the header shows it on a light green square so it stays visible.
   - Original logo: watercolor three-peak mark (`assets/img/original-logo.webp`), shown by the footer easter egg.
   - Newer logo: modern mountain + trees illustration (`assets/img/new-logo-v1.jpg`). Kept in the repo for possible future use (e.g. about page, print materials, or a refined favicon). Not currently shown on the live pages.
 - **Easter egg:** the small mountain icon after the copyright line in the footer opens a pop-up with the original logo (built in `assets/js/site.js`). It is intentionally unlabeled on screen; screen readers announce it as "See our original logo".
@@ -354,7 +361,6 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 ## Known follow-ups
 
 - Add the church's street address (the original site only linked to Google Maps).
-- Hero artwork (for example a mountain illustration echoing the logos) is planned but not designed yet. The hero currently has only the sun glow.
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
 - **Sermon data job, first run:** after adding the `GOOGLE_API_KEY` secret and running "Update sermon data", confirm that the bot's commit also triggers a GitHub Pages deploy ("pages build and deployment" in the Actions tab). If it doesn't, switch Pages to deploy with GitHub Actions or add a deploy step to the workflow, and update this README.
 - **Gospel of John series:** its Drive folder (`0B-mo4R1ry-JBakM1N3ZYUFAwams`) is private, so it isn't on the Sermons page. Make it "Anyone with the link can view" and add it to `data/series.json`. (Note: on the old Wix "Sermon Lists" page, each series' link pointed at the *next* series' folder. `data/series.json` uses the correct folders.)
@@ -362,7 +368,7 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 
 ## Privacy and security
 
-Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The summarize-services skill sends service transcripts to Claude (through your Claude Code session) to write titles and summaries; it's told to leave out names and private details from announcements and prayer requests. The site makes requests to these outside services: Google Fonts, YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
+Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The summarize-services skill sends service transcripts to Claude (through your Claude Code session) to write titles and summaries; it's told to leave out names and private details from announcements and prayer requests. The site makes requests to these outside services: Google Fonts (fonts only), YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive. The light/dark choice from the footer toggle is saved only in the visitor's own browser (`localStorage`); it is never sent anywhere or seen by the church. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
 
 ## License
 

@@ -142,26 +142,9 @@ li {
 }
 
 .btn,
-.list a,
-.card .link,
 .refs .ref,
-.head p a,
 .nb {
   white-space: nowrap
-}
-
-/* Older section heading (Home/Sermons until they are restyled) */
-.head {
-  margin-bottom: 40px
-}
-
-.head h2 {
-  margin-top: 10px
-}
-
-.head p {
-  color: var(--muted);
-  margin: 14px 0 0
 }
 
 /* ---- Shared components ---- */
