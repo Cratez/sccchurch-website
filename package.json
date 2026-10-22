@@ -6,10 +6,12 @@
     "test": "playwright test --project=desktop --project=mobile",
     "test:live": "playwright test --project=live",
     "test:report": "playwright show-report",
-    "sermons": "node scripts/build-sermons/index.js"
+    "sermons": "node scripts/build-sermons/index.js",
+    "photos": "node scripts/images/build-photos.js"
   },
   "devDependencies": {
-    "@playwright/test": "1.64.0"
+    "@playwright/test": "1.64.0",
+    "sharp": "0.35.4"
   },
   "dependencies": {
     "unpdf": "1.8.1"
