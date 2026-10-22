@@ -1,4 +1,11 @@
 /* Sermons page */
+
+/* Banner (sizing is the shared .photo-hero.banner in base.css): Trillium Lake with the kayaker.
+   Keep the peak, the kayaker and the reflection in view. */
+.sermons-hero img {
+  object-position: 50% 30%
+}
+
 #recent {
   padding-top: 48px
 }

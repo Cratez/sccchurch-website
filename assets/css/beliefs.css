@@ -1,4 +1,10 @@
 /* Statement of Faith page */
+
+/* Banner (sizing is the shared .photo-hero.banner in base.css): keep the Mt. Hood summit in view */
+.beliefs-hero img {
+    object-position: 50% 15%
+}
+
 .progress {
     position: fixed;
     top: 0;

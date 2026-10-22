@@ -214,7 +214,7 @@ html[data-season="summer"] [data-season-only="school-year"] {
   margin: 0 0 12px
 }
 
-/* "When we gather" rows: big time, small "when" note */
+/* "When we gather" rows: big time, then the name with a gray note line under it */
 .gather .time {
   font-size: 1.5rem;
   font-weight: 600;
@@ -232,13 +232,6 @@ html[data-season="summer"] [data-season-only="school-year"] {
 
 .gather .desc a {
   white-space: nowrap /* keep "What to expect" etc. on one line */
-}
-
-.gather .when {
-  font-family: var(--sans);
-  font-size: .92rem;
-  color: var(--muted);
-  text-align: right
 }
 
 .rows-note {
@@ -280,34 +273,13 @@ html[data-season="summer"] [data-season-only="school-year"] {
     gap: 4px
   }
 
-  .gather .when {
-    text-align: left
-  }
-
   .cols {
     grid-template-columns: 1fr;
     gap: 32px
   }
 }
 
-/* Page header without a photo (Sermons, Beliefs) */
-.page-head {
-  padding: 72px 0 36px;
-  border-bottom: 1px solid var(--line)
-}
-
-.page-head h1 {
-  margin: 14px 0 0
-}
-
-.page-head .lead {
-  color: var(--muted);
-  font-size: 1.2rem;
-  max-width: var(--measure);
-  margin: 18px 0 0
-}
-
-/* Full-width photo with dark overlay and white text (Home, Visit).
+/* Full-width photo with dark overlay and white text (Home hero, and the inner-page banners).
    If the photo fails to load, the dark fir background (a fixed color, the same in light and
    dark mode, like the overlay) keeps the white text readable. */
 .photo-hero {
@@ -350,6 +322,39 @@ html[data-season="summer"] [data-season-only="school-year"] {
   width: 100%;
   padding-top: 72px;
   padding-bottom: 56px
+}
+
+/* Shorter photo banner at the top of an inner page (Plan your visit, What We Believe) */
+.photo-hero.banner {
+  min-height: min(46vh, 420px)
+}
+
+.photo-hero.banner h1 {
+  font-size: clamp(2.2rem, 5.6vw, 3.8rem);
+  max-width: 18ch;
+  margin: 14px 0 0
+}
+
+.photo-hero.banner .lead {
+  max-width: 40rem;
+  margin: 16px 0 0;
+  font-size: 1.2rem
+}
+
+.photo-hero.banner .wrap {
+  padding-top: 64px;
+  padding-bottom: 44px
+}
+
+@media (max-width: 760px) {
+  .photo-hero.banner {
+    min-height: 40vh
+  }
+
+  .photo-hero.banner .wrap {
+    padding-top: 56px;
+    padding-bottom: 28px
+  }
 }
 
 .photo-hero .eyebrow,

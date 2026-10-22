@@ -1,15 +1,13 @@
 /**
- * FEATURE: Home page proportions: section spacing, the "Coming for the first time?" teaser
- *          spaced like every other section (even gaps, with its own top rule), and the "96.7 FM"
- *          frequency sized to stand out without outranking its column heading.
+ * FEATURE: Home page proportions: section spacing, and the "Coming for the first time?" teaser
+ *          spaced like every other section (even gaps, with its own top rule).
  * COVERS:  the `section` padding rules in assets/css/base.css; .section-head.first-time
- *          and .cols .freq in assets/css/home.css
- * WHY:     Spacing of 72px a side left large dead areas, especially around the short teaser,
- *          and the frequency was larger than the headings around it. Removing the teaser's
- *          rule was tried and looked wrong; tucking it closer than other sections made the
- *          gaps uneven, which looked worse than the extra space.
+ *          in assets/css/home.css
+ * WHY:     Spacing of 72px a side left large dead areas, especially around the short teaser.
+ *          Removing the teaser's rule was tried and looked wrong; tucking it closer than other
+ *          sections made the gaps uneven, which looked worse than the extra space.
  * UPDATE WHEN: the section spacing or the home page layout is redesigned.
- * REMOVE WHEN: the teaser or the radio column is removed from the home page.
+ * REMOVE WHEN: the teaser is removed from the home page.
  */
 const { test, expect } = require('./support/fixtures');
 
@@ -43,11 +41,3 @@ test('the gap above every section rule is the same, including the first-time tea
   expect(Math.max(...gaps) - Math.min(...gaps), `gaps: ${gaps.join(', ')}`).toBeLessThanOrEqual(2);
 });
 
-test('"96.7 FM" stands out but stays smaller than 1.25x its column heading', async ({ page }) => {
-  await page.goto('index.html');
-  const radio = page.locator('#join .cols > *', { hasText: 'On the radio' });
-  const freq = await px(radio.locator('.freq'), 'fontSize');
-  const heading = await px(radio.locator('h3'), 'fontSize');
-  expect(freq).toBeGreaterThan(heading);
-  expect(freq).toBeLessThanOrEqual(heading * 1.25);
-});

@@ -17,6 +17,16 @@ const FIXTURE = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'ser
 const serve = (page, body, status = 200) => page.route('**/data/sermons.json', (route) =>
   route.fulfill({ status, contentType: 'application/json', body: typeof body === 'string' ? body : JSON.stringify(body) }));
 
+// The header is a photo banner (like Plan your visit), so "Recent services" starts with its
+// own rule, and there is no plain page header with a second line under the title.
+test('photo banner on top, then one rule above "Recent services"', async ({ page }) => {
+  await serve(page, FIXTURE);
+  await page.goto('sermons.html');
+  await expect(page.locator('main > .photo-hero.banner')).toHaveCount(1);
+  await expect(page.locator('.page-head')).toHaveCount(0);
+  expect(await page.locator('#recent .section-head').evaluate((el) => parseFloat(getComputedStyle(el).borderTopWidth))).toBe(1);
+});
+
 test.describe('with data', () => {
   test.beforeEach(async ({ page }) => {
     await serve(page, FIXTURE);

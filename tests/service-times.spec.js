@@ -4,7 +4,7 @@
  *          twice a year; text for the other season is hidden.
  * COVERS:  assets/js/season.js, the [data-season-only] rule in assets/css/base.css,
  *          index.html (hero quick-link bar, #gather "When we gather", #join "In person" and
- *          "On the radio", meta description), visit.html (#gather, the Sunday School answer and
+ *          "Listen on 96.7 FM", meta description), visit.html #remote "Listen on 96.7 FM", visit.html (#gather, the Sunday School answer and
  *          the #sunday-school section),
  *          and the footer "Sundays" column on every page (index, beliefs, sermons, visit)
  * WHY:     The times are written in several places by hand, and only one season's times may
@@ -64,6 +64,16 @@ test('home page meta description is season-neutral', async ({ page }) => {
   expect(meta).toContain(`${EXPECTED.radio} FM`);
 });
 
+// The radio option reads the same on Home ("Three ways to join") and Plan your visit.
+for (const [p, where] of [['index.html', '#join'], ['visit.html', '#remote']]) {
+  test(`${p} radio option: "Listen on ${EXPECTED.radio} FM" and what the transmitter reaches`, async ({ page }) => {
+    await page.goto(p);
+    const col = page.locator(`${where} .cols > *`, { hasText: 'Listen on' });
+    await expect(col.locator('h3')).toHaveText(`Listen on ${EXPECTED.radio} FM`);
+    await expect(col.locator('p')).toHaveText('Our short-range transmitter reaches the parking lot and nearby buildings, so you can listen from your car.');
+  });
+}
+
 for (const season of SEASONS) {
   const school = season === 'school-year';
   const s = EXPECTED.schoolYear;
@@ -100,13 +110,14 @@ for (const season of SEASONS) {
           expect(r.href).toBe(e.href);
         }
 
+        // Thursday row: same shape as the Sunday rows (time + name, then the gray note line).
         const thursday = groups.nth(1).locator('.rows > li');
         await expect(thursday).toHaveCount(1);
-        const t = await text(thursday);
-        expect(t).toContain(`${EXPECTED.thursdays.time} pm`);
-        expect(t).toContain('Bible Studies');
-        expect(t).toContain('location varies; ask in person');
-        expect(t).toContain(EXPECTED.thursdays.label);
+        expect(await thursday.evaluate((el) => `${el.querySelector('.time').textContent} ${el.querySelector('.what').firstChild.textContent}`.trim()))
+          .toBe(`${EXPECTED.thursdays.time} pm Men’s and Women’s Bible Studies`);
+        expect(await text(thursday.locator('.desc')))
+          .toBe(`${EXPECTED.thursdays.label} of the month. Location varies; ask in person.`);
+        await expect(thursday.locator('.when')).toHaveCount(0);
         expect(await text(page.locator('#gather .rows-note'))).toContain(`${EXPECTED.radio} FM`);
       });
     }
@@ -125,7 +136,6 @@ for (const season of SEASONS) {
       expect(col).toBe(school
         ? `There is seating inside. Sunday School starts at ${s.sundaySchool} am and the Church Service at ${s.service} am.`
         : `There is seating inside. The Church Service starts at ${EXPECTED.summer.service} am.`);
-      await expect(page.locator('#join .cols > *', { hasText: 'On the radio' }).locator('.freq')).toHaveText(`${EXPECTED.radio} FM`);
     });
 
     test('visit page Sunday School answer matches the season', async ({ page }) => {
@@ -142,8 +152,8 @@ for (const season of SEASONS) {
           .locator('p:not(.eyebrow)')
           .evaluateAll((ps) => ps.filter((p) => p.checkVisibility()).map((p) => p.innerText.trim()));
         expect(lines).toEqual(school
-          ? [`${s.service} am Church Service · ${s.sundaySchool} am Sunday School`, `${EXPECTED.radio} FM in the parking lot`]
-          : [`${EXPECTED.summer.service} am Church Service`, `${EXPECTED.radio} FM in the parking lot`]);
+          ? [`${s.sundaySchool} am Sunday School`, `${s.service} am Church Service`]
+          : [`${EXPECTED.summer.service} am Church Service`]);
       });
     }
   });

@@ -1,4 +1,4 @@
-// Builds the website photos from the two Pexels originals (which are NOT kept in the repo).
+// Builds the website photos from the Pexels originals (which are NOT kept in the repo).
 // Usage: npm run photos -- <folder holding the originals>
 const fs = require('fs');
 const path = require('path');
@@ -10,20 +10,24 @@ const WEBP_QUALITY = 72;
 const JPEG_QUALITY = 78;
 const MAX_BYTES = 450 * 1024;
 
-// Trillium is a tall photo (4000x6000). We cut a full-width 16:9 band (4000x2250) so it fits a
-// wide hero. Centre at 47% of the height keeps the snowy peak and its reflection together.
-// Final crop box (tuned by eye): left 0, top 1695, width 4000, height 2250.
-const TRILLIUM_CENTER = 0.47;
+// Most originals are already wide (about 3:2) and are not cropped; each page positions its photo
+// with CSS object-position. The kayak photo is tall (4000x6000), so we cut a full-width 16:9 band
+// from it; centring the band at 40% of the height leaves sky above the summit and keeps the kayaker.
+const KAYAK_CENTER = 0.40;
 
-function trilliumCrop(meta) {
-  const height = Math.round((meta.width * 9) / 16);
-  const top = Math.min(meta.height - height, Math.max(0, Math.round(meta.height * TRILLIUM_CENTER - height / 2)));
-  return { left: 0, top, width: meta.width, height };
+function wideBand(center) {
+  return (meta) => {
+    const height = Math.round((meta.width * 9) / 16);
+    const top = Math.min(meta.height - height, Math.max(0, Math.round(meta.height * center - height / 2)));
+    return { left: 0, top, width: meta.width, height };
+  };
 }
 
 const PHOTOS = [
-  { name: 'hood-sunset', source: 'pexels-aleksey-kuprikov-1883853-3493805.jpg' },
-  { name: 'trillium', source: 'pexels-aleksey-kuprikov-1883853-3551192.jpg', crop: trilliumCrop },
+  { name: 'hood-sunset', source: 'pexels-aleksey-kuprikov-1883853-3493805.jpg' }, // Home
+  { name: 'trillium', source: 'pexels-aleksey-kuprikov-1883853-3551197.jpg' }, // Plan your visit
+  { name: 'hood-summit', source: 'pexels-aleksey-kuprikov-1883853-3551214.jpg' }, // What We Believe
+  { name: 'trillium-kayak', source: 'pexels-aleksey-kuprikov-1883853-3551192.jpg', crop: wideBand(KAYAK_CENTER) }, // Sermons
 ];
 
 async function build(sourceDir) {
@@ -65,7 +69,7 @@ async function build(sourceDir) {
 
 const sourceDir = process.argv[2];
 if (!sourceDir) {
-  console.error('Usage: npm run photos -- <folder holding the two Pexels originals>');
+  console.error('Usage: npm run photos -- <folder holding the Pexels originals>');
   process.exit(1);
 }
 build(path.resolve(sourceDir)).catch((err) => {

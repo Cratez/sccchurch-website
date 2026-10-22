@@ -129,13 +129,6 @@
 }
 
 /* ---- Three ways to join ---- */
-.cols .freq {
-  font-size: 1.7rem; /* stands out in its column without outranking the column heading */
-  font-weight: 600;
-  line-height: 1;
-  margin: 4px 0 0
-}
-
 /* ---- First time? ---- */
 /* Spaced like every other section, so the gaps between sections stay even */
 .section-head.first-time {

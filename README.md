@@ -10,8 +10,8 @@ There is no framework, no build step, and nothing to install to run the site. Th
 | --- | --- | --- |
 | Home | `index.html` | Mt. Hood photo hero with rotating verse and quick links, "When we gather" times, ways to join (in person / radio / online), first-visit teaser, latest-service video with TV tip |
 | Plan your visit | `visit.html` | Trillium Lake photo banner, common questions, what happens on a Sunday (step by step), Sunday School (the three classes), "When we gather" times, where we are (near Molalla, with a Google Maps link and phone), and ways to join if you can't come in person |
-| Sermons | `sermons.html` | The 6 most recent service recordings, and past sermon series with notes, audio, and video links (built from `data/sermons.json`; see "Sermon data") |
-| What We Believe | `beliefs.html` | The Statement of Faith, with clickable scripture references that load the verse text |
+| Sermons | `sermons.html` | Trillium Lake photo banner, then the 6 most recent service recordings, and past sermon series with notes, audio, and video links (built from `data/sermons.json`; see "Sermon data") |
+| What We Believe | `beliefs.html` | Mt. Hood summit photo banner, then the Statement of Faith, with clickable scripture references that load the verse text |
 
 ## Project structure
 
@@ -48,7 +48,7 @@ sccchurch-website/
 └── assets/
     ├── favicon.svg         Mountain mark: three peaks and a cross (tab icon and header mark)
     ├── img/
-    │   ├── photos/         Website photos (hood-sunset-*, trillium-*) and CREDITS.md
+    │   ├── photos/         Website photos (hood-sunset-*, trillium-*, hood-summit-*, trillium-kayak-*) and CREDITS.md
     │   ├── original-logo.webp   Original watercolor mountain logo (footer easter egg)
     │   └── new-logo-v1.jpg      Newer mountain + trees logo (kept for future use)
     ├── css/
@@ -113,8 +113,8 @@ npx playwright install chromium
 | Colors | The `:root { ... }` block at the top of `assets/css/base.css`. The color "tokens" (named colors such as `--brand` and `--bg` that the whole site uses) live here, so one change updates every page. The dark set is written twice just below it (`[data-theme="dark"]` for visitors who chose dark with the footer toggle, and the `prefers-color-scheme: dark` block for devices set to dark); keep the two the same. `tests/contrast.spec.js` checks that text stays readable in both light and dark mode, so run `npm test` after changing a color. |
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
 | Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
-| Home hero photo | `index.html`, the `<picture>` in `.home-hero`; the dark overlay and fallback color are `.photo-hero` in `assets/css/base.css`; the crop (`object-position`, including the phone crop) is set per page in `assets/css/home.css` and `assets/css/visit.css` |
-| Replace or add a photo | Put the originals in a folder on your computer and run `npm run photos -- <that folder>` (needs `npm install` once). It writes the resized WebP/JPG files into `assets/img/photos/`. The original file names it expects are listed in the `PHOTOS` list near the top of `scripts/images/build-photos.js`. Update `assets/img/photos/CREDITS.md` with the photographer and source, and `tests/photos.spec.js` if file names or sizes change. The originals are not stored in the repo. |
+| Page photos | Home: the `<picture>` in `.home-hero` in `index.html`. Plan your visit, What We Believe and Sermons: the banner `<picture>` at the top of `visit.html`, `beliefs.html` and `sermons.html`. The dark overlay and fallback color are `.photo-hero`, and the inner-page banner size is `.photo-hero.banner`, both in `assets/css/base.css`. Which part of each photo shows (`object-position`) is set per page in `assets/css/home.css`, `visit.css`, `beliefs.css` and `sermons.css`. |
+| Replace or add a photo | Put the originals in a folder on your computer and run `npm run photos -- <that folder>` (needs `npm install` once). It writes the resized WebP/JPG files into `assets/img/photos/`. The original file names it expects are listed in the `PHOTOS` list near the top of `scripts/images/build-photos.js`. Update `assets/img/photos/CREDITS.md` with the photographer and source, and `tests/photos.spec.js` (and `tests/page-banners.spec.js` for a banner) if file names or sizes change. The originals are not stored in the repo. |
 | Plan your visit questions and steps | `visit.html`: the questions are the `<div><dt>…</dt><dd>…</dd></div>` rows in `#questions`; the Sunday steps are the list items in `#sunday`; the Sunday School description is the `#sunday-school` section (its first sentence has a school-year and a summer version). The short descriptions under each Sunday time in "When we gather" (on both Home and Plan your visit) link to these two sections. Copy a row to add one. If an answer mentions a time, see "Service times" above. Styles are in `assets/css/visit.css`. Then check `tests/visit.spec.js`. |
 | Add or change a sermon series | `data/series.json` (see "Sermon data") |
 | Sermons page look | `assets/css/sermons.css` for styling, `assets/js/sermons.js` for what each card shows. Then update `tests/sermons-page.spec.js`. |
@@ -349,7 +349,7 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - **Light/dark:** follows the visitor's device setting until they press the sun/moon button in the footer. Their choice is saved in the browser (`localStorage`) and applied by a tiny script in each page's `<head>` before the page draws, so there is no white flash.
 - **Phone menu:** below 760px wide, the header links fold behind a "Menu" button. If JavaScript is off, the links simply stay visible.
 - **Accessibility:** semantic HTML, keyboard focus outlines, `prefers-reduced-motion` respected, and light/dark contrast chosen deliberately. Check any new color combination for contrast.
-- **Photos:** the home page uses a Mt. Hood sunset and the Plan your visit page uses Mt. Hood over Trillium Lake, both by Aleksey Kuprikov (Pexels; see `assets/img/photos/CREDITS.md`). A dark overlay keeps the white text readable, and if a photo fails to load the green background still keeps the text readable.
+- **Photos:** the home page uses a Mt. Hood sunset, Plan your visit uses Mt. Hood over Trillium Lake, What We Believe uses a close-up of Mt. Hood's summit, and Sermons uses Trillium Lake with a kayaker, all by Aleksey Kuprikov (Pexels; see `assets/img/photos/CREDITS.md`). A dark overlay keeps the white text readable, and if a photo fails to load the green background still keeps the text readable.
 - **Rotating verse:** the home hero fades between King James verses about every 10 seconds, with a pause button. Visitors who ask their device for reduced motion see one verse per day instead of a rotation, and with JavaScript off they see the first verse (written into the page).
 - **Logos:**
   - Header / tab icon: three-peak mountain mark with a small cross (`assets/favicon.svg`). In dark mode the header shows it on a light green square so it stays visible.
