@@ -1,88 +1,150 @@
 /**
- * FEATURE: Service times and radio frequency are stated the same way everywhere.
- * COVERS:  index.html (meta description, hero quick-link bar, #gather "When we gather" rows,
- *          #join "In person" and "On the radio" columns),
- *          visit.html #gather rows, and the footer
- *          "Sundays" column on every page (index, beliefs, sermons, visit)
- * WHY:     The times are repeated in several places by hand. Changing one and missing another
- *          would tell visitors two different times.
+ * FEATURE: Service times show the current season's schedule, the same way everywhere.
+ *          assets/js/season.js holds the one setting ('school-year' or 'summer') that is flipped
+ *          twice a year; text for the other season is hidden.
+ * COVERS:  assets/js/season.js, the [data-season-only] rule in assets/css/base.css,
+ *          index.html (hero quick-link bar, #gather "When we gather", #join "In person" and
+ *          "On the radio", meta description), visit.html (#gather, the Sunday School answer and
+ *          the #sunday-school section),
+ *          and the footer "Sundays" column on every page (index, beliefs, sermons, visit)
+ * WHY:     The times are written in several places by hand, and only one season's times may
+ *          show at once. Missing a place, or forgetting a data-season-only marker, would tell
+ *          visitors the wrong time.
  * UPDATE WHEN: the times or frequency change (edit EXPECTED), or they move/are added elsewhere.
  * REMOVE WHEN: the site stops listing service times.
  */
+const fs = require('fs');
+const path = require('path');
 const { test, expect } = require('./support/fixtures');
 
 const EXPECTED = {
-  schoolYear: { service: '10:30', sundaySchool: '9:30', label: 'September – early June' },
+  schoolYear: { sundaySchool: '9:30', service: '10:30' },
   summer: { service: '9:30' },
   thursdays: { time: '6:30', label: '1st & 3rd Thursdays' },
   radio: '96.7',
 };
+const SEASONS = ['school-year', 'summer'];
+const PAGES = ['index.html', 'beliefs.html', 'sermons.html', 'visit.html'];
 
-test('home page meta description states the times and frequency', async ({ page }) => {
+// Serves a stand-in season.js so each season can be checked whatever the real setting is.
+const goto = async (page, url, season) => {
+  await page.route('**/assets/js/season.js', (route) => route.fulfill({
+    contentType: 'text/javascript',
+    body: `document.documentElement.dataset.season = ${JSON.stringify(season)};`,
+  }));
+  await page.goto(url);
+};
+// Visible text only (hidden season text is left out by innerText).
+const text = (locator) => locator.evaluate((el) => el.innerText.replace(/\s+/g, ' ').trim());
+
+test('the real season setting is valid and applied on every page', async ({ page }) => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'assets', 'js', 'season.js'), 'utf8');
+  const season = /const SEASON = '([^']+)'/.exec(src)?.[1];
+  expect(SEASONS, 'SEASON in assets/js/season.js').toContain(season);
+  for (const p of PAGES) {
+    await page.goto(p);
+    await expect(page.locator('html'), p).toHaveAttribute('data-season', season);
+  }
+});
+
+test('without JavaScript the school-year times show', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.route(/fonts\.g|youtube|ytimg/, (r) => r.fulfill({ body: '' }));
+  await page.goto('http://localhost:4173/index.html');
+  expect(await text(page.locator('#gather .gather-group').first())).toContain(`${EXPECTED.schoolYear.service} am Church Service`);
+  await expect(page.locator('#gather [data-season-only="summer"]')).toBeHidden();
+  await context.close();
+});
+
+test('home page meta description is season-neutral', async ({ page }) => {
   await page.goto('index.html');
   const meta = await page.locator('meta[name="description"]').getAttribute('content');
-  expect(meta).toContain(`Sundays ${EXPECTED.schoolYear.service} am`);
-  expect(meta).toContain(`Sunday School ${EXPECTED.schoolYear.sundaySchool} am, ${EXPECTED.schoolYear.label}`);
-  expect(meta).toContain(`summer ${EXPECTED.summer.service} am`);
+  expect(meta).not.toMatch(/\d:\d\d/);
   expect(meta).toContain(`${EXPECTED.radio} FM`);
 });
 
-test('home page hero bar shows the Sunday and summer times', async ({ page }) => {
-  await page.goto('index.html');
-  const cell = page.locator('.home-hero nav.quick a[href="#gather"]');
-  await expect(cell).toContainText(`Sundays ${EXPECTED.schoolYear.service} am`);
-  await expect(cell).toContainText(`Summer ${EXPECTED.summer.service} am`);
-});
-
-test('home page "When we gather" rows list every time', async ({ page }) => {
-  await page.goto('index.html');
-  const rows = page.locator('#gather .rows > li');
-  await expect(rows).toHaveCount(4);
+for (const season of SEASONS) {
+  const school = season === 'school-year';
   const s = EXPECTED.schoolYear;
-  await expect(rows.nth(0)).toContainText(`${s.service} am`);
-  await expect(rows.nth(0)).toContainText('Worship service');
-  await expect(rows.nth(0)).toContainText(s.label);
-  await expect(rows.nth(1)).toContainText(`${s.sundaySchool} am`);
-  await expect(rows.nth(1)).toContainText('Sunday School');
-  await expect(rows.nth(1)).toContainText(s.label);
-  await expect(rows.nth(2)).toContainText(`${EXPECTED.summer.service} am`);
-  await expect(rows.nth(2)).toContainText('summer');
-  await expect(rows.nth(3)).toContainText(`${EXPECTED.thursdays.time} pm`);
-  await expect(rows.nth(3)).toContainText(EXPECTED.thursdays.label);
-  await expect(page.locator('#gather .rows-note')).toContainText(`${EXPECTED.radio} FM`);
-});
 
-test('home page "In person" column states the same times', async ({ page }) => {
-  await page.goto('index.html');
-  const col = page.locator('#join .cols > *', { hasText: 'In person' });
-  await expect(col).toContainText(`${EXPECTED.schoolYear.service} am`);
-  await expect(col).toContainText(`Sunday School at ${EXPECTED.schoolYear.sundaySchool} am`);
-  await expect(col).toContainText(EXPECTED.schoolYear.label);
-  await expect(col).toContainText(`In summer, worship starts at ${EXPECTED.summer.service} am`);
-  await expect(page.locator('#join .cols > *', { hasText: 'On the radio' }).locator('.freq')).toHaveText(`${EXPECTED.radio} FM`);
-});
+  test.describe(`${season} schedule`, () => {
+    for (const p of ['index.html', 'visit.html']) {
+      test(`${p} "When we gather": Sundays, then Thursdays`, async ({ page }) => {
+        await goto(page, p, season);
+        const groups = page.locator('#gather .gather-group');
+        await expect(groups).toHaveCount(2);
+        await expect(groups.nth(0).locator('h3')).toHaveText('Sundays');
+        await expect(groups.nth(1).locator('h3')).toHaveText('Thursdays');
 
-test('visit page rows list the same times', async ({ page }) => {
-  await page.goto('visit.html');
-  const rows = page.locator('#gather .rows');
-  const s = EXPECTED.schoolYear;
-  await expect(rows).toContainText(`${s.service} am`);
-  await expect(rows).toContainText(`${s.sundaySchool} am`);
-  await expect(rows).toContainText(s.label);
-  await expect(rows).toContainText(`${EXPECTED.summer.service} am`);
-  await expect(rows).toContainText(`${EXPECTED.thursdays.time} pm`);
-  await expect(rows).toContainText(EXPECTED.thursdays.label);
-});
+        // Each Sunday row: time + name, then a short description with a link to more detail
+        // (on the visit page the links jump within the page).
+        const more = p === 'visit.html' ? '' : 'visit.html';
+        const sundays = groups.nth(0).locator('.rows > li:visible');
+        const row = async (i) => {
+          const li = sundays.nth(i);
+          return {
+            name: await li.evaluate((el) => `${el.querySelector('.time').textContent} ${el.querySelector('.what').firstChild.textContent}`.trim()),
+            desc: await text(li.locator('.desc')),
+            href: await li.locator('.desc a').getAttribute('href'),
+          };
+        };
+        const school_ = { name: `${s.sundaySchool} am Sunday School`, href: `${more}#sunday-school`, desc: /^Two adult classes and a children’s class, each working through a Bible study\. More about Sunday School$/ };
+        const service = (time) => ({ name: `${time} am Church Service`, href: `${more}#sunday`, desc: /^Singing, prayer, and a sermon from the Bible\. What to expect$/ });
+        const expected = school ? [school_, service(s.service)] : [service(EXPECTED.summer.service)];
+        await expect(sundays).toHaveCount(expected.length);
+        for (const [i, e] of expected.entries()) {
+          const r = await row(i);
+          expect(r.name).toBe(e.name);
+          expect(r.desc).toMatch(e.desc);
+          expect(r.href).toBe(e.href);
+        }
 
-// Footer "Sundays" column (the same on every page).
-for (const path of ['index.html', 'beliefs.html', 'sermons.html', 'visit.html']) {
-  test(`${path} footer lists the same times and frequency`, async ({ page }) => {
-    await page.goto(path);
-    const s = EXPECTED.schoolYear;
-    const sundays = page.locator('footer.site .foot-cols section', { hasText: 'Sundays' });
-    await expect(sundays).toContainText(`${s.service} am worship · ${s.sundaySchool} am Sunday School`);
-    await expect(sundays).toContainText(s.label);
-    await expect(sundays).toContainText(`Summer: ${EXPECTED.summer.service} am worship`);
-    await expect(sundays).toContainText(`${EXPECTED.radio} FM in the parking lot`);
+        const thursday = groups.nth(1).locator('.rows > li');
+        await expect(thursday).toHaveCount(1);
+        const t = await text(thursday);
+        expect(t).toContain(`${EXPECTED.thursdays.time} pm`);
+        expect(t).toContain('Bible Studies');
+        expect(t).toContain('location varies; ask in person');
+        expect(t).toContain(EXPECTED.thursdays.label);
+        expect(await text(page.locator('#gather .rows-note'))).toContain(`${EXPECTED.radio} FM`);
+      });
+    }
+
+    test('home hero bar shows this season\'s Sunday times', async ({ page }) => {
+      await goto(page, 'index.html', season);
+      const cell = await text(page.locator('.home-hero nav.quick a[href="#gather"]'));
+      expect(cell).toBe(school
+        ? `Church Service ${s.service} am Sunday School ${s.sundaySchool} am`
+        : `Church Service ${EXPECTED.summer.service} am Summer schedule`);
+    });
+
+    test('home "In person" column states this season\'s times', async ({ page }) => {
+      await goto(page, 'index.html', season);
+      const col = await text(page.locator('#join .cols > *', { hasText: 'In person' }).locator('p'));
+      expect(col).toBe(school
+        ? `There is seating inside. Sunday School starts at ${s.sundaySchool} am and the Church Service at ${s.service} am.`
+        : `There is seating inside. The Church Service starts at ${EXPECTED.summer.service} am.`);
+      await expect(page.locator('#join .cols > *', { hasText: 'On the radio' }).locator('.freq')).toHaveText(`${EXPECTED.radio} FM`);
+    });
+
+    test('visit page Sunday School answer matches the season', async ({ page }) => {
+      await goto(page, 'visit.html', season);
+      const answer = await text(page.locator('#questions dt', { hasText: 'Sunday School' }).locator('xpath=following-sibling::dd'));
+      expect(answer).toMatch(school ? /^Yes\. It meets for an hour at 9:30, before the 10:30 Church Service\./ : /^Not over the summer; right now there’s one service at 9:30\./);
+    });
+
+    for (const p of PAGES) {
+      test(`${p} footer shows this season's Sunday times`, async ({ page }) => {
+        await goto(page, p, season);
+        // The visible lines under the "Sundays" label (the label itself is styled in capitals).
+        const lines = await page.locator('footer.site .foot-cols section', { hasText: 'Sundays' })
+          .locator('p:not(.eyebrow)')
+          .evaluateAll((ps) => ps.filter((p) => p.checkVisibility()).map((p) => p.innerText.trim()));
+        expect(lines).toEqual(school
+          ? [`${s.service} am Church Service · ${s.sundaySchool} am Sunday School`, `${EXPECTED.radio} FM in the parking lot`]
+          : [`${EXPECTED.summer.service} am Church Service`, `${EXPECTED.radio} FM in the parking lot`]);
+      });
+    }
   });
 }

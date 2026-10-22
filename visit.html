@@ -8,6 +8,7 @@
     <meta name="description" content="What to expect on your first Sunday at South Clackamas Community Church near Molalla, Oregon.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
+    <script src="assets/js/season.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -55,7 +56,7 @@
                 <dl class="rows faq">
                     <div><dt>What should I wear?</dt><dd>Whatever you&rsquo;re comfortable in. You&rsquo;ll see jeans and you&rsquo;ll see Sunday best, and nobody is checking.</dd></div>
                     <div><dt>How long is the service?</dt><dd>About an hour and a half: singing, a time of prayer together, and a sermon from the Bible.</dd></div>
-                    <div><dt>Is there Sunday School?</dt><dd>Yes, from September to early June. It meets for an hour at 9:30, before the 10:30 service. In summer there&rsquo;s no Sunday School and the service moves to 9:30.</dd></div>
+                    <div><dt>Is there Sunday School?</dt><dd><span data-season-only="school-year">Yes. It meets for an hour at 9:30, before the 10:30 Church Service. It takes a break over the summer, when there&rsquo;s one service at 9:30. <a href="#sunday-school">More about Sunday School</a></span><span data-season-only="summer">Not over the summer; right now there&rsquo;s one service at 9:30. From September to early June, Sunday School meets for an hour at 9:30, before the 10:30 Church Service. <a href="#sunday-school">More about Sunday School</a></span></dd></div>
                 </dl>
             </div>
         </section>
@@ -76,19 +77,41 @@
             </div>
         </section>
 
+        <section id="sunday-school">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Before the service</p>
+                    <h2>Sunday School</h2>
+                </div>
+                <div class="prose">
+                    <p data-season-only="school-year">Sunday School meets at 9:30 am, the hour before the Church Service, from September to early June.</p>
+                    <p data-season-only="summer">Sunday School takes a break over the summer and starts again in September. During the school year it meets at 9:30 am, the hour before the Church Service.</p>
+                    <p>There are three classes: two for adults and one for children. Each class works through a Bible study, and the topic changes from time to time. It might be a survey of the whole Bible, a study of one book, or something else. Visitors are welcome to join any class.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="gather">
             <div class="wrap">
                 <div class="section-head">
-                    <p class="eyebrow">Sundays &amp; Thursdays</p>
+                    <p class="eyebrow">Service times</p>
                     <h2>When we gather</h2>
                 </div>
-                <ul class="rows gather">
-                    <li><span class="time">10:30 am</span><span class="what">Worship service</span><span class="when">Sundays, September – early June</span></li>
-                    <li><span class="time">9:30 am</span><span class="what">Sunday School <span class="muted">(an hour, before the service)</span></span><span class="when">September – early June</span></li>
-                    <li><span class="time">9:30 am</span><span class="what">Worship service <span class="muted">(no Sunday School)</span></span><span class="when">Sundays in summer</span></li>
-                    <li><span class="time">6:30 pm</span><span class="what">Men&rsquo;s and women&rsquo;s Bible studies <span class="muted">(<a href="tel:+15036513707">ask us for the location</a>)</span></span><span class="when">1st &amp; 3rd Thursdays</span></li>
-                </ul>
-                <p class="rows-note">The service is also broadcast on <span class="nb">96.7 FM</span> for listening from your car in the parking lot, and streamed live on YouTube.</p>
+                <div class="gather-group">
+                    <h3>Sundays</h3>
+                    <ul class="rows gather">
+                        <li data-season-only="school-year"><span class="time">9:30 am</span><span class="what">Sunday School<span class="desc">Two adult classes and a children&rsquo;s class, each working through a Bible study. <a href="#sunday-school">More about Sunday School</a></span></span></li>
+                        <li data-season-only="school-year"><span class="time">10:30 am</span><span class="what">Church Service<span class="desc">Singing, prayer, and a sermon from the Bible. <a href="#sunday">What to expect</a></span></span></li>
+                        <li data-season-only="summer"><span class="time">9:30 am</span><span class="what">Church Service<span class="desc">Singing, prayer, and a sermon from the Bible. <a href="#sunday">What to expect</a></span></span></li>
+                    </ul>
+                </div>
+                <div class="gather-group">
+                    <h3>Thursdays</h3>
+                    <ul class="rows gather">
+                        <li><span class="time">6:30 pm</span><span class="what">Men&rsquo;s and Women&rsquo;s Bible Studies <span class="muted">(location varies; ask in person)</span></span><span class="when">1st &amp; 3rd Thursdays</span></li>
+                    </ul>
+                </div>
+                <p class="rows-note">The Sunday service is also broadcast on <span class="nb">96.7 FM</span> for listening from your car in the parking lot, and streamed live on YouTube.</p>
             </div>
         </section>
 
@@ -131,7 +154,7 @@
             <div class="foot-cols">
                 <section><p class="eyebrow">Find us</p><p>Near Molalla, Oregon</p><p><a href="https://maps.google.com/?cid=1658989575399774330">Open in Google Maps</a></p></section>
                 <section><p class="eyebrow">Contact</p><p><a href="tel:+15036513707">(503) 651-3707</a></p><p><a href="https://www.facebook.com/South-Clackamas-Community-Church-301109009916380/">Facebook</a></p></section>
-                <section><p class="eyebrow">Sundays</p><p>10:30 am worship · 9:30 am Sunday School<br><span class="muted">September – early June</span></p><p>Summer: 9:30 am worship</p><p>96.7 FM in the parking lot</p></section>
+                <section><p class="eyebrow">Sundays</p><p data-season-only="school-year">10:30 am Church Service · 9:30 am Sunday School</p><p data-season-only="summer">9:30 am Church Service</p><p>96.7 FM in the parking lot</p></section>
                 <section><p class="eyebrow">Watch</p><p><a href="sermons.html">Sermons</a></p><p><a href="https://www.youtube.com/@southclackamascommunitychu1171/streams">YouTube</a></p></section>
             </div>
             <div class="foot-base">

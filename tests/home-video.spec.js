@@ -15,14 +15,17 @@ const { test, expect } = require('./support/fixtures');
 
 const PLAYLIST = 'UU1Svz8uLW3raCDDP9I1eg_A';
 
-test('embeds the channel uploads playlist, with the TV tip under the heading', async ({ page }) => {
+test('embeds the channel uploads playlist, with the TV tip below the player', async ({ page }) => {
   await page.goto('index.html');
   const iframe = page.locator('#watch .video iframe');
   await expect(iframe).toHaveAttribute('src', `https://www.youtube.com/embed/videoseries?list=${PLAYLIST}`);
   await expect(iframe).toHaveAttribute('title', /latest service/);
-  // The tip sits between the heading and the player (the old "Watch on YouTube if the player
-  // doesn't load" line was removed on purpose; YouTube is linked from the hero bar and "Online").
-  await expect(page.locator('#watch .section-head .tv-tip')).toHaveText(/^Watching on a TV\?.*Chromecast, Roku, or Apple TV\.$/);
+  // The tip sits right after the player (the old "Watch on YouTube if the player doesn't load"
+  // line was removed on purpose; YouTube is linked from the hero bar and "Online").
+  const tip = page.locator('#watch .video + .tv-tip');
+  await expect(tip).toHaveText(/^Watching on a TV\?.*Chromecast, Roku, or Apple TV\.$/);
+  const [video, tipBox] = [await page.locator('#watch .video').boundingBox(), await tip.boundingBox()];
+  expect(tipBox.y, 'tip is below the player').toBeGreaterThan(video.y + video.height);
   await expect(page.locator('#watch .section-head')).not.toContainText("if the player doesn't load");
 });
 

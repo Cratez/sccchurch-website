@@ -43,6 +43,15 @@
   max-width: var(--measure)
 }
 
+/* ---- Sunday School: a couple of reading paragraphs ---- */
+.prose {
+  max-width: var(--measure)
+}
+
+.prose p {
+  margin: 0 0 14px
+}
+
 /* ---- Steps: big serif numerals ---- */
 .steps {
   list-style: none;

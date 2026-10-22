@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>South Clackamas Community Church</title>
     <meta name="description"
-        content="Non-denominational church near Molalla, Oregon. Sundays 10:30 am (Sunday School 9:30 am, September – early June); summer 9:30 am. In person, on 96.7 FM, or online.">
+        content="Non-denominational church near Molalla, Oregon. Join us Sunday mornings in person, on 96.7 FM, or online.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
+    <script src="assets/js/season.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -68,7 +69,7 @@
             <nav class="quick" aria-label="Quick links">
                 <ul>
                     <li><a href="visit.html"><b>Plan your visit</b><span>What to expect</span></a></li>
-                    <li><a href="#gather"><b>Sundays 10:30 am</b><span>Summer 9:30 am</span></a></li>
+                    <li><a href="#gather"><b data-season-only="school-year">Church Service 10:30 am</b><span data-season-only="school-year">Sunday School 9:30 am</span><b data-season-only="summer">Church Service 9:30 am</b><span data-season-only="summer">Summer schedule</span></a></li>
                     <li><a href="#watch"><b>Watch the latest service</b><span>Live or recorded</span></a></li>
                 </ul>
             </nav>
@@ -77,16 +78,24 @@
         <section id="gather">
             <div class="wrap">
                 <div class="section-head">
-                    <p class="eyebrow">Sundays &amp; Thursdays</p>
+                    <p class="eyebrow">Service times</p>
                     <h2>When we gather</h2>
                 </div>
-                <ul class="rows gather">
-                    <li><span class="time">10:30 am</span><span class="what">Worship service</span><span class="when">Sundays, September – early June</span></li>
-                    <li><span class="time">9:30 am</span><span class="what">Sunday School <span class="muted">(an hour, before the service)</span></span><span class="when">September – early June</span></li>
-                    <li><span class="time">9:30 am</span><span class="what">Worship service <span class="muted">(no Sunday School)</span></span><span class="when">Sundays in summer</span></li>
-                    <li><span class="time">6:30 pm</span><span class="what">Men&rsquo;s and women&rsquo;s Bible studies <span class="muted">(<a href="tel:+15036513707">ask us for the location</a>)</span></span><span class="when">1st &amp; 3rd Thursdays</span></li>
-                </ul>
-                <p class="rows-note">The service is also broadcast on <span class="nb">96.7 FM</span> for listening from your car in the parking lot, and streamed live on YouTube.</p>
+                <div class="gather-group">
+                    <h3>Sundays</h3>
+                    <ul class="rows gather">
+                        <li data-season-only="school-year"><span class="time">9:30 am</span><span class="what">Sunday School<span class="desc">Two adult classes and a children&rsquo;s class, each working through a Bible study. <a href="visit.html#sunday-school">More about Sunday School</a></span></span></li>
+                        <li data-season-only="school-year"><span class="time">10:30 am</span><span class="what">Church Service<span class="desc">Singing, prayer, and a sermon from the Bible. <a href="visit.html#sunday">What to expect</a></span></span></li>
+                        <li data-season-only="summer"><span class="time">9:30 am</span><span class="what">Church Service<span class="desc">Singing, prayer, and a sermon from the Bible. <a href="visit.html#sunday">What to expect</a></span></span></li>
+                    </ul>
+                </div>
+                <div class="gather-group">
+                    <h3>Thursdays</h3>
+                    <ul class="rows gather">
+                        <li><span class="time">6:30 pm</span><span class="what">Men&rsquo;s and Women&rsquo;s Bible Studies <span class="muted">(location varies; ask in person)</span></span><span class="when">1st &amp; 3rd Thursdays</span></li>
+                    </ul>
+                </div>
+                <p class="rows-note">The Sunday service is also broadcast on <span class="nb">96.7 FM</span> for listening from your car in the parking lot, and streamed live on YouTube.</p>
             </div>
         </section>
 
@@ -99,7 +108,7 @@
                 <div class="cols">
                     <article>
                         <h3>In person</h3>
-                        <p>There is seating inside. The worship service starts at <span class="nb">10:30 am</span>, with Sunday School at <span class="nb">9:30 am</span> (September – early June). In summer, worship starts at <span class="nb">9:30 am</span>.</p>
+                        <p>There is seating inside. <span data-season-only="school-year">Sunday School starts at <span class="nb">9:30 am</span> and the Church Service at <span class="nb">10:30 am</span>.</span><span data-season-only="summer">The Church Service starts at <span class="nb">9:30 am</span>.</span></p>
                         <a href="https://maps.google.com/?cid=1658989575399774330">Get directions →</a>
                     </article>
                     <article>
@@ -132,7 +141,6 @@
                 <div class="section-head">
                     <p class="eyebrow">Latest service</p>
                     <h2>Watch our most recent service.</h2>
-                    <p class="tv-tip">Watching on a TV? Open the service in the YouTube app on your Chromecast, Roku, or Apple TV.</p>
                 </div>
                 <div class="video">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=UU1Svz8uLW3raCDDP9I1eg_A"
@@ -140,6 +148,7 @@
                         allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
                         referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
+                <p class="tv-tip">Watching on a TV? Open the service in the YouTube app on your Chromecast, Roku, or Apple TV.</p>
             </div>
         </section>
     </main>
@@ -148,7 +157,7 @@
             <div class="foot-cols">
                 <section><p class="eyebrow">Find us</p><p>Near Molalla, Oregon</p><p><a href="https://maps.google.com/?cid=1658989575399774330">Open in Google Maps</a></p></section>
                 <section><p class="eyebrow">Contact</p><p><a href="tel:+15036513707">(503) 651-3707</a></p><p><a href="https://www.facebook.com/South-Clackamas-Community-Church-301109009916380/">Facebook</a></p></section>
-                <section><p class="eyebrow">Sundays</p><p>10:30 am worship · 9:30 am Sunday School<br><span class="muted">September – early June</span></p><p>Summer: 9:30 am worship</p><p>96.7 FM in the parking lot</p></section>
+                <section><p class="eyebrow">Sundays</p><p data-season-only="school-year">10:30 am Church Service · 9:30 am Sunday School</p><p data-season-only="summer">9:30 am Church Service</p><p>96.7 FM in the parking lot</p></section>
                 <section><p class="eyebrow">Watch</p><p><a href="sermons.html">Sermons</a></p><p><a href="https://www.youtube.com/@southclackamascommunitychu1171/streams">YouTube</a></p></section>
             </div>
             <div class="foot-base">

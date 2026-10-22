@@ -14,7 +14,7 @@ test.skip(({ isMobile }) => isMobile, 'colors are the same on phones; measured o
 // The real elements measured for each pair.
 const PAIRS = [
   { name: 'body text on --bg', selector: 'footer.site .foot-cols p:not(.eyebrow) >> nth=0' },
-  { name: 'muted text on --bg', selector: 'footer.site .muted' },
+  { name: 'muted text on --bg', selector: '#gather .muted >> nth=0' },
   { name: 'link (--brand) on --bg', selector: 'footer.site .foot-cols a >> nth=0' },
   { name: '.btn text on its background', selector: 'main a.btn:not(.btn-outline) >> nth=0' },
   { name: '.btn-outline text on --bg', selector: 'main a.btn-outline >> nth=0' },

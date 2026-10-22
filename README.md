@@ -9,7 +9,7 @@ There is no framework, no build step, and nothing to install to run the site. Th
 | Page | File | What it contains |
 | --- | --- | --- |
 | Home | `index.html` | Mt. Hood photo hero with rotating verse and quick links, "When we gather" times, ways to join (in person / radio / online), first-visit teaser, latest-service video with TV tip |
-| Plan your visit | `visit.html` | Trillium Lake photo banner, common questions, what happens on a Sunday (step by step), "When we gather" times, where we are (near Molalla, with a Google Maps link and phone), and ways to join if you can't come in person |
+| Plan your visit | `visit.html` | Trillium Lake photo banner, common questions, what happens on a Sunday (step by step), Sunday School (the three classes), "When we gather" times, where we are (near Molalla, with a Google Maps link and phone), and ways to join if you can't come in person |
 | Sermons | `sermons.html` | The 6 most recent service recordings, and past sermon series with notes, audio, and video links (built from `data/sermons.json`; see "Sermon data") |
 | What We Believe | `beliefs.html` | The Statement of Faith, with clickable scripture references that load the verse text |
 
@@ -58,6 +58,7 @@ sccchurch-website/
     │   ├── sermons.css     Sermons page only
     │   └── beliefs.css     Statement of Faith page only
     └── js/
+        ├── season.js       Every page: THE SEASON SWITCH (school-year or summer service times)
         ├── site.js         Every page: phone menu, light/dark toggle, footer easter egg (original logo pop-up)
         ├── home.js         Home page: rotating hero verse, and a friendly fallback when the video can't play from a local file
         ├── sermons.js      Sermons page: builds the cards and series list from data/sermons.json
@@ -106,15 +107,15 @@ npx playwright install chromium
 
 | I want to change... | Edit this |
 | --- | --- |
-| Service times | There are two seasons (school year: Sundays 10:30 am with Sunday School at 9:30, September – early June; summer: Sundays 9:30 am, no Sunday School) plus men's and women's Bible studies on 1st & 3rd Thursdays at 6:30 pm. The times are written by hand in every one of these places, so change all of them: `index.html` (the `<meta name="description">` in the `<head>`, the "Sundays 10:30 am" link in the hero's quick-link bar, the "When we gather" rows in `#gather`, and the "In person" column in `#join`), `visit.html` (the "When we gather" rows in `#gather`, plus the Sunday School answer in the questions list), and the footer "Sundays" column in **all four** pages. Then update the `EXPECTED` object at the top of `tests/service-times.spec.js`; the test fails if a place was missed. |
-| Phone, Facebook, Google Maps links | Written by hand in several places, so change all of them. Phone: `index.html` (the Bible studies row in "When we gather", `#gather`) and `visit.html` (the same Bible studies row, and the "Call" button in "Where we are", `#where`). Google Maps: `index.html` ("Get directions" in the "In person" column, `#join`) and `visit.html` (the "Open in Google Maps" button in `#where`). Phone, Facebook and Maps are also in the footer "Contact"/"Find us" columns of **all four** pages (`index.html`, `visit.html`, `sermons.html`, `beliefs.html`). Search the folder for the old number or address to be sure none are left. |
+| Service times / summer schedule | **Twice a year, flip the season:** open `assets/js/season.js` and change `SEASON` to `'summer'` (early June) or back to `'school-year'` (September), then commit and push. Every page then shows only that season's times: school year is the Church Service at 10:30 am with Sunday School at 9:30 am; summer is one Church Service at 9:30 am. To change the **times themselves**, edit them in every place they're written: `index.html` (the "Sundays" link in the hero's quick-link bar, the Sundays and Thursdays rows in `#gather`, and the "In person" column in `#join`), `visit.html` (the rows in `#gather` and the Sunday School answer in the questions list), and the footer "Sundays" column in **all four** pages. Season-specific text is marked `data-season-only="school-year"` or `data-season-only="summer"`; text without that marker shows in both seasons (like the Thursday Bible studies). Then update the `EXPECTED` object at the top of `tests/service-times.spec.js`; the test checks every place in both seasons. |
+| Phone, Facebook, Google Maps links | Written by hand in several places, so change all of them. Phone: `visit.html` (the "Call" button in "Where we are", `#where`). Google Maps: `index.html` ("Get directions" in the "In person" column, `#join`) and `visit.html` (the "Open in Google Maps" button in `#where`). Phone, Facebook and Maps are also in the footer "Contact"/"Find us" columns of **all four** pages (`index.html`, `visit.html`, `sermons.html`, `beliefs.html`). Search the folder for the old number or address to be sure none are left. |
 | Hero verses (the rotating verse on the home page) | `index.html`: the list in `<script type="application/json" id="hero-verses">` (KJV text; add `"partial": true` when quoting only part of a verse). The first one is also written into the `<figure class="verse">` above it, for visitors without JavaScript. Run `npm run test:live` (needs internet) to check every verse's wording against the KJV on bible-api.com; the normal `npm test` only checks that the rotation works. |
 | Colors | The `:root { ... }` block at the top of `assets/css/base.css`. The color "tokens" (named colors such as `--brand` and `--bg` that the whole site uses) live here, so one change updates every page. The dark set is written twice just below it (`[data-theme="dark"]` for visitors who chose dark with the footer toggle, and the `prefers-color-scheme: dark` block for devices set to dark); keep the two the same. `tests/contrast.spec.js` checks that text stays readable in both light and dark mode, so run `npm test` after changing a color. |
 | Fonts | The Google Fonts `<link>` in each page's `<head>`, plus `--serif` / `--sans` in `base.css` |
 | Header / tab icon | Replace `assets/favicon.svg` (used for both the tab icon and the header mark) |
 | Home hero photo | `index.html`, the `<picture>` in `.home-hero`; the dark overlay and fallback color are `.photo-hero` in `assets/css/base.css`; the crop (`object-position`, including the phone crop) is set per page in `assets/css/home.css` and `assets/css/visit.css` |
 | Replace or add a photo | Put the originals in a folder on your computer and run `npm run photos -- <that folder>` (needs `npm install` once). It writes the resized WebP/JPG files into `assets/img/photos/`. The original file names it expects are listed in the `PHOTOS` list near the top of `scripts/images/build-photos.js`. Update `assets/img/photos/CREDITS.md` with the photographer and source, and `tests/photos.spec.js` if file names or sizes change. The originals are not stored in the repo. |
-| Plan your visit questions and steps | `visit.html`: the questions are the `<div><dt>…</dt><dd>…</dd></div>` rows in `#questions`; the Sunday steps are the list items in `#sunday`. Copy a row to add one. If an answer mentions a time, see "Service times" above. Styles are in `assets/css/visit.css`. Then check `tests/visit.spec.js`. |
+| Plan your visit questions and steps | `visit.html`: the questions are the `<div><dt>…</dt><dd>…</dd></div>` rows in `#questions`; the Sunday steps are the list items in `#sunday`; the Sunday School description is the `#sunday-school` section (its first sentence has a school-year and a summer version). The short descriptions under each Sunday time in "When we gather" (on both Home and Plan your visit) link to these two sections. Copy a row to add one. If an answer mentions a time, see "Service times" above. Styles are in `assets/css/visit.css`. Then check `tests/visit.spec.js`. |
 | Add or change a sermon series | `data/series.json` (see "Sermon data") |
 | Sermons page look | `assets/css/sermons.css` for styling, `assets/js/sermons.js` for what each card shows. Then update `tests/sermons-page.spec.js`. |
 
@@ -158,7 +159,7 @@ The home page embeds the channel's **uploads playlist** (`UU1Svz8uLW3raCDDP9I1eg
 
 - If the player shows **"Error 153"**, the page was probably opened as a local file or without a referrer. YouTube requires embeds to be loaded from a real web address. Test on the deployed site or a local server.
 - If the video shows an old service, the channel has not had a newer upload or stream.
-- A one-line tip under the heading explains how to watch on a TV. If the player won't load, visitors can use the YouTube links in the hero bar and the "Online" column.
+- A one-line tip below the player explains how to watch on a TV. If the player won't load, visitors can use the YouTube links in the hero bar and the "Online" column.
 
 ## Sermon data
 

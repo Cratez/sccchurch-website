@@ -130,13 +130,23 @@
 
 /* ---- Three ways to join ---- */
 .cols .freq {
-  font-size: 2.2rem;
+  font-size: 1.7rem; /* stands out in its column without outranking the column heading */
   font-weight: 600;
   line-height: 1;
   margin: 4px 0 0
 }
 
 /* ---- First time? ---- */
+/* Spaced like every other section, so the gaps between sections stay even */
+.section-head.first-time {
+  margin-bottom: 0
+}
+
+/* One short sentence: no width limit, so it stays on one line on desktop */
+.section-head.first-time p:not(.eyebrow) {
+  max-width: none
+}
+
 .first-time .btn {
   margin-top: 24px
 }
@@ -171,10 +181,11 @@
   margin: 0
 }
 
-/* Subtle one-line tip under the "Latest service" heading */
-.section-head p.tv-tip {
+/* Subtle one-line tip under the video player */
+.tv-tip {
+  color: var(--muted);
   font-size: .95rem;
-  max-width: none /* short enough to stay on one line on desktop */
+  margin: 16px 0 0
 }
 
 /* ---- Phones ---- */

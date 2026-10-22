@@ -1,5 +1,6 @@
 /**
- * FEATURE: The "Plan your visit" page (banner, questions, Sunday steps, where we are, other ways to join).
+ * FEATURE: The "Plan your visit" page (banner, questions, Sunday steps, Sunday School, where we are,
+ *          other ways to join).
  * COVERS:  visit.html, assets/css/visit.css, assets/img/photos/trillium-*
  * WHY:     First-time visitors rely on this page. It is hand-written HTML, so a broken banner photo,
  *          a lost question, a reordered step or a wrong map/phone link would go unnoticed.
@@ -36,6 +37,31 @@ test('Sunday steps are an ordered list of five', async ({ page }) => {
   await expect(steps).toHaveCount(5);
   await expect(steps.locator('h3')).toHaveText(['Welcome and prayer', 'Singing', 'Announcements and prayer', 'The sermon', 'Closing']);
 });
+
+test('Sunday School section comes right after the Sunday steps and describes the classes', async ({ page }) => {
+  const ids = await page.locator('main > section').evaluateAll((s) => s.map((x) => x.id));
+  expect(ids.indexOf('sunday-school')).toBe(ids.indexOf('sunday') + 1);
+  const section = page.locator('#sunday-school');
+  await expect(section.locator('h2')).toHaveText('Sunday School');
+  await expect(section).toContainText('There are three classes: two for adults and one for children.');
+  await expect(section).toContainText('a survey of the whole Bible, a study of one book');
+  // The Sunday School answer in the questions links down to this section.
+  await expect(page.locator('dl.faq dd a[href="#sunday-school"]:visible')).toHaveCount(1);
+});
+
+for (const [season, sentence] of [
+  ['school-year', 'Sunday School meets at 9:30 am, the hour before the Church Service, from September to early June.'],
+  ['summer', 'Sunday School takes a break over the summer and starts again in September.'],
+]) {
+  test(`Sunday School section opens with the ${season} sentence`, async ({ page }) => {
+    await page.route('**/assets/js/season.js', (route) => route.fulfill({
+      contentType: 'text/javascript', body: `document.documentElement.dataset.season = '${season}';`,
+    }));
+    await page.reload();
+    const first = page.locator('#sunday-school .prose p:visible').first();
+    await expect(first).toContainText(sentence);
+  });
+}
 
 test('"Where we are" names Molalla and links to Maps and the phone', async ({ page }) => {
   const where = page.locator('#where');

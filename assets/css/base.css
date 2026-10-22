@@ -87,8 +87,16 @@ img {
   padding: 0 24px
 }
 
+/* Space around each section. The gap between sections is twice this (88px desktop, 80px phones).
+   If you change these, update the numbers in tests/home-spacing.spec.js too. */
 section {
-  padding: 72px 0
+  padding: 44px 0
+}
+
+@media (max-width: 760px) {
+  section {
+    padding: 40px 0
+  }
 }
 
 /* ---- Type ---- */
@@ -189,12 +197,41 @@ li {
   margin: 0
 }
 
-/* "When we gather" rows (Home, Visit): big time, small "when" note */
+/* Seasonal schedule: assets/js/season.js sets <html data-season="school-year|summer">.
+   Text for the other season is hidden; without JavaScript the school-year times show. */
+html:not([data-season="summer"]) [data-season-only="summer"],
+html[data-season="summer"] [data-season-only="school-year"] {
+  display: none !important
+}
+
+/* "When we gather" (Home, Visit): a sub-heading per day, then ruled rows */
+.gather-group+.gather-group {
+  margin-top: 36px
+}
+
+.gather-group h3 {
+  font-size: 1.5rem;
+  margin: 0 0 12px
+}
+
+/* "When we gather" rows: big time, small "when" note */
 .gather .time {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2;
   white-space: nowrap
+}
+
+/* Short gray description under a Sunday item, with a link to more detail */
+.gather .desc {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: .95rem
+}
+
+.gather .desc a {
+  white-space: nowrap /* keep "What to expect" etc. on one line */
 }
 
 .gather .when {
@@ -206,8 +243,7 @@ li {
 
 .rows-note {
   color: var(--muted);
-  max-width: var(--measure);
-  margin: 20px 0 0
+  margin: 20px 0 0 /* no width limit: a short note reads best on one line on desktop */
 }
 
 /* Three columns, each topped by a fir rule */
