@@ -2,8 +2,10 @@
  * FEATURE: Statement of Faith reading aids. The thin reading-progress bar at the top of the
  *          screen, and the sidebar highlighting the section you're reading (desktop only;
  *          the sidebar is hidden on narrow screens).
- * COVERS:  assets/js/beliefs.js (progress bar + IntersectionObserver), .progress / .toc in assets/css/beliefs.css
- * WHY:     Scroll-driven behavior is easy to break when the layout or markup changes.
+ * COVERS:  assets/js/beliefs.js (progress bar + section highlighting on scroll), .progress / .toc in assets/css/beliefs.css
+ * WHY:     Scroll-driven behavior is easy to break when the layout or markup changes. On tall
+ *          screens the last section (Church) once never lit up, because the page ran out of
+ *          scroll before its heading reached the highlight line.
  * UPDATE WHEN: the sidebar breakpoint (860px) or highlight style changes.
  * REMOVE WHEN: the progress bar or sidebar is removed.
  */
@@ -29,6 +31,13 @@ test('sidebar highlights the section being read', async ({ page, isMobile }) => 
   await page.locator('#salvation').evaluate((el) => el.scrollIntoView({ behavior: 'instant' }));
   await expect(page.locator('aside.toc a.on')).toHaveText('6. Salvation');
   await page.locator('#church').evaluate((el) => el.scrollIntoView({ behavior: 'instant' }));
+  await expect(page.locator('aside.toc a.on')).toHaveText('11. Church');
+});
+
+test('last section is highlighted at the bottom of the page, even on a tall screen', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'The sidebar is hidden on narrow screens.');
+  await page.setViewportSize({ width: 1280, height: 1200 });
+  await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
   await expect(page.locator('aside.toc a.on')).toHaveText('11. Church');
 });
 

@@ -1,17 +1,21 @@
 // Reading-progress bar + highlights the current section in the sidebar.
 const bar = document.querySelector('.progress');
-addEventListener('scroll', () => {
-  const h = document.documentElement;
-  bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight)})`;
-}, { passive: true });
-
 const links = [...document.querySelectorAll('.toc a')];
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
-  });
-}, { rootMargin: '-20% 0px -70% 0px' });
-document.querySelectorAll('.tenet').forEach(s => io.observe(s));
+const tenets = [...document.querySelectorAll('.tenet')];
+
+// The current section is the last one whose top has scrolled past 30% of the screen.
+// At the very bottom, the last sections may be too short to get there, so pick the last one.
+function onScroll() {
+  const h = document.documentElement;
+  const max = h.scrollHeight - h.clientHeight;
+  bar.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
+  let current = tenets.findLast(s => s.getBoundingClientRect().top <= innerHeight * 0.3);
+  if (h.scrollTop >= max - 2) current = tenets[tenets.length - 1];
+  links.forEach(a => a.classList.toggle('on', !!current && a.hash === '#' + current.id));
+}
+addEventListener('scroll', onScroll, { passive: true });
+addEventListener('resize', onScroll);
+onScroll();
 
 // ---- Scripture lookups (free, key-less API: https://bible-api.com) ----
 const API = 'https://bible-api.com/';
