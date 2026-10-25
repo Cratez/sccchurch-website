@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-23T00:18:50.395Z",
+  "generatedAt": "2026-10-25T23:42:12.498Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
+    {
+      "videoId": "EXPudWk7ATA",
+      "url": "https://www.youtube.com/watch?v=EXPudWk7ATA",
+      "thumbnail": "https://i.ytimg.com/vi/EXPudWk7ATA/hqdefault.jpg",
+      "date": "2026-10-25",
+      "youtubeTitle": "SCCC 10/25/2026",
+      "title": null,
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
     {
       "videoId": "6zuVPimQvxU",
       "url": "https://www.youtube.com/watch?v=6zuVPimQvxU",
@@ -56,17 +67,6 @@
       "title": null,
       "live": false,
       "summary": null,
-      "sermon": null
-    },
-    {
-      "videoId": "wDxOt9zxxdg",
-      "url": "https://www.youtube.com/watch?v=wDxOt9zxxdg",
-      "thumbnail": "https://i.ytimg.com/vi/wDxOt9zxxdg/hqdefault.jpg",
-      "date": "2026-09-13",
-      "youtubeTitle": "SCCC 09/13/2026",
-      "title": "A Jet Tour of Isaiah, Part 1",
-      "live": false,
-      "summary": "The first of three messages surveying Isaiah: the prophet, the kings of Judah he served, and chapters 1-22 traced to their New Testament quotations, showing his prophecies about Israel will be literally fulfilled.",
       "sermon": null
     }
   ],
