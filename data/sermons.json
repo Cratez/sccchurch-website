@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-25T23:42:12.498Z",
+  "generatedAt": "2026-10-27T03:26:23.489Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
     {
@@ -9,10 +9,18 @@
       "thumbnail": "https://i.ytimg.com/vi/EXPudWk7ATA/hqdefault.jpg",
       "date": "2026-10-25",
       "youtubeTitle": "SCCC 10/25/2026",
-      "title": null,
+      "title": "There Will Be Judgment!",
       "live": false,
       "summary": null,
-      "sermon": null
+      "sermon": {
+        "seriesId": "second-thessalonians",
+        "seriesTitle": "Second Thessalonians",
+        "number": "2",
+        "title": "There Will Be Judgment!",
+        "passage": "II Thessalonians 1:6-9",
+        "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s84fc81f027374ff28a32139914566913&cid=8F8F2DB857A1408F",
+        "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scf8b2028c4f143a091b8fce67516dbea&cid=8F8F2DB857A1408F"
+      }
     },
     {
       "videoId": "6zuVPimQvxU",
@@ -23,7 +31,15 @@
       "title": null,
       "live": false,
       "summary": null,
-      "sermon": null
+      "sermon": {
+        "seriesId": "second-thessalonians",
+        "seriesTitle": "Second Thessalonians",
+        "number": "1",
+        "title": null,
+        "passage": null,
+        "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0b98c7cf0e9147ec936a9cf23c02b9b7&cid=8F8F2DB857A1408F",
+        "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s23999017897f41e2bf08eb357e7e8bab&cid=8F8F2DB857A1408F"
+      }
     },
     {
       "videoId": "V4V7DZmF-zk",
@@ -71,6 +87,1084 @@
     }
   ],
   "series": [
+    {
+      "id": "second-thessalonians",
+      "title": "Second Thessalonians",
+      "current": true,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s583d62570c4f488c872abd65e40a2c11&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2026-10-18",
+      "lastDate": "2026-10-25",
+      "sermons": [
+        {
+          "key": "001 10-18-26",
+          "number": "1",
+          "date": "2026-10-18",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0b98c7cf0e9147ec936a9cf23c02b9b7&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s23999017897f41e2bf08eb357e7e8bab&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=6zuVPimQvxU",
+          "summary": null
+        },
+        {
+          "key": "002 10-25-26",
+          "number": "2",
+          "date": "2026-10-25",
+          "title": "There Will Be Judgment!",
+          "passage": "II Thessalonians 1:6-9",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s84fc81f027374ff28a32139914566913&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scf8b2028c4f143a091b8fce67516dbea&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=EXPudWk7ATA",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "first-thessalonians",
+      "title": "First Thessalonians",
+      "current": false,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9204fc99eabf4e95b5dd49383bb61b32&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2026-08-02",
+      "lastDate": "2026-08-30",
+      "sermons": [
+        {
+          "key": "001 08-02-26",
+          "number": "1",
+          "date": "2026-08-02",
+          "title": "Good Job!",
+          "passage": "I Thessalonians 1",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5c0abcecc9d04592b59126f0406d9577&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se0085f519e0f4e8bb715378d02dd4df1&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=SBuVQH6d4AA",
+          "summary": null
+        },
+        {
+          "key": "002 08-09-26",
+          "number": "2",
+          "date": "2026-08-09",
+          "title": "I So Dearly Wish to See You Again",
+          "passage": "I Thessalonians 2",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s30b8925e7d70401e933c4c98cc31ebd2&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa0189159291a46dba0dbea3860ec67a5&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=davtgjYfvxg",
+          "summary": null
+        },
+        {
+          "key": "003 08-16-26",
+          "number": "3",
+          "date": "2026-08-16",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sf9e5b9435ff74bd2802163df2d8f9e67&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s8870a7d374974baf86dcba38830ec874&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=llCoFmDrrBg",
+          "summary": null
+        },
+        {
+          "key": "004 08-23-26",
+          "number": "4",
+          "date": "2026-08-23",
+          "title": "”Excel Still More; Great Things Are Coming!”",
+          "passage": "1 Thessalonians 4",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s2128483d8d654f5ea8af9f3db32ee8ae&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sf80cf5569c3b4738a3eae1549c8f3398&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=XXGmtZ1oulQ",
+          "summary": null
+        },
+        {
+          "key": "005 08-30-26",
+          "number": "5",
+          "date": "2026-08-30",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s61926f3ae47f4a46806a35eace5653e4&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s33c142391dc54ce3a0a25502e93dc978&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=0F_Q0X9VcqU",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "galatians",
+      "title": "Galatians",
+      "current": false,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sde93ba4fb691443fb6a959b01e7bceb4&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2025-04-19",
+      "lastDate": "2026-07-26",
+      "sermons": [
+        {
+          "key": "019 04-19-25",
+          "number": "19",
+          "date": "2025-04-19",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se499cf60c93c4a13a1d38b63d34c3ddb&cid=8F8F2DB857A1408F",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "001 11-09-25",
+          "number": "1",
+          "date": "2025-11-09",
+          "title": "Intro to Galatians",
+          "passage": "Galatians1:1-5",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9305118600e04db68b3b940cdc3a4615&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scc4cb4cf3e484ab696d2ed1cc7f6fb2e&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=PWe2x1SLRX8",
+          "summary": null
+        },
+        {
+          "key": "002 11-16-25",
+          "number": "2",
+          "date": "2025-11-16",
+          "title": "Be Careful Who You Listen To!",
+          "passage": "Galatians 1:6-10",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa89ad9c735494f3e9622cdb90796242c&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s24c7612866db4bdca9e47b6f26375a48&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=S5J-ntOoL8w",
+          "summary": null
+        },
+        {
+          "key": "004 11-30-25",
+          "number": "4",
+          "date": "2025-11-30",
+          "title": "Glory to God for the Change in Paul",
+          "passage": "Gal. 1:18-24",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sf0146a5f7d4240fc8964942f0f6576da&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s87ae8779c9bb41359ab274a43d28e769&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=ljO-_iBN1L0",
+          "summary": null
+        },
+        {
+          "key": "005 12-07-25",
+          "number": "5",
+          "date": "2025-12-07",
+          "title": "Salvation Through the Gospel and Nothing Else",
+          "passage": "Galatians 2:1-5",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb5a520691aaa47b8b7e4f008e3c02f26&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s1dfc5bbfc75a46d5af0d1beb57b33af7&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=RiINZKPrvwM",
+          "summary": null
+        },
+        {
+          "key": "006 12-28-25",
+          "number": "6",
+          "date": "2025-12-28",
+          "title": "Confirmation of Paul’s Divine Call to Ministry",
+          "passage": "Galatians 2:6-10",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s31c3664cdc0b4f7f8f899b2c0efefe0a&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sc47e98b889b84af49d4edf1182232d0f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=KecKci_ZneQ",
+          "summary": null
+        },
+        {
+          "key": "007 01-04-26",
+          "number": "7",
+          "date": "2026-01-04",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s8038a275247e458b93245896dad75cc8&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5ca9519b731b4a47b946ca1d868335c6&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=faLpaujD3iA",
+          "summary": null
+        },
+        {
+          "key": "008 01-11-26",
+          "number": "8",
+          "date": "2026-01-11",
+          "title": "Justified by Christ Jesus",
+          "passage": "Galatians 2:15-16",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s20bd672a8c2441818f04cbe59aee122c&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s605dbca81e1748d5ad34ab0fee79495a&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=btQ3YUUOkBM",
+          "summary": null
+        },
+        {
+          "key": "009 01-18-26",
+          "number": "9",
+          "date": "2026-01-18",
+          "title": "Did Christ Die Needlessly?",
+          "passage": "Galatians 2:17-21",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sca82e1ea9cf14c088aaa58c6eca25cf8&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s89a7be719ea84f5eadf2067aaaa389de&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=c3FL9q25--k",
+          "summary": null
+        },
+        {
+          "key": "010 01-25-26",
+          "number": "10",
+          "date": "2026-01-25",
+          "title": "“So Faith Comes by Hearing”",
+          "passage": "Galatians 3:1-5",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s3fc8cf3ce36e42b882fc02f260da32a6&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s7f0b224b40a844bfa23ac7b4f64ad127&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=6sXvuXnMBgk",
+          "summary": null
+        },
+        {
+          "key": "010.2 02-01-26",
+          "number": "10.2",
+          "date": "2026-02-01",
+          "title": "Hearing With Faith",
+          "passage": "Galatians 3:6-9",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0d0f237a3402416e93cfc1e07cff4e27&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s64f96ba413fa4db58efb263bd768c682&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=7dsobgY8IMw",
+          "summary": null
+        },
+        {
+          "key": "011 02-08-26",
+          "number": "11",
+          "date": "2026-02-08",
+          "title": "“Christ Redeemed Us From the Curse of the Law”",
+          "passage": "Galatians 3:10-14",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9122f91a3aaf407ea47e9081f76c1382&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sba71bfc8353247b4a81216cb6815a729&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=RI5PrCoqfP4",
+          "summary": null
+        },
+        {
+          "key": "012 02-15-26",
+          "number": "12",
+          "date": "2026-02-15",
+          "title": "God’s Unchangeable Promise",
+          "passage": "Galatians 3:15-18",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s7c09de664ccc4a49862b1e2670a078c2&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s2762ad5fb1184f9a998f640da8c33899&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=nhRWSYX1oEU",
+          "summary": null
+        },
+        {
+          "key": "013 03-01-26",
+          "number": "13",
+          "date": "2026-03-01",
+          "title": "“So That the Promise by Faith in Jesus Christ Might be Given",
+          "passage": "Galatians 3:19-22",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sbb033aa7e6bb4e0699433f57171631bd&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd55f46cd6a6a47c09075aa847a05c8c1&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=xRdzVcYHorY",
+          "summary": null
+        },
+        {
+          "key": "014 03-08-26",
+          "number": "14",
+          "date": "2026-03-08",
+          "title": null,
+          "passage": "Galatians 3:23-29",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s78251cdd71dd474caf0f84aa6b463210&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s53fb0b510c344a8bb22b06d7c4066b8f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=-8RBzdGuDr0",
+          "summary": null
+        },
+        {
+          "key": "015 03-15-26",
+          "number": "15",
+          "date": "2026-03-15",
+          "title": "No Longer Children, But Sons",
+          "passage": "Galatians 4:1-7",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s28d723e9aa294dce9f4cfb16c1a39e1b&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s2946694fd88545f1a8bcaf368f94a4b4&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=sQImjof5WvQ",
+          "summary": null
+        },
+        {
+          "key": "016 03-22-26",
+          "number": "16",
+          "date": "2026-03-22",
+          "title": "I Fear For You",
+          "passage": "Galatians 4:8-11",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s1c32bdd58cf7469cb2253667754b0c81&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5ab6257f539c4491b36fa51401a1c804&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=zMk3NCY23KI",
+          "summary": null
+        },
+        {
+          "key": "017 03-29-26",
+          "number": "17",
+          "date": "2026-03-29",
+          "title": "“I Am Perplexed About You”",
+          "passage": "Galatians 4:12-20",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sc77410d0237d402eba0d5fe371b53db2&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa4f5d9bae1a144b5ad55c3dd496c5171&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=XsKXkKTMH90",
+          "summary": null
+        },
+        {
+          "key": "018 04-12-26",
+          "number": "18",
+          "date": "2026-04-12",
+          "title": "Freedom vs. Slavery",
+          "passage": "Galatians 4:21-31",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s1c427fc3ba904c6ba3a8301df6d4cbe0&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s147863189476441eba1e7a416fac821c&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=ADltbtklmgw",
+          "summary": null
+        },
+        {
+          "key": "019 04-19-26",
+          "number": "19",
+          "date": "2026-04-19",
+          "title": "“Keep Standing Firm”",
+          "passage": "Galatians 5:1-6",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4d68475474dc4aa68520b15c3bc116c2&cid=8F8F2DB857A1408F",
+          "audioUrl": null,
+          "videoUrl": "https://www.youtube.com/watch?v=6qV9RlU8CbU",
+          "summary": null
+        },
+        {
+          "key": "020 04-26-26",
+          "number": "20",
+          "date": "2026-04-26",
+          "title": null,
+          "passage": "Galatians 5:7-12",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s49962ed685c14d8aa1fc7ad49e9fff46&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa4d799194886434797371223d803f575&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=YfMKRYiLbZ8",
+          "summary": null
+        },
+        {
+          "key": "021 05-03-26",
+          "number": "21",
+          "date": "2026-05-03",
+          "title": null,
+          "passage": "Galatians 5:13-15",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s179594d6babc47dcafc2b6106ea54069&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sc17b472ed2f44bb09a7d9a1c68147ca0&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=ZfOFvWPmVOk",
+          "summary": null
+        },
+        {
+          "key": "022 05-17-26",
+          "number": "22",
+          "date": "2026-05-17",
+          "title": "Don’t Drink From the Toilet!",
+          "passage": "Galatians 5:16-21",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s19f608a46fbd46679bd55dda74d2b7f6&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s1ba0f279b9014f85bec6f3f177b3abc1&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=4paR5GOdVwY",
+          "summary": null
+        },
+        {
+          "key": "023 05-24-26",
+          "number": "23",
+          "date": "2026-05-24",
+          "title": "The Good Stuff is Evident Too,",
+          "passage": "Galatians 5:22-23",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sae6654c907b0431c8c7f356df38d8ed5&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s345e3368ba88444b97c9988e5f393b9d&cid=8F8F2DB857A1408F",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "024 05-31-26",
+          "number": "24",
+          "date": "2026-05-31",
+          "title": null,
+          "passage": "Galatians 5:24-26",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s2a30b2120d5847ab9ead9dc34ae5bbab&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s2f741a40a7964130927f3e30ee257d93&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=AOmIi-kKjEk",
+          "summary": null
+        },
+        {
+          "key": "025 06-14-26",
+          "number": "25",
+          "date": "2026-06-14",
+          "title": "Restoration is the Goal!",
+          "passage": "Galatians 6:1",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb4eca02d52aa4404ace99505973150e1&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s8c76e40d75a9408e929031a0653b6705&cid=8F8F2DB857A1408F",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "026 06-28-26",
+          "number": "26",
+          "date": "2026-06-28",
+          "title": null,
+          "passage": "Galatians 6:2-5",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s25e44a4aa7a14a42b66ed9e879cac139&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se6f8e0bec5504d58b2934ff26e1b8386&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=PnNvduts7ao",
+          "summary": null
+        },
+        {
+          "key": "027 07-05-26",
+          "number": "27",
+          "date": "2026-07-05",
+          "title": "Do Good",
+          "passage": "Galatians 6:6-10",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s38dfce47c30c477398b260909496beda&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s3cf73196c8a641718b34a0d9070b3ae7&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=QEeyoo7HIT0",
+          "summary": null
+        },
+        {
+          "key": "028 07-12-26",
+          "number": "28",
+          "date": "2026-07-12",
+          "title": "HEY! PAY ATTENTION!",
+          "passage": "Galatians 6:11-14",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s51d37649eaa64f37b574e7f0aaab69a8&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sba50962e6c6e4ee3b0a44487c0e12d1e&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=q7TCMnZ9lAg",
+          "summary": null
+        },
+        {
+          "key": "029 07-19-26",
+          "number": "29",
+          "date": "2026-07-19",
+          "title": "Walk by This Rule",
+          "passage": "Galatians 6:14-16",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb421cadf251a42729490eb29f43dec7c&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sca1c388590c1496c8f30bd5511414d64&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=Jw449zxdK78",
+          "summary": null
+        },
+        {
+          "key": "030 07-26-26",
+          "number": "30",
+          "date": "2026-07-26",
+          "title": "Tell Them What You Told Them",
+          "passage": "Galatians 6:17-18",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s477e797efa034c978d4fcd671989ecc4&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sba292a9026154b50a94e05f41a63bdf9&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=ERD9ics3SgE",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "titus",
+      "title": "Titus",
+      "current": false,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s1a89e2d6e7294e4f98ea084211e734d4&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2025-08-31",
+      "lastDate": "2025-09-28",
+      "sermons": [
+        {
+          "key": "001 08-31-25",
+          "number": "1",
+          "date": "2025-08-31",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s7fedcfccbb934a7cbba63f9437a3d0ee&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4c1ac2815d72426e8c339da0148a58f4&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=61KwkKJVhxo",
+          "summary": null
+        },
+        {
+          "key": "002 09-07-25",
+          "number": "2",
+          "date": "2025-09-07",
+          "title": "Healthy Churches Have Healthy Leaders",
+          "passage": "Titus 1:5-16",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9140b6610df2475b866c76478748290b&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sddd0a2965b6c4f518be65ef2d31ff174&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=Wf5JaroUq3g",
+          "summary": null
+        },
+        {
+          "key": "003 09-14-25",
+          "number": "3",
+          "date": "2025-09-14",
+          "title": "All of the Saints Have Work to Do!",
+          "passage": "Titus 2",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd74940cdc7a64a8bb7ceccf29c4f66d2&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s00766ee6220049b49403a2704b2b1322&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=M-ZSi4K4yfY",
+          "summary": null
+        },
+        {
+          "key": "004 09-21-25",
+          "number": "4",
+          "date": "2025-09-21",
+          "title": null,
+          "passage": "Titus 3:1-11",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s169ccabc0edd4d0b806f617410c4acef&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s2ed75e22630940a5910db0c680dc8916&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=gn_k-jZi9rQ",
+          "summary": null
+        },
+        {
+          "key": "005 09-28-25",
+          "number": "5",
+          "date": "2025-09-28",
+          "title": "Live Fruitful Lives",
+          "passage": "Titus 3:12-15",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se079ade0b9c143f880fa49ae13afdc32&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa24509751cd54397acf0410ce610c659&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=PrAWn4EeQvA",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "philemon",
+      "title": "Philemon",
+      "current": false,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sf71b794f21d547538588ef36240124e8&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2025-07-27",
+      "lastDate": "2025-08-24",
+      "sermons": [
+        {
+          "key": "001 07-27-25",
+          "number": "1",
+          "date": "2025-07-27",
+          "title": "A Short Seminar on Forgiveness",
+          "passage": "Philemon 1:1-7",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!saaeecf5c83264bd98e092c1ee0016e53&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s7d81910a8f3c41069c6a3b2d8fe99cca&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=2e6rzHvEYXY",
+          "summary": null
+        },
+        {
+          "key": "002 08-03-25",
+          "number": "2",
+          "date": "2025-08-03",
+          "title": "A Short Seminar on Forgiveness",
+          "passage": "Philemon 1:1-7",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se7c500bce8174fe694534773fe1b1716&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sea239025bf3945d1b2200bffe502b23a&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=jPPGGVbddUc",
+          "summary": null
+        },
+        {
+          "key": "003 08-10-25",
+          "number": "3",
+          "date": "2025-08-10",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sed4401553645432a8c5869f290ca6ca2&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s15731642995e47b594fb30bb2fa7f5e8&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=oUWq6Ldj89U",
+          "summary": null
+        },
+        {
+          "key": "004 08-17-25",
+          "number": "4",
+          "date": "2025-08-17",
+          "title": null,
+          "passage": "Philemon 1:17-20",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9d6d045e28b34124b64b49fcec1eabbf&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb4fd5a72ed5f46a9a7a8e0563c420f79&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=YHJ8baa1kt0",
+          "summary": null
+        },
+        {
+          "key": "005 08-24-25",
+          "number": "5",
+          "date": "2025-08-24",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5027b2dcd61e400da22c4a4258f390ca&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5e6acff60675451a98e471d9be2403ea&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=i1K_cYvq6Mg",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "colossians",
+      "title": "Colossians",
+      "current": false,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s988f49ef4ecc430cbdc25961eb41a795&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2025-02-02",
+      "lastDate": "2025-07-20",
+      "sermons": [
+        {
+          "key": "000 02-02-25",
+          "number": "0",
+          "date": "2025-02-02",
+          "title": "Introduction",
+          "passage": "Col. 1:1-2 and 13-20; 2:8-15",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s55aae29eb04644cdba59fbd21f3d7d60&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s462446d3cd164e5eab7b29692f529e1f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=IIo5PPS1bkY",
+          "summary": null
+        },
+        {
+          "key": "001 02-09-25",
+          "number": "1",
+          "date": "2025-02-09",
+          "title": "God’s Gift of Salvation in Christ",
+          "passage": "Col. 1:3-8",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5703270ce2ae4d848d92a83ce6d49bd3&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s651e9c6624ba4822a32b252876371f7d&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=eOewkCQZObk",
+          "summary": null
+        },
+        {
+          "key": "002 02-16-25",
+          "number": "2",
+          "date": "2025-02-16",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s82c495de5c2e4174a6c9b32677a5a47a&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s1d9b22ff6f5a4d92b67d4af5b615d5cb&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=i8lvNZEJVVI",
+          "summary": null
+        },
+        {
+          "key": "003 02-23-25",
+          "number": "3",
+          "date": "2025-02-23",
+          "title": null,
+          "passage": "Col. 1:13-17",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa504cb5b69ea4ee397b65c60dc147690&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s33655e4ebeba4b2f9b8ae49753190749&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=DokPNCFfy3M",
+          "summary": null
+        },
+        {
+          "key": "004 03-02-25",
+          "number": "4",
+          "date": "2025-03-02",
+          "title": "The Preeminence of Christ",
+          "passage": "Col. 1:18-20",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd6d05d96aec441efaeb30da9ca81fe6c&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s7eae9d8a367d4730acedb02f2370570f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=vsizPFvd9ug",
+          "summary": null
+        },
+        {
+          "key": "005 03-09-25",
+          "number": "5",
+          "date": "2025-03-09",
+          "title": "“If You’ve Been Reconciled, Act Like It!”",
+          "passage": "Col. 1:21-23",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s49da7b7258734ef082151496223ab8a3&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sc17e371959554032affc59307eec26bd&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=oA9WYRPqS34",
+          "summary": null
+        },
+        {
+          "key": "006 03-16-25",
+          "number": "6",
+          "date": "2025-03-16",
+          "title": "Sacrificial Service",
+          "passage": "Col. 1:24-29",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s688896ddbc04443984461c6401f24900&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s3ef1b784ffc4449a9c682b8662d3ce32&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=jyOPjjEipxc",
+          "summary": null
+        },
+        {
+          "key": "007 03-23-25",
+          "number": "7",
+          "date": "2025-03-23",
+          "title": "The Maturity of the Church",
+          "passage": "Col. 2:1-5",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s93bba3447e7142deb05afefef0123f73&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5ba364fba88948cba859b21ea641caa1&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=LjKlqflgvdU",
+          "summary": null
+        },
+        {
+          "key": "008 03-30-25",
+          "number": "8",
+          "date": "2025-03-30",
+          "title": "“Therefore …”",
+          "passage": "Col. 2:6-7; Psalm 1",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa750e50d95f04bc7bffd82a5977a975e&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s3c95eb2f20b741b1abea3cf05922dd4b&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=kYU1cBc0IkQ",
+          "summary": null
+        },
+        {
+          "key": "009 04-06-25",
+          "number": "9",
+          "date": "2025-04-06",
+          "title": null,
+          "passage": "Colossians 2:8-10",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s3ed9997dc91140de8c95ac1a4ae754aa&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s184e5df0faa04c3b886e67ebec98651d&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=essANSqzVgI",
+          "summary": null
+        },
+        {
+          "key": "010 04-13-25",
+          "number": "10",
+          "date": "2025-04-13",
+          "title": "The Work of the Cross",
+          "passage": "Col. 2:11-15",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5af7ec2a70c8483e94681c8a74eaa2d8&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s645f00ec3cb34d108e2a21ee70b9464a&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=srdoJAWrysQ",
+          "summary": null
+        },
+        {
+          "key": "011.1 04-27-25",
+          "number": "11.1",
+          "date": "2025-04-27",
+          "title": "Complete in Christ, Nothing Else",
+          "passage": "Col. 2:16-19; Col. 2:9-15",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd3b985969cbf473bbbcbe491ebd762b0&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s6301d3889ee6479d8a1818caa4d0622f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=zEPXBFSxUzo",
+          "summary": null
+        },
+        {
+          "key": "011.2 05-04-25",
+          "number": "11.2",
+          "date": "2025-05-04",
+          "title": "Not Man’s Flesh, but Christ’s Character",
+          "passage": "Col. 2:20-3:1",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s38655a3930c1483f91a69f6fe3d32ff1&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb4d0b06609c84da6976557738c1d5006&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=k_nYMTWI5LE",
+          "summary": null
+        },
+        {
+          "key": "012 05-18-25",
+          "number": "12",
+          "date": "2025-05-18",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s3901cd4b841a4156a02f244537029262&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s8d58b0dc1d2049bbad60cfb555f7b138&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=qiEQ46EWQIc",
+          "summary": null
+        },
+        {
+          "key": "013 05-25-25",
+          "number": "13",
+          "date": "2025-05-25",
+          "title": "More Like Christ",
+          "passage": "Col. 3:5-11",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd13a87ee16ae45c787da64f890f1d8d8&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s367b7c6a4c4646b4b8b0cfc07346e8a5&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=FcA77YE43wc",
+          "summary": null
+        },
+        {
+          "key": "014 06-22-25",
+          "number": "14",
+          "date": "2025-06-22",
+          "title": "Whatever",
+          "passage": "Col. 3:12-17",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!secde8cd9517c417e99076b9910fbde8a&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s210a5da2c0e7423abc8122869efa1cf0&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=bPa4CrPPRMY",
+          "summary": null
+        },
+        {
+          "key": "015 06-29-25",
+          "number": "15",
+          "date": "2025-06-29",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s6ec8a5a1b19f408cadd2c36e54f976ab&cid=8F8F2DB857A1408F",
+          "videoUrl": null,
+          "summary": null
+        },
+        {
+          "key": "016 07-06-25",
+          "number": "16",
+          "date": "2025-07-06",
+          "title": "Vacuums or Blowers?",
+          "passage": "Col. 3:22-4:1; Eph. 6:5-9",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sc0933cfce2a74f54b522993d9d4124e6&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scc556574352a4225a71cbbff718d0f0e&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=EbHP4BXSm9g",
+          "summary": null
+        },
+        {
+          "key": "017 07-13-25",
+          "number": "17",
+          "date": "2025-07-13",
+          "title": "Pray, Pray, Pray",
+          "passage": "Col. 4:2-6",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4191b16facef4be99d2bcd388699fe89&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa652d85da5a542fcb7e817509f9c3dbb&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=o_kMRdOo0pk",
+          "summary": null
+        },
+        {
+          "key": "018 07-20-25",
+          "number": "18",
+          "date": "2025-07-20",
+          "title": "Be Noteworthy",
+          "passage": "Colossians 4:7-18",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb29ad7272f714ff5a8d92db49c3e8fce&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sdf0a1b382458413898e7c46062e36d23&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=PUF_Jtbeuhs",
+          "summary": null
+        }
+      ]
+    },
+    {
+      "id": "philippians",
+      "title": "Philippians",
+      "current": false,
+      "folderUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4d33ba3be1454eb796c8145f9d8ffa5e&cid=8F8F2DB857A1408F",
+      "summary": null,
+      "firstDate": "2024-04-07",
+      "lastDate": "2024-09-29",
+      "sermons": [
+        {
+          "key": "001 04-07-24",
+          "number": "1",
+          "date": "2024-04-07",
+          "title": null,
+          "passage": "Acts 16; Philippians 1:1-2",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5e0b18a33283465f87ebbc05009951f7&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!saf71a747a38c4206b4b9272a1318214b&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=JalQP_J1szg",
+          "summary": null
+        },
+        {
+          "key": "002 04-14-24",
+          "number": "2",
+          "date": "2024-04-14",
+          "title": "“So, How’s That Prayer Life Coming?”",
+          "passage": "Phil. 1:3-11; Eph. 6:18-20",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s98a0716c12b64d948215aeb045ca6f0f&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scab911827b284e1fa4e41a7dffde402d&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=1vH4nhfcaE8",
+          "summary": null
+        },
+        {
+          "key": "003 04-21-24",
+          "number": "3",
+          "date": "2024-04-21",
+          "title": "We Must Be Proclaimers of Christ!",
+          "passage": "Philippians 1:12-18; Col. 1:28-29; I Peter 2:9",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scacd153ae999475d904b49b9073ec9e6&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s6feeb481f416453189414535b65be257&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=EXRZfZud0a0",
+          "summary": null
+        },
+        {
+          "key": "004 04-28-24",
+          "number": "4",
+          "date": "2024-04-28",
+          "title": "“As Soon As You Get Your Chores Done!”",
+          "passage": "Phil. 1:19-26",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sf15f5eef7d5c4e2a99c6ea2243d05f29&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sbb79353f263b4fc68974ff0354606525&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=O-uqB8tSVfc",
+          "summary": null
+        },
+        {
+          "key": "005 05-05-24",
+          "number": "5",
+          "date": "2024-05-05",
+          "title": "In This Life We Must Strive Together and Suffer",
+          "passage": "Phil. 1:27-30; I John 3:1-3",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s874b1679db814b3390f22b23ecd0db8f&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s5bae177644b24818bf56d82c580fd778&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=bZsl6pRZnAA",
+          "summary": null
+        },
+        {
+          "key": "006 05-12-24",
+          "number": "6",
+          "date": "2024-05-12",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s8adf968376b14c3bb0a5454ab90fc5b8&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4cd70dd069974344bce457ff4e1875d7&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=J9MUtEt_DJo",
+          "summary": null
+        },
+        {
+          "key": "007 05-26-24",
+          "number": "7",
+          "date": "2024-05-26",
+          "title": "To Honor a Hero, Be a Hero",
+          "passage": "Phil. 2:1-18",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0695a528036b4bc39985f69c916e3a69&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s25438c4113ae434bbfaa7e1b586b0e7a&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=Z2T373OYFkE",
+          "summary": null
+        },
+        {
+          "key": "008 06-09-24",
+          "number": "8",
+          "date": "2024-06-09",
+          "title": "Christ’s Attitude Changed Everything",
+          "passage": "Phil. 2:5-11; I John 3:16",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4d433b3664ae4b89ac6c9f5a527196e1&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se64cbac37e034d56ba9af43df15c29d9&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=kY_0193EMpw",
+          "summary": null
+        },
+        {
+          "key": "009 06-16-24",
+          "number": "9",
+          "date": "2024-06-16",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s35b2ca6147824cf594c3f80e645334f3&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s141450e6e6f546349cdecae792ea938e&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=znYuqvJIqrY",
+          "summary": null
+        },
+        {
+          "key": "010 06-23-24",
+          "number": "10",
+          "date": "2024-06-23",
+          "title": "Appearance Matters!",
+          "passage": "Phil. 2:14-18",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se44ed2fe44da46ae9fbc570b2170a9f1&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sb0af086224e04d4f90f38f37538929e7&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=jwm-xTGa5jY",
+          "summary": null
+        },
+        {
+          "key": "011 06-30-24",
+          "number": "11",
+          "date": "2024-06-30",
+          "title": "Love and Empathy in the Service of One Another",
+          "passage": "Phil. 2:19-30",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s6cb7b5dadb7b462695257b8ccab79454&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s4ff9ef40707e43f0a90d34995a1abdbb&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=j_BdWZsPcnw",
+          "summary": null
+        },
+        {
+          "key": "012 07-07-24",
+          "number": "12",
+          "date": "2024-07-07",
+          "title": "“Rejoice in the Lord, Not in You!”",
+          "passage": "Phil. 3:1-11; I Kings 18:20-46",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa2459562185d4c55bc3b7729d9f52123&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s89366facc6054eb39706ecc6d6f222f1&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=2uXSyaFSgmg",
+          "summary": null
+        },
+        {
+          "key": "013 07-14-24",
+          "number": "13",
+          "date": "2024-07-14",
+          "title": "The Sprint Towards Christlikeness",
+          "passage": "Phil. 3:12-16",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd6044fca6c0946a5920901a985d412fa&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0cbbfba9259b45789998a15656748ce5&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=DzKJNu8Utdk",
+          "summary": null
+        },
+        {
+          "key": "014 07-21-24",
+          "number": "14",
+          "date": "2024-07-21",
+          "title": "“There’s Not Just a Sprint, But Also a Walk”",
+          "passage": "Phil. 3:17-19",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!se6126a715f7647cf8f83f4140dd2cef0&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!scdca6ff272104a889c3a56199e59006f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=QuKvD_JYpaI",
+          "summary": null
+        },
+        {
+          "key": "015 07-28-24",
+          "number": "15",
+          "date": "2024-07-28",
+          "title": "“So … Where You From?",
+          "passage": "Philippians 3:18-21",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sa868d19a26bb4e718c3c4dc281ce550c&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9cf83dbd18504bd283d4d875b5e3276f&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=MwmuH-2t4R8",
+          "summary": null
+        },
+        {
+          "key": "016 08-04-24",
+          "number": "16",
+          "date": "2024-08-04",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0de8e4345d4d481ca3d11eb127edcae4&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=4Vxcblo1XFo",
+          "summary": null
+        },
+        {
+          "key": "017 08-11-24",
+          "number": "17",
+          "date": "2024-08-11",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s32f052cc291b45618fd852a133254c2c&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sff0acda75d484c719bb1d71c79c611d7&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=N1LobTqeF5U",
+          "summary": null
+        },
+        {
+          "key": "018 08-25-24",
+          "number": "18",
+          "date": "2024-08-25",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sd0974561e9b649418aa05531ce89138c&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=KRggNzraXkE",
+          "summary": null
+        },
+        {
+          "key": "019 09-01-24",
+          "number": "19",
+          "date": "2024-09-01",
+          "title": null,
+          "passage": null,
+          "notesUrl": null,
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s793c960405604c2788685c750024e2db&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=VKIQkLipPo4",
+          "summary": null
+        },
+        {
+          "key": "020 09-08-24",
+          "number": "20",
+          "date": "2024-09-08",
+          "title": "You Can Be Content",
+          "passage": "Phil. 4:10-13",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s7fb64a4fd43b4150b09afb488f865068&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s30c671a5b49c421ea478e0da9c817b90&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=F6hT9bxNWG0",
+          "summary": null
+        },
+        {
+          "key": "021 09-15-24",
+          "number": "21",
+          "date": "2024-09-15",
+          "title": "Cheerful Givers Should Have Cheerful Receivers",
+          "passage": "Phil. 4:14-18",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0d7acf6b7df8434086957dd28bdd418a&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s601f866c1afc45b6bc44aad2450132f7&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=arj0qQMbJBM",
+          "summary": null
+        },
+        {
+          "key": "022 09-22-24",
+          "number": "22",
+          "date": "2024-09-22",
+          "title": "“According to His Riches in Glory …”",
+          "passage": "Phil 4:19-20",
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s81923bf82cae4885b27ca76f15b807bf&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!sc273f012dbfa40048309d40371c0be16&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=GT3AXd2bn1g",
+          "summary": null
+        },
+        {
+          "key": "023 09-29-24",
+          "number": "23",
+          "date": "2024-09-29",
+          "title": null,
+          "passage": null,
+          "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9e751be87af64d2f947d4e1da96a0c2a&cid=8F8F2DB857A1408F",
+          "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s9c4329fd8bb54791bf0fa835e9080a81&cid=8F8F2DB857A1408F",
+          "videoUrl": "https://www.youtube.com/watch?v=ThMwcx2s6cI",
+          "summary": null
+        }
+      ]
+    },
     {
       "id": "james",
       "title": "James",

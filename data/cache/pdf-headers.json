@@ -1,4 +1,520 @@
 {
+  "8F8F2DB857A1408F!s0b98c7cf0e9147ec936a9cf23c02b9b7": {
+    "modifiedTime": "2026-10-18T21:05:21Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s84fc81f027374ff28a32139914566913": {
+    "modifiedTime": "2026-10-25T20:18:48Z",
+    "parser": 2,
+    "title": "There Will Be Judgment!",
+    "passage": "II Thessalonians 1:6-9"
+  },
+  "8F8F2DB857A1408F!s5c0abcecc9d04592b59126f0406d9577": {
+    "modifiedTime": "2026-08-02T19:26:38Z",
+    "parser": 2,
+    "title": "Good Job!",
+    "passage": "I Thessalonians 1"
+  },
+  "8F8F2DB857A1408F!s30b8925e7d70401e933c4c98cc31ebd2": {
+    "modifiedTime": "2026-08-09T19:07:48Z",
+    "parser": 2,
+    "title": "I So Dearly Wish to See You Again",
+    "passage": "I Thessalonians 2"
+  },
+  "8F8F2DB857A1408F!sf9e5b9435ff74bd2802163df2d8f9e67": {
+    "modifiedTime": "2026-08-16T19:50:36Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s2128483d8d654f5ea8af9f3db32ee8ae": {
+    "modifiedTime": "2026-08-23T20:05:24Z",
+    "parser": 2,
+    "title": "”Excel Still More; Great Things Are Coming!”",
+    "passage": "1 Thessalonians 4"
+  },
+  "8F8F2DB857A1408F!s61926f3ae47f4a46806a35eace5653e4": {
+    "modifiedTime": "2026-08-30T19:32:28Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s9305118600e04db68b3b940cdc3a4615": {
+    "modifiedTime": "2025-11-09T21:18:41Z",
+    "parser": 2,
+    "title": "Intro to Galatians",
+    "passage": "Galatians1:1-5"
+  },
+  "8F8F2DB857A1408F!sa89ad9c735494f3e9622cdb90796242c": {
+    "modifiedTime": "2025-11-16T21:45:27Z",
+    "parser": 2,
+    "title": "Be Careful Who You Listen To!",
+    "passage": "Galatians 1:6-10"
+  },
+  "8F8F2DB857A1408F!sf0146a5f7d4240fc8964942f0f6576da": {
+    "modifiedTime": "2025-11-30T21:26:27Z",
+    "parser": 2,
+    "title": "Glory to God for the Change in Paul",
+    "passage": "Gal. 1:18-24"
+  },
+  "8F8F2DB857A1408F!sb5a520691aaa47b8b7e4f008e3c02f26": {
+    "modifiedTime": "2025-12-11T01:01:41Z",
+    "parser": 2,
+    "title": "Salvation Through the Gospel and Nothing Else",
+    "passage": "Galatians 2:1-5"
+  },
+  "8F8F2DB857A1408F!s31c3664cdc0b4f7f8f899b2c0efefe0a": {
+    "modifiedTime": "2025-12-28T21:27:21Z",
+    "parser": 2,
+    "title": "Confirmation of Paul’s Divine Call to Ministry",
+    "passage": "Galatians 2:6-10"
+  },
+  "8F8F2DB857A1408F!s8038a275247e458b93245896dad75cc8": {
+    "modifiedTime": "2026-01-04T21:45:37Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s20bd672a8c2441818f04cbe59aee122c": {
+    "modifiedTime": "2026-01-12T18:38:19Z",
+    "parser": 2,
+    "title": "Justified by Christ Jesus",
+    "passage": "Galatians 2:15-16"
+  },
+  "8F8F2DB857A1408F!sca82e1ea9cf14c088aaa58c6eca25cf8": {
+    "modifiedTime": "2026-01-18T21:21:27Z",
+    "parser": 2,
+    "title": "Did Christ Die Needlessly?",
+    "passage": "Galatians 2:17-21"
+  },
+  "8F8F2DB857A1408F!s3fc8cf3ce36e42b882fc02f260da32a6": {
+    "modifiedTime": "2026-01-25T21:57:14Z",
+    "parser": 2,
+    "title": "“So Faith Comes by Hearing”",
+    "passage": "Galatians 3:1-5"
+  },
+  "8F8F2DB857A1408F!s0d0f237a3402416e93cfc1e07cff4e27": {
+    "modifiedTime": "2026-02-01T21:55:15Z",
+    "parser": 2,
+    "title": "Hearing With Faith",
+    "passage": "Galatians 3:6-9"
+  },
+  "8F8F2DB857A1408F!s9122f91a3aaf407ea47e9081f76c1382": {
+    "modifiedTime": "2026-02-08T22:58:26Z",
+    "parser": 2,
+    "title": "“Christ Redeemed Us From the Curse of the Law”",
+    "passage": "Galatians 3:10-14"
+  },
+  "8F8F2DB857A1408F!s7c09de664ccc4a49862b1e2670a078c2": {
+    "modifiedTime": "2026-02-22T22:35:20Z",
+    "parser": 2,
+    "title": "God’s Unchangeable Promise",
+    "passage": "Galatians 3:15-18"
+  },
+  "8F8F2DB857A1408F!sbb033aa7e6bb4e0699433f57171631bd": {
+    "modifiedTime": "2026-03-01T21:19:00Z",
+    "parser": 2,
+    "title": "“So That the Promise by Faith in Jesus Christ Might be Given",
+    "passage": "Galatians 3:19-22"
+  },
+  "8F8F2DB857A1408F!s78251cdd71dd474caf0f84aa6b463210": {
+    "modifiedTime": "2026-03-08T20:50:27Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Galatians 3:23-29"
+  },
+  "8F8F2DB857A1408F!s28d723e9aa294dce9f4cfb16c1a39e1b": {
+    "modifiedTime": "2026-03-15T21:40:06Z",
+    "parser": 2,
+    "title": "No Longer Children, But Sons",
+    "passage": "Galatians 4:1-7"
+  },
+  "8F8F2DB857A1408F!s1c32bdd58cf7469cb2253667754b0c81": {
+    "modifiedTime": "2026-03-22T19:51:40Z",
+    "parser": 2,
+    "title": "I Fear For You",
+    "passage": "Galatians 4:8-11"
+  },
+  "8F8F2DB857A1408F!sc77410d0237d402eba0d5fe371b53db2": {
+    "modifiedTime": "2026-03-29T20:22:32Z",
+    "parser": 2,
+    "title": "“I Am Perplexed About You”",
+    "passage": "Galatians 4:12-20"
+  },
+  "8F8F2DB857A1408F!s1c427fc3ba904c6ba3a8301df6d4cbe0": {
+    "modifiedTime": "2026-04-12T22:09:02Z",
+    "parser": 2,
+    "title": "Freedom vs. Slavery",
+    "passage": "Galatians 4:21-31"
+  },
+  "8F8F2DB857A1408F!s4d68475474dc4aa68520b15c3bc116c2": {
+    "modifiedTime": "2026-04-23T18:37:09Z",
+    "parser": 2,
+    "title": "“Keep Standing Firm”",
+    "passage": "Galatians 5:1-6"
+  },
+  "8F8F2DB857A1408F!s49962ed685c14d8aa1fc7ad49e9fff46": {
+    "modifiedTime": "2026-04-26T20:29:00Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Galatians 5:7-12"
+  },
+  "8F8F2DB857A1408F!s179594d6babc47dcafc2b6106ea54069": {
+    "modifiedTime": "2026-05-03T19:54:03Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Galatians 5:13-15"
+  },
+  "8F8F2DB857A1408F!s19f608a46fbd46679bd55dda74d2b7f6": {
+    "modifiedTime": "2026-05-18T19:41:08Z",
+    "parser": 2,
+    "title": "Don’t Drink From the Toilet!",
+    "passage": "Galatians 5:16-21"
+  },
+  "8F8F2DB857A1408F!sae6654c907b0431c8c7f356df38d8ed5": {
+    "modifiedTime": "2026-06-01T20:10:25Z",
+    "parser": 2,
+    "title": "The Good Stuff is Evident Too,",
+    "passage": "Galatians 5:22-23"
+  },
+  "8F8F2DB857A1408F!s2a30b2120d5847ab9ead9dc34ae5bbab": {
+    "modifiedTime": "2026-06-01T20:44:18Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Galatians 5:24-26"
+  },
+  "8F8F2DB857A1408F!sb4eca02d52aa4404ace99505973150e1": {
+    "modifiedTime": "2026-06-21T19:24:05Z",
+    "parser": 2,
+    "title": "Restoration is the Goal!",
+    "passage": "Galatians 6:1"
+  },
+  "8F8F2DB857A1408F!s25e44a4aa7a14a42b66ed9e879cac139": {
+    "modifiedTime": "2026-06-28T18:48:48Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Galatians 6:2-5"
+  },
+  "8F8F2DB857A1408F!s38dfce47c30c477398b260909496beda": {
+    "modifiedTime": "2026-07-05T20:21:24Z",
+    "parser": 2,
+    "title": "Do Good",
+    "passage": "Galatians 6:6-10"
+  },
+  "8F8F2DB857A1408F!s51d37649eaa64f37b574e7f0aaab69a8": {
+    "modifiedTime": "2026-07-12T19:12:31Z",
+    "parser": 2,
+    "title": "HEY! PAY ATTENTION!",
+    "passage": "Galatians 6:11-14"
+  },
+  "8F8F2DB857A1408F!sb421cadf251a42729490eb29f43dec7c": {
+    "modifiedTime": "2026-07-19T19:28:11Z",
+    "parser": 2,
+    "title": "Walk by This Rule",
+    "passage": "Galatians 6:14-16"
+  },
+  "8F8F2DB857A1408F!s477e797efa034c978d4fcd671989ecc4": {
+    "modifiedTime": "2026-07-26T18:44:22Z",
+    "parser": 2,
+    "title": "Tell Them What You Told Them",
+    "passage": "Galatians 6:17-18"
+  },
+  "8F8F2DB857A1408F!s7fedcfccbb934a7cbba63f9437a3d0ee": {
+    "modifiedTime": "2025-08-31T19:11:14Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s9140b6610df2475b866c76478748290b": {
+    "modifiedTime": "2025-09-07T20:09:58Z",
+    "parser": 2,
+    "title": "Healthy Churches Have Healthy Leaders",
+    "passage": "Titus 1:5-16"
+  },
+  "8F8F2DB857A1408F!sd74940cdc7a64a8bb7ceccf29c4f66d2": {
+    "modifiedTime": "2025-09-14T20:15:48Z",
+    "parser": 2,
+    "title": "All of the Saints Have Work to Do!",
+    "passage": "Titus 2"
+  },
+  "8F8F2DB857A1408F!s169ccabc0edd4d0b806f617410c4acef": {
+    "modifiedTime": "2025-09-21T20:28:14Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Titus 3:1-11"
+  },
+  "8F8F2DB857A1408F!se079ade0b9c143f880fa49ae13afdc32": {
+    "modifiedTime": "2025-09-28T19:59:21Z",
+    "parser": 2,
+    "title": "Live Fruitful Lives",
+    "passage": "Titus 3:12-15"
+  },
+  "8F8F2DB857A1408F!saaeecf5c83264bd98e092c1ee0016e53": {
+    "modifiedTime": "2025-07-27T22:08:34Z",
+    "parser": 2,
+    "title": "A Short Seminar on Forgiveness",
+    "passage": "Philemon 1:1-7"
+  },
+  "8F8F2DB857A1408F!se7c500bce8174fe694534773fe1b1716": {
+    "modifiedTime": "2025-08-03T19:49:13Z",
+    "parser": 2,
+    "title": "A Short Seminar on Forgiveness",
+    "passage": "Philemon 1:1-7"
+  },
+  "8F8F2DB857A1408F!sed4401553645432a8c5869f290ca6ca2": {
+    "modifiedTime": "2025-08-17T20:43:58Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s9d6d045e28b34124b64b49fcec1eabbf": {
+    "modifiedTime": "2025-08-17T19:51:35Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Philemon 1:17-20"
+  },
+  "8F8F2DB857A1408F!s5027b2dcd61e400da22c4a4258f390ca": {
+    "modifiedTime": "2025-08-24T19:00:42Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s55aae29eb04644cdba59fbd21f3d7d60": {
+    "modifiedTime": "2025-02-02T21:16:10Z",
+    "parser": 2,
+    "title": "Introduction",
+    "passage": "Col. 1:1-2 and 13-20; 2:8-15"
+  },
+  "8F8F2DB857A1408F!s5703270ce2ae4d848d92a83ce6d49bd3": {
+    "modifiedTime": "2025-02-17T00:48:02Z",
+    "parser": 2,
+    "title": "God’s Gift of Salvation in Christ",
+    "passage": "Col. 1:3-8"
+  },
+  "8F8F2DB857A1408F!s82c495de5c2e4174a6c9b32677a5a47a": {
+    "modifiedTime": "2025-02-17T01:08:37Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!sa504cb5b69ea4ee397b65c60dc147690": {
+    "modifiedTime": "2025-02-23T22:57:16Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Col. 1:13-17"
+  },
+  "8F8F2DB857A1408F!sd6d05d96aec441efaeb30da9ca81fe6c": {
+    "modifiedTime": "2025-03-02T21:02:10Z",
+    "parser": 2,
+    "title": "The Preeminence of Christ",
+    "passage": "Col. 1:18-20"
+  },
+  "8F8F2DB857A1408F!s49da7b7258734ef082151496223ab8a3": {
+    "modifiedTime": "2025-03-16T22:26:09Z",
+    "parser": 2,
+    "title": "“If You’ve Been Reconciled, Act Like It!”",
+    "passage": "Col. 1:21-23"
+  },
+  "8F8F2DB857A1408F!s688896ddbc04443984461c6401f24900": {
+    "modifiedTime": "2025-03-16T22:26:44Z",
+    "parser": 2,
+    "title": "Sacrificial Service",
+    "passage": "Col. 1:24-29"
+  },
+  "8F8F2DB857A1408F!s93bba3447e7142deb05afefef0123f73": {
+    "modifiedTime": "2025-03-23T20:05:52Z",
+    "parser": 2,
+    "title": "The Maturity of the Church",
+    "passage": "Col. 2:1-5"
+  },
+  "8F8F2DB857A1408F!sa750e50d95f04bc7bffd82a5977a975e": {
+    "modifiedTime": "2025-03-30T20:06:37Z",
+    "parser": 2,
+    "title": "“Therefore …”",
+    "passage": "Col. 2:6-7; Psalm 1"
+  },
+  "8F8F2DB857A1408F!s3ed9997dc91140de8c95ac1a4ae754aa": {
+    "modifiedTime": "2025-04-13T20:43:24Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Colossians 2:8-10"
+  },
+  "8F8F2DB857A1408F!s5af7ec2a70c8483e94681c8a74eaa2d8": {
+    "modifiedTime": "2025-04-13T21:04:59Z",
+    "parser": 2,
+    "title": "The Work of the Cross",
+    "passage": "Col. 2:11-15"
+  },
+  "8F8F2DB857A1408F!sd3b985969cbf473bbbcbe491ebd762b0": {
+    "modifiedTime": "2025-04-27T20:08:15Z",
+    "parser": 2,
+    "title": "Complete in Christ, Nothing Else",
+    "passage": "Col. 2:16-19; Col. 2:9-15"
+  },
+  "8F8F2DB857A1408F!s38655a3930c1483f91a69f6fe3d32ff1": {
+    "modifiedTime": "2025-05-04T20:12:20Z",
+    "parser": 2,
+    "title": "Not Man’s Flesh, but Christ’s Character",
+    "passage": "Col. 2:20-3:1"
+  },
+  "8F8F2DB857A1408F!s3901cd4b841a4156a02f244537029262": {
+    "modifiedTime": "2025-05-24T21:16:48Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!sd13a87ee16ae45c787da64f890f1d8d8": {
+    "modifiedTime": "2025-05-25T20:24:15Z",
+    "parser": 2,
+    "title": "More Like Christ",
+    "passage": "Col. 3:5-11"
+  },
+  "8F8F2DB857A1408F!secde8cd9517c417e99076b9910fbde8a": {
+    "modifiedTime": "2025-06-22T22:24:58Z",
+    "parser": 2,
+    "title": "Whatever",
+    "passage": "Col. 3:12-17"
+  },
+  "8F8F2DB857A1408F!sc0933cfce2a74f54b522993d9d4124e6": {
+    "modifiedTime": "2025-07-06T19:09:04Z",
+    "parser": 2,
+    "title": "Vacuums or Blowers?",
+    "passage": "Col. 3:22-4:1; Eph. 6:5-9"
+  },
+  "8F8F2DB857A1408F!s4191b16facef4be99d2bcd388699fe89": {
+    "modifiedTime": "2025-07-20T20:02:15Z",
+    "parser": 2,
+    "title": "Pray, Pray, Pray",
+    "passage": "Col. 4:2-6"
+  },
+  "8F8F2DB857A1408F!sb29ad7272f714ff5a8d92db49c3e8fce": {
+    "modifiedTime": "2025-07-20T20:04:38Z",
+    "parser": 2,
+    "title": "Be Noteworthy",
+    "passage": "Colossians 4:7-18"
+  },
+  "8F8F2DB857A1408F!s5e0b18a33283465f87ebbc05009951f7": {
+    "modifiedTime": "2024-04-07T21:37:06Z",
+    "parser": 2,
+    "title": null,
+    "passage": "Acts 16; Philippians 1:1-2"
+  },
+  "8F8F2DB857A1408F!s98a0716c12b64d948215aeb045ca6f0f": {
+    "modifiedTime": "2024-04-14T19:55:51Z",
+    "parser": 2,
+    "title": "“So, How’s That Prayer Life Coming?”",
+    "passage": "Phil. 1:3-11; Eph. 6:18-20"
+  },
+  "8F8F2DB857A1408F!scacd153ae999475d904b49b9073ec9e6": {
+    "modifiedTime": "2024-04-21T19:50:39Z",
+    "parser": 2,
+    "title": "We Must Be Proclaimers of Christ!",
+    "passage": "Philippians 1:12-18; Col. 1:28-29; I Peter 2:9"
+  },
+  "8F8F2DB857A1408F!sf15f5eef7d5c4e2a99c6ea2243d05f29": {
+    "modifiedTime": "2024-04-28T20:04:55Z",
+    "parser": 2,
+    "title": "“As Soon As You Get Your Chores Done!”",
+    "passage": "Phil. 1:19-26"
+  },
+  "8F8F2DB857A1408F!s874b1679db814b3390f22b23ecd0db8f": {
+    "modifiedTime": "2024-05-04T23:19:08Z",
+    "parser": 2,
+    "title": "In This Life We Must Strive Together and Suffer",
+    "passage": "Phil. 1:27-30; I John 3:1-3"
+  },
+  "8F8F2DB857A1408F!s8adf968376b14c3bb0a5454ab90fc5b8": {
+    "modifiedTime": "2024-05-13T18:14:11Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s0695a528036b4bc39985f69c916e3a69": {
+    "modifiedTime": "2024-05-26T21:21:58Z",
+    "parser": 2,
+    "title": "To Honor a Hero, Be a Hero",
+    "passage": "Phil. 2:1-18"
+  },
+  "8F8F2DB857A1408F!s4d433b3664ae4b89ac6c9f5a527196e1": {
+    "modifiedTime": "2024-06-09T19:13:41Z",
+    "parser": 2,
+    "title": "Christ’s Attitude Changed Everything",
+    "passage": "Phil. 2:5-11; I John 3:16"
+  },
+  "8F8F2DB857A1408F!s35b2ca6147824cf594c3f80e645334f3": {
+    "modifiedTime": "2024-06-16T18:49:24Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!se44ed2fe44da46ae9fbc570b2170a9f1": {
+    "modifiedTime": "2024-06-23T18:58:00Z",
+    "parser": 2,
+    "title": "Appearance Matters!",
+    "passage": "Phil. 2:14-18"
+  },
+  "8F8F2DB857A1408F!s6cb7b5dadb7b462695257b8ccab79454": {
+    "modifiedTime": "2024-06-30T20:55:00Z",
+    "parser": 2,
+    "title": "Love and Empathy in the Service of One Another",
+    "passage": "Phil. 2:19-30"
+  },
+  "8F8F2DB857A1408F!sa2459562185d4c55bc3b7729d9f52123": {
+    "modifiedTime": "2024-07-07T18:18:28Z",
+    "parser": 2,
+    "title": "“Rejoice in the Lord, Not in You!”",
+    "passage": "Phil. 3:1-11; I Kings 18:20-46"
+  },
+  "8F8F2DB857A1408F!sd6044fca6c0946a5920901a985d412fa": {
+    "modifiedTime": "2024-07-14T18:53:08Z",
+    "parser": 2,
+    "title": "The Sprint Towards Christlikeness",
+    "passage": "Phil. 3:12-16"
+  },
+  "8F8F2DB857A1408F!se6126a715f7647cf8f83f4140dd2cef0": {
+    "modifiedTime": "2024-07-21T18:42:34Z",
+    "parser": 2,
+    "title": "“There’s Not Just a Sprint, But Also a Walk”",
+    "passage": "Phil. 3:17-19"
+  },
+  "8F8F2DB857A1408F!sa868d19a26bb4e718c3c4dc281ce550c": {
+    "modifiedTime": "2024-08-11T22:29:21Z",
+    "parser": 2,
+    "title": "“So … Where You From?",
+    "passage": "Philippians 3:18-21"
+  },
+  "8F8F2DB857A1408F!s32f052cc291b45618fd852a133254c2c": {
+    "modifiedTime": "2024-08-11T21:59:07Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
+  "8F8F2DB857A1408F!s7fb64a4fd43b4150b09afb488f865068": {
+    "modifiedTime": "2024-09-29T19:49:14Z",
+    "parser": 2,
+    "title": "You Can Be Content",
+    "passage": "Phil. 4:10-13"
+  },
+  "8F8F2DB857A1408F!s0d7acf6b7df8434086957dd28bdd418a": {
+    "modifiedTime": "2024-09-29T19:49:47Z",
+    "parser": 2,
+    "title": "Cheerful Givers Should Have Cheerful Receivers",
+    "passage": "Phil. 4:14-18"
+  },
+  "8F8F2DB857A1408F!s81923bf82cae4885b27ca76f15b807bf": {
+    "modifiedTime": "2024-09-29T19:50:19Z",
+    "parser": 2,
+    "title": "“According to His Riches in Glory …”",
+    "passage": "Phil 4:19-20"
+  },
+  "8F8F2DB857A1408F!s9e751be87af64d2f947d4e1da96a0c2a": {
+    "modifiedTime": "2024-09-29T21:00:21Z",
+    "parser": 2,
+    "title": null,
+    "passage": null
+  },
   "184SPvO2F023ILiUXgrTLntFtE2bnqias": {
     "modifiedTime": "2022-12-18T22:38:31.843Z",
     "parser": 2,
