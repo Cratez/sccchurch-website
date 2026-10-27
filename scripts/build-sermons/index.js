@@ -1,10 +1,11 @@
-// Builds data/sermons.json from YouTube and Google Drive. Run with: npm run sermons
+// Builds data/sermons.json from YouTube, Google Drive, and OneDrive. Run with: npm run sermons
 // Needs the GOOGLE_API_KEY environment variable (see "Sermon data" in README.md).
 // If any source fails, nothing is written, so the site keeps its last good data.
 const fs = require('fs');
 const path = require('path');
 const { listStreams } = require('./youtube');
 const { folderId, listFolder, download } = require('./drive');
+const { isOneDriveLink, oneDrive, downloadUrl } = require('./onedrive');
 const { firstPageText } = require('./pdf');
 const { assemble, parseFileName, parseNotesHeader, HEADER_PARSER_VERSION } = require('./build');
 const { validateSermons } = require('./validate');
@@ -33,8 +34,19 @@ async function run({ key, fetchImpl = fetch, rootDir = path.resolve(__dirname, '
   const warnings = [];
 
   const streams = await listStreams(key, fetchImpl);
+  // Each series folder is either a Google Drive folder or a subfolder of a OneDrive share.
   const folders = {};
-  for (const s of config.series) folders[s.id] = await listFolder(folderId(s.folder), key, fetchImpl, s.title);
+  const folderUrls = {};
+  const od = oneDrive(fetchImpl);
+  for (const s of config.series) {
+    if (isOneDriveLink(s.folder)) {
+      const listed = await od.listFolder(s.folder, s.subfolder, s.title);
+      folders[s.id] = listed.files;
+      folderUrls[s.id] = listed.folderUrl;
+    } else {
+      folders[s.id] = await listFolder(folderId(s.folder), key, fetchImpl, s.title);
+    }
+  }
 
   // Read titles/passages from notes PDFs that are new or changed since the last run.
   const newCache = {};
@@ -49,7 +61,8 @@ async function run({ key, fetchImpl = fetch, rootDir = path.resolve(__dirname, '
       }
       let header = { title: null, passage: null };
       try {
-        header = parseNotesHeader(await firstPageText(await download(f.id, key, fetchImpl)));
+        const pdf = f.downloadUrl ? await downloadUrl(f.downloadUrl, fetchImpl) : await download(f.id, key, fetchImpl);
+        header = parseNotesHeader(await firstPageText(pdf));
       } catch (err) {
         warnings.push(`Couldn't read "${f.name}" in ${s.title}: ${err.message}`);
       }
@@ -57,7 +70,7 @@ async function run({ key, fetchImpl = fetch, rootDir = path.resolve(__dirname, '
     }
   }
 
-  const built = assemble({ config, streams, folders, headers: newCache, videoNotes });
+  const built = assemble({ config, streams, folders, folderUrls, headers: newCache, videoNotes });
   warnings.push(...built.warnings);
 
   // Keep the old timestamp when nothing else changed, so the daily run doesn't commit for nothing.

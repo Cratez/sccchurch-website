@@ -1,4 +1,4 @@
-# Rebuilds data/sermons.json from YouTube and Google Drive (see "Sermon data" in README.md)
+# Rebuilds data/sermons.json from YouTube, Google Drive, and OneDrive (see "Sermon data" in README.md)
 # and commits it when something changed. Runs daily, or on demand from the Actions tab.
 name: Update sermon data
 

@@ -1,11 +1,12 @@
 /**
- * FEATURE: Sermon data job, full run. Calls the YouTube and Drive APIs (faked here), reads PDF
- *          headers with caching, validates, and writes data/sermons.json without ever leaving
- *          half-written data behind.
- * COVERS:  scripts/build-sermons/index.js, youtube.js, drive.js, pdf.js
+ * FEATURE: Sermon data job, full run. Calls the YouTube, Google Drive, and OneDrive APIs (faked
+ *          here), reads PDF headers with caching, validates, and writes data/sermons.json without
+ *          ever leaving half-written data behind.
+ * COVERS:  scripts/build-sermons/index.js, youtube.js, drive.js, onedrive.js, pdf.js
  * WHY:     The job runs unattended on GitHub every day. A failure must leave the site's data
- *          untouched, and unchanged data must not create a new commit.
- * UPDATE WHEN: the APIs used, the cache format, or the failure policy change.
+ *          untouched, and unchanged data must not create a new commit. OneDrive links must be ones
+ *          a signed-out visitor can open (the API's own links ask visitors to sign in).
+ * UPDATE WHEN: the APIs used, the OneDrive link format, the cache format, or the failure policy change.
  * REMOVE WHEN: the sermon data job is removed.
  */
 const fs = require('fs');
@@ -24,14 +25,40 @@ const SERIES = {
   series: [{ id: 'james', title: 'James', folder: 'https://drive.google.com/drive/folders/JAMES', current: false, summary: null, overrides: {} }],
 };
 
-// A fake Google API. Records every URL requested; `fail` makes a matching URL return 403.
+const SHARE = 'https://1drv.ms/f/c/abc/SHARE?e=x';
+const pdfResponse = () => ({ ok: true, status: 200, arrayBuffer: async () => PDF.buffer.slice(PDF.byteOffset, PDF.byteOffset + PDF.length) });
+
+// A fake Google and OneDrive API. Records every URL requested (and the OneDrive auth headers);
+// `fail` makes a matching URL return 403.
 function fakeGoogle({ fail } = {}) {
   const calls = [];
+  const authHeaders = [];
   const json = (body, status = 200) => ({ ok: status < 400, status, statusText: '', json: async () => body });
-  const fetchImpl = async (url) => {
+  const fetchImpl = async (url, opts = {}) => {
     calls.push(url);
     if (fail && url.includes(fail)) return json({ error: { message: 'The caller does not have permission' } }, 403);
     const u = new URL(url);
+    if (u.hostname === 'api-badgerp.svc.ms') return json({ token: 'GUEST', authScheme: 'Badger' });
+    if (u.hostname === 'my.microsoftpersonalcontent.com') {
+      authHeaders.push(opts.headers && opts.headers.Authorization);
+      if (u.pathname.includes('/shares/')) return json({ id: 'ROOT', name: 'SCCC Sermons', parentReference: { driveId: 'CID' } });
+      if (u.pathname.endsWith('/items/ROOT/children')) {
+        // Two pages, to check "next page" links are followed.
+        return u.searchParams.get('page')
+          ? json({ value: [{ id: 'TITUS', name: 'Titus', folder: { childCount: 2 } }] })
+          : json({ value: [{ id: 'Y2025', name: '2025', folder: { childCount: 9 } }],
+            '@odata.nextLink': 'https://my.microsoftpersonalcontent.com/_api/v2.0/drives/CID/items/ROOT/children?page=2' });
+      }
+      if (u.pathname.endsWith('/items/TITUS/children')) {
+        return json({ value: [
+          { id: 'CID!t1pdf', name: '001 01-09-22.PDF', file: { mimeType: 'application/pdf' }, lastModifiedDateTime: '2022-01-09T00:00:00Z',
+            '@content.downloadUrl': 'https://download.example/t1pdf' },
+          { id: 'CID!t1mp3', name: '001 01-09-22 .mp3', file: { mimeType: 'audio/mpeg' }, lastModifiedDateTime: '2022-01-09T00:00:00Z',
+            '@content.downloadUrl': 'https://download.example/t1mp3' },
+        ] });
+      }
+    }
+    if (url === 'https://download.example/t1pdf') return pdfResponse();
     if (u.pathname.endsWith('/playlistItems')) {
       return u.searchParams.get('pageToken')
         ? json({ items: [{ contentDetails: { videoId: 'vid2' } }, { contentDetails: { videoId: 'upcoming' } }] })
@@ -55,20 +82,27 @@ function fakeGoogle({ fail } = {}) {
         { id: 'doc', name: 'Series outline', mimeType: 'application/vnd.google-apps.document', modifiedTime: '2022-01-01T00:00:00Z' },
       ] });
     }
-    if (u.pathname === '/drive/v3/files/pdf1') {
-      return { ok: true, status: 200, arrayBuffer: async () => PDF.buffer.slice(PDF.byteOffset, PDF.byteOffset + PDF.length) };
-    }
+    if (u.pathname === '/drive/v3/files/pdf1') return pdfResponse();
     return json({ error: { message: `unexpected ${url}` } }, 404);
   };
-  return { fetchImpl, calls };
+  return { fetchImpl, calls, authHeaders };
 }
 
-function tempSite() {
+function tempSite(series = SERIES) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'sermons-'));
   fs.mkdirSync(path.join(root, 'data'));
-  fs.writeFileSync(path.join(root, 'data', 'series.json'), JSON.stringify(SERIES));
+  fs.writeFileSync(path.join(root, 'data', 'series.json'), JSON.stringify(series));
   return root;
 }
+const withTitus = (subfolder = 'Titus') => ({
+  ...SERIES,
+  series: [...SERIES.series, { id: 'titus', title: 'Titus', folder: SHARE, subfolder, current: true, summary: null, overrides: {} }],
+});
+// What a visitor's link points at: the share it opens and the item it shows.
+const opened = (link) => {
+  const u = new URL(link);
+  return { host: u.host, share: Buffer.from(u.searchParams.get('redeem'), 'base64').toString(), item: u.searchParams.get('id') };
+};
 const readOut = (root) => JSON.parse(fs.readFileSync(path.join(root, 'data', 'sermons.json'), 'utf8'));
 const quiet = () => {};
 
@@ -153,4 +187,47 @@ test('a private folder error says which series and what to check', async () => {
 
 test('a missing API key gives a clear error', async () => {
   await expect(run({ key: '', rootDir: tempSite(), log: quiet })).rejects.toThrow(/GOOGLE_API_KEY is not set/);
+});
+
+test.describe('OneDrive series', () => {
+  test('are read with a guest token, with links a signed-out visitor can open', async () => {
+    const root = tempSite(withTitus());
+    const fake = fakeGoogle();
+    await run({ key: 'k', fetchImpl: fake.fetchImpl, rootDir: root, log: quiet });
+    const data = readOut(root);
+    const titus = data.series.find((s) => s.id === 'titus');
+
+    expect(validateSermons(data)).toEqual([]);
+    expect(fake.authHeaders.every((h) => h === 'Badger GUEST')).toBe(true);
+    // Notes PDF read for its title; file name quirks (".PDF", a space before ".mp3") still pair up.
+    expect(titus.sermons).toHaveLength(1);
+    expect(titus.sermons[0]).toMatchObject({ title: 'You Can Have Joy No Matter What', passage: 'James 1:1-4' });
+    // Links go through the share (so no sign-in is needed) to the right file or folder.
+    expect(opened(titus.sermons[0].notesUrl)).toEqual({ host: 'onedrive.live.com', share: SHARE, item: 'CID!t1pdf' });
+    expect(opened(titus.sermons[0].audioUrl)).toEqual({ host: 'onedrive.live.com', share: SHARE, item: 'CID!t1mp3' });
+    expect(opened(titus.folderUrl)).toEqual({ host: 'onedrive.live.com', share: SHARE, item: 'TITUS' });
+    // Drive series still work alongside.
+    expect(data.series.find((s) => s.id === 'james').sermons[0].notesUrl).toBe('https://drive.google.com/file/d/pdf1/view');
+    // The guest token is never written anywhere.
+    expect(fs.readFileSync(path.join(root, 'data', 'sermons.json'), 'utf8')).not.toContain('GUEST');
+  });
+
+  test('a renamed subfolder fails the run with a clear message and leaves data untouched', async () => {
+    const root = tempSite(withTitus('Tituss'));
+    const out = path.join(root, 'data', 'sermons.json');
+    fs.writeFileSync(out, 'previous data');
+    await expect(run({ key: 'k', fetchImpl: fakeGoogle().fetchImpl, rootDir: root, log: quiet }))
+      .rejects.toThrow(/folder "Tituss" for Titus/);
+    expect(fs.readFileSync(out, 'utf8')).toBe('previous data');
+  });
+
+  for (const [name, fail, message] of [
+    ['the share is no longer public', '/shares/', /Titus.*Anyone with the link can view/],
+    ['Microsoft refuses the guest token', 'api-badgerp', /guest token/],
+  ]) {
+    test(`when ${name}, the run fails with a clear message`, async () => {
+      await expect(run({ key: 'k', fetchImpl: fakeGoogle({ fail }).fetchImpl, rootDir: tempSite(withTitus()), log: quiet }))
+        .rejects.toThrow(message);
+    });
+  }
 });

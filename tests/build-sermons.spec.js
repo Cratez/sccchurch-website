@@ -74,7 +74,7 @@ test.describe('groupFiles', () => {
     const { sermons, warnings } = groupFiles([f('a', '008 02-27 -22.mp3'), f('b', '008 02-27-22.pdf')], 'James');
     expect(sermons.size).toBe(1);
     expect(sermons.get('008 02-27-22')).toMatchObject({ audioFile: { id: 'a' }, notesFile: { id: 'b' } });
-    expect(warnings).toEqual(['Read "008 02-27 -22.mp3" in James as "008 02-27-22". Consider renaming it in Drive.']);
+    expect(warnings).toEqual(['Read "008 02-27 -22.mp3" in James as "008 02-27-22". Consider renaming it.']);
   });
 
   test('keeps the most recently changed duplicate and warns', () => {

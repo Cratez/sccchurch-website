@@ -26,7 +26,11 @@ test('data/series.json is well-formed', () => {
   for (const s of config.series) {
     expect(s.id, 'ids are lowercase words joined by dashes').toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
     expect(typeof s.title).toBe('string');
-    expect(s.folder, `${s.title} needs a Drive folder link`).toMatch(/^https:\/\/drive\.google\.com\/drive\/folders\/[\w-]+/);
+    if (/^https:\/\/1drv\.ms\//.test(s.folder)) {
+      expect(typeof s.subfolder, `${s.title} needs the name of its OneDrive "subfolder"`).toBe('string');
+    } else {
+      expect(s.folder, `${s.title} needs a Drive folder or OneDrive share link`).toMatch(/^https:\/\/drive\.google\.com\/drive\/folders\/[\w-]+/);
+    }
     if ('current' in s) expect(typeof s.current).toBe('boolean');
     if (s.overrides) {
       for (const key of Object.keys(s.overrides)) expect(key, 'override keys are file names without extension').toMatch(/^\d+(\.\d+)? \d{2}-\d{2}-\d{2}$/);

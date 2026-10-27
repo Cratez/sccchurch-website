@@ -103,7 +103,7 @@ function seriesCard(s) {
 
   const body = el('div', 'series-body');
   if (s.summary) body.append(el('p', 'summary', s.summary));
-  body.append(link('Open the Drive folder ↗', s.folderUrl, 'folder'));
+  body.append(link('Open the folder ↗', s.folderUrl, 'folder'));
   const list = el('ol', 'sermon-list');
   for (const m of s.sermons) {
     const row = el('li');

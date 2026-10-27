@@ -1,4 +1,4 @@
-// Pure functions that turn raw YouTube/Drive data into sermons.json. No network access here,
+// Pure functions that turn raw YouTube/Drive/OneDrive data into sermons.json. No network access here,
 // so everything can be tested with plain inputs. The output shape is checked by validate.js.
 const { MAX_RECENT, DATA_VERSION } = require('./validate');
 
@@ -12,6 +12,8 @@ const AUDIO = new Set(['mp3', 'm4a', 'wav']);
 const pacificDay = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' });
 
 const driveFileUrl = (id) => `https://drive.google.com/file/d/${id}/view`;
+// OneDrive files come with their own link for visitors (see onedrive.js); Drive files don't.
+const fileUrl = (f) => f.url || driveFileUrl(f.id);
 const videoUrl = (id) => `https://www.youtube.com/watch?v=${id}`;
 const baseName = (name) => name.replace(MEDIA, '').replace(/\s+/g, ' ').trim();
 const kindOf = (name) => (AUDIO.has(MEDIA.exec(name)[1].toLowerCase()) ? 'audio' : 'notes');
@@ -52,7 +54,7 @@ function groupFiles(files, seriesTitle) {
       warnings.push(`Skipped "${f.name}" in ${seriesTitle}: not an audio or PDF file`);
       continue;
     }
-    if (p.typo) warnings.push(`Read "${f.name}" in ${seriesTitle} as "${p.key}". Consider renaming it in Drive.`);
+    if (p.typo) warnings.push(`Read "${f.name}" in ${seriesTitle} as "${p.key}". Consider renaming it.`);
     if (!sermons.has(p.key)) sermons.set(p.key, { key: p.key, number: p.number, date: p.date });
     const s = sermons.get(p.key);
     const slot = p.kind === 'audio' ? 'audioFile' : 'notesFile';
@@ -105,11 +107,12 @@ const startTime = (v) => v.actualStartTime || v.publishedAt || '';
 // Builds the sermons.json object (without generatedAt) and returns any warnings.
 //   config:  parsed data/series.json
 //   streams: [{ videoId, title, publishedAt, actualStartTime, live }]
-//   folders: { [seriesId]: [{ id, name, mimeType, modifiedTime }] }
+//   folders: { [seriesId]: [{ id, name, mimeType, modifiedTime, url? }] }
+//   folderUrls: { [seriesId]: link to show for the folder }, when it differs from the configured one
 //   headers: { [pdfFileId]: { title, passage } }
 //   videoNotes: parsed data/video-notes.json, { [videoId]: { title, summary } } written from
 //               auto-captions by the summarize-services skill. A notes-PDF title still wins.
-function assemble({ config, streams, folders, headers, videoNotes = {} }) {
+function assemble({ config, streams, folders, folderUrls = {}, headers, videoNotes = {} }) {
   const warnings = [];
   const hidden = new Set(config.hiddenVideos || []);
   const videos = streams
@@ -137,8 +140,8 @@ function assemble({ config, streams, folders, headers, videoNotes = {} }) {
         // Undated extras ("Intro to Author") are titled by their file name.
         title: o.title ?? header.title ?? notes.title ?? (s.date ? null : s.key),
         passage: o.passage ?? header.passage ?? null,
-        notesUrl: s.notesFile ? driveFileUrl(s.notesFile.id) : null,
-        audioUrl: s.audioFile ? driveFileUrl(s.audioFile.id) : null,
+        notesUrl: s.notesFile ? fileUrl(s.notesFile) : null,
+        audioUrl: s.audioFile ? fileUrl(s.audioFile) : null,
         videoUrl: video ? video.url : null,
         summary: o.summary ?? notes.summary ?? null,
       };
@@ -153,7 +156,7 @@ function assemble({ config, streams, folders, headers, videoNotes = {} }) {
       id: cfg.id,
       title: cfg.title,
       current: !!cfg.current,
-      folderUrl: cfg.folder,
+      folderUrl: folderUrls[cfg.id] || cfg.folder,
       summary: cfg.summary ?? null,
       firstDate: dated.length ? dated[0].date : null,
       lastDate: dated.length ? dated[dated.length - 1].date : null,

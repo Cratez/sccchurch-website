@@ -32,7 +32,7 @@ sccchurch-website/
 │   ├── video-notes.json    Service titles/summaries written from YouTube captions (editable)
 │   │                       (copied into sermons.json by scripts/video-notes/apply.js)
 │   └── cache/              Generated: titles already read from notes PDFs
-├── scripts/build-sermons/  The sermon data job (reads YouTube and Google Drive)
+├── scripts/build-sermons/  The sermon data job (reads YouTube, Google Drive, and OneDrive)
 ├── scripts/video-notes/    Downloads service captions for the summarize-services skill
 ├── scripts/images/         build-photos.js: makes the website photos from the originals (see "Photos")
 ├── .claude/skills/         Claude Code skills for this repo (summarize-services)
@@ -164,12 +164,12 @@ The home page embeds the channel's **uploads playlist** (`UU1Svz8uLW3raCDDP9I1eg
 The Sermons page reads `data/sermons.json`. A GitHub job ("Update sermon data", `.github/workflows/update-sermons.yml`) rebuilds that file **every day at about 3 pm Pacific**. The job:
 
 1. Lists the channel's past **live streams** on YouTube (where each Sunday service is saved; titles like `SCCC 10/18/2026`).
-2. Lists the files in each series' Google Drive folder from `data/series.json`.
+2. Lists the files in each series' folder from `data/series.json`. Newer series are in the church's shared OneDrive folder; older ones (James, Jude, First and Second Peter) are in Google Drive.
 3. Reads the **title and passage** from the top of each new notes PDF (only once per file; results are cached in `data/cache/`).
 4. Matches each sermon to the stream from the **same date**, and builds the 6 newest services plus every series.
 5. Commits `data/sermons.json` if anything changed. GitHub Pages then publishes it.
 
-If anything goes wrong (a folder made private, a bad key, Google down), the job changes nothing. The site keeps showing the last good data, and GitHub emails the repo owner that the run failed.
+If anything goes wrong (a folder made private or renamed, a bad key, Google or Microsoft down), the job changes nothing. The site keeps showing the last good data, and GitHub emails the repo owner that the run failed.
 
 ### One-time setup
 
@@ -183,6 +183,16 @@ The job needs a free Google API key.
 
 The key only reads public information, but still never put it in a file in this repo; it belongs only in the GitHub secret.
 
+OneDrive needs no key or setup (see the next section).
+
+### OneDrive
+
+The church's sermons since 2024 are in a OneDrive folder ("SCCC Sermons") shared as **"Anyone with the link can view"**. Each series is a subfolder of it.
+
+Microsoft's official API won't read a shared folder without signing in, even when it's public. So the job does what the OneDrive website does when a signed-out visitor opens the link: it asks Microsoft for a short-lived guest pass and reads the folder with that. This isn't an official, documented feature, so Microsoft could change it someday. If that happens, the daily job fails with a message mentioning a "guest token", the site keeps showing its last good data, and GitHub emails the repo owner. The fix then is code work (in `scripts/build-sermons/onedrive.js`), or moving the files back to Google Drive.
+
+The Notes, Audio, and folder links on the Sermons page open in OneDrive's own viewer, with no sign-in needed. `npm run test:live` checks that this still works.
+
 ### Adding a sermon series
 
 Add an entry to `data/series.json`:
@@ -191,7 +201,8 @@ Add an entry to `data/series.json`:
 {
   "id": "acts",
   "title": "Acts",
-  "folder": "https://drive.google.com/drive/folders/<folder id>",
+  "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+  "subfolder": "Acts",
   "current": true,
   "summary": null,
   "overrides": {}
@@ -199,14 +210,14 @@ Add an entry to `data/series.json`:
 ```
 
 - **`id`**: short lowercase name, words joined with dashes. Used in links like `sermons.html#series-acts`.
-- **`folder`**: the series' Google Drive folder. It must be shared as **"Anyone with the link can view"**.
-- **`current`**: `true` for the series being preached now. It's listed first, labeled "Current series", and its sermons show up on the recent service cards. Set it back to `false` when the series ends.
+- **`folder`**: where the files are. For a series in the shared OneDrive folder, use the share link above (the same one for every series) and put the subfolder's name in **`subfolder`**, exactly as it appears in OneDrive (capitals don't matter). If the subfolder is renamed in OneDrive, update `subfolder` too, or the daily job stops with an error. For a series in Google Drive, use the folder's link (`https://drive.google.com/drive/folders/<folder id>`) and leave out `subfolder`. Either way the folder must be shared as **"Anyone with the link can view"**.
+- **`current`**: `true` for the series being preached now. It's listed first, labeled "Current series", and its sermons show up on the recent service cards. Set it back to `false` when the series ends (and set it on the new series).
 - **`summary`**: optional short description shown on the series card.
 - **`overrides`**: optional fixes for a single sermon, keyed by its file name without the extension, e.g. `"003 01-23-22": { "title": "Correct title", "passage": "James 1:9-11" }`.
 
 To hide a specific video from the Sermons page (e.g. a test stream), add its YouTube video ID to `"hiddenVideos"` at the top of the file.
 
-### File naming in Drive
+### File naming
 
 The job only understands files named **`NNN MM-DD-YY`** plus the extension, using the date of the sermon:
 
@@ -216,6 +227,7 @@ The job only understands files named **`NNN MM-DD-YY`** plus the extension, usin
 - One sermon spread over several Sundays: either a letter after the number (`032 A 12-04-22.pdf`, `032 B 12-11-22.pdf`, shown as #32A and #32B) or a part after the date (`024 07-24-22 (part 1).pdf`, shown as #24 (part 1)).
 - Audio or PDF files with no number and date (e.g. `Intro to Author.pdf` and `Intro to Author.mp3`) are listed at the top of the series, titled by their file name.
 - Small typos in the date (`05-29=22`, `02-27 -22`, extra spaces) are still understood, and the job suggests renaming those files in its warnings.
+- A wrong date can't be detected: an audio file named `019 04-19-25.mp3` next to `019 04-19-26.pdf` shows up as two separate sermons. Rename the file to fix it.
 
 To fix a title with `overrides`, use the sermon's `key` exactly as it appears in `data/sermons.json` (e.g. `"032A 12-04-22"` or `"024 07-24-22 (part 1)"`).
 
@@ -242,7 +254,7 @@ GOOGLE_API_KEY=your-key npm run sermons
 
 ### Service titles from captions
 
-YouTube names the streams only by date (`SCCC 10/18/2026`), so a recent service that doesn't match a sermon in Drive would just say "Sunday service". To give those a real title and a short summary, there's a Claude Code skill that reads YouTube's **automatic captions**:
+YouTube names the streams only by date (`SCCC 10/18/2026`), so a recent service that doesn't match a sermon in the sermon folders would just say "Sunday service". To give those a real title and a short summary, there's a Claude Code skill that reads YouTube's **automatic captions**:
 
 1. Open this repo in Claude Code and run `/summarize-services` (or ask Claude to "summarize the recent services").
 2. It downloads the captions for recent services that don't have notes yet (with [yt-dlp](https://github.com/yt-dlp/yt-dlp), on your computer), reads each transcript, saves a title and a 1-2 sentence summary to `data/video-notes.json`, and copies them into `data/sermons.json` (`node scripts/video-notes/apply.js`), so the page shows them right away.
@@ -361,12 +373,13 @@ Later DNS changes all happen in Cloudflare. See [GitHub's custom domain guide](h
 - Add the church's street address (the original site only linked to Google Maps).
 - Possible typos in the official Statement of Faith PDF, left unchanged pending leadership review: "originalwritings" (missing hyphen), "plenary" (possibly "plenarily"), "It's mission" (possibly "Its"), and "the justified and the unjust" (possibly "the just and the unjust"). Fixed already: "Deuteronomy 64" is now 6:4 and "1 Corinthians 5:18-21" is now 2 Corinthians 5:18-21.
 - **Sermon data job, first run:** after adding the `GOOGLE_API_KEY` secret and running "Update sermon data", confirm that the bot's commit also triggers a GitHub Pages deploy ("pages build and deployment" in the Actions tab). If it doesn't, switch Pages to deploy with GitHub Actions or add a deploy step to the workflow, and update this README.
+- **Other OneDrive folders:** the shared "SCCC Sermons" folder also has `2024`, `2025`, and `2026` (one-off services named like `SCCC 10-06-24.pdf`), `Marriage` (2016 audio only), and `Correspondence`. They aren't on the Sermons page, because the job only understands series files named `NNN MM-DD-YY`.
 - **Gospel of John series:** its Drive folder (`0B-mo4R1ry-JBakM1N3ZYUFAwams`) is private, so it isn't on the Sermons page. Make it "Anyone with the link can view" and add it to `data/series.json`. (Note: on the old Wix "Sermon Lists" page, each series' link pointed at the *next* series' folder. `data/series.json` uses the correct folders.)
 - **Sermon summaries:** recent services can get summaries from their captions (see "Service titles from captions"). Older series sermons and the series themselves only have summaries if hand-written (series `summary` and per-sermon `overrides` in `data/series.json`).
 
 ## Privacy and security
 
-Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The summarize-services skill sends service transcripts to Claude (through your Claude Code session) to write titles and summaries; it's told to leave out names and private details from announcements and prayer requests. The site makes requests to these outside services: Google Fonts (fonts only), YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive. The light/dark choice from the footer toggle is saved only in the visitor's own browser (`localStorage`); it is never sent anywhere or seen by the church. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
+Everything in this repository is public. Never commit passwords, API keys, private member information, or anything confidential. The summarize-services skill sends service transcripts to Claude (through your Claude Code session) to write titles and summaries; it's told to leave out names and private details from announcements and prayer requests. The site makes requests to these outside services: Google Fonts (fonts only), YouTube (`youtube.com`, and video thumbnails from `i.ytimg.com`), and bible-api.com. The Sermons page links to files on Google Drive and OneDrive. The light/dark choice from the footer toggle is saved only in the visitor's own browser (`localStorage`); it is never sent anywhere or seen by the church. The sermon data job uses a Google API key that is stored only as a GitHub secret (`GOOGLE_API_KEY`).
 
 ## License
 

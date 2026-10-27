@@ -2,6 +2,69 @@
   "hiddenVideos": [],
   "series": [
     {
+      "id": "second-thessalonians",
+      "title": "Second Thessalonians",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "Second Thessalonians",
+      "current": true,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "first-thessalonians",
+      "title": "First Thessalonians",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "First Thessalonians",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "galatians",
+      "title": "Galatians",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "Galatians 2025",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "titus",
+      "title": "Titus",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "Titus",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "philemon",
+      "title": "Philemon",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "Philemon",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "colossians",
+      "title": "Colossians",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "Colossians",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
+      "id": "philippians",
+      "title": "Philippians",
+      "folder": "https://1drv.ms/f/c/8f8f2db857a1408f/IgCi1xIXr0hNSLHJ9jo3UWHRAZqC4eymS84XIlTIljsbrc4?e=0g0Iub",
+      "subfolder": "Philippians",
+      "current": false,
+      "summary": null,
+      "overrides": {}
+    },
+    {
       "id": "james",
       "title": "James",
       "folder": "https://drive.google.com/drive/folders/10qhMfF2NgGNnmGcpaVqIX7nIDKNqtx5l",
