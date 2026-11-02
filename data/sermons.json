@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-27T03:26:23.489Z",
+  "generatedAt": "2026-11-02T01:10:08.087Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
+    {
+      "videoId": "YCrE3nEzLB0",
+      "url": "https://www.youtube.com/watch?v=YCrE3nEzLB0",
+      "thumbnail": "https://i.ytimg.com/vi/YCrE3nEzLB0/hqdefault.jpg",
+      "date": "2026-11-01",
+      "youtubeTitle": "SCCC 11/01/2026 - Celebration of Life for Andrew \"Andy\" Thornton",
+      "title": null,
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
     {
       "videoId": "EXPudWk7ATA",
       "url": "https://www.youtube.com/watch?v=EXPudWk7ATA",
@@ -69,17 +80,6 @@
       "thumbnail": "https://i.ytimg.com/vi/C6925R5FDTM/hqdefault.jpg",
       "date": "2026-09-27",
       "youtubeTitle": "SCCC 09/27/2026",
-      "title": null,
-      "live": false,
-      "summary": null,
-      "sermon": null
-    },
-    {
-      "videoId": "CXhfA9HoQsU",
-      "url": "https://www.youtube.com/watch?v=CXhfA9HoQsU",
-      "thumbnail": "https://i.ytimg.com/vi/CXhfA9HoQsU/hqdefault.jpg",
-      "date": "2026-09-20",
-      "youtubeTitle": "SCCC 09/20/2026",
       "title": null,
       "live": false,
       "summary": null,
