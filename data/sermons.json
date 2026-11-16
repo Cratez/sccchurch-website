@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-09T01:20:52.571Z",
+  "generatedAt": "2026-11-16T01:30:30.195Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
+    {
+      "videoId": "TNTW-jFyyEU",
+      "url": "https://www.youtube.com/watch?v=TNTW-jFyyEU",
+      "thumbnail": "https://i.ytimg.com/vi/TNTW-jFyyEU/hqdefault.jpg",
+      "date": "2026-11-15",
+      "youtubeTitle": "SCCC 11/15/2026 - Celebrating the Life of Terry Blair",
+      "title": null,
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
     {
       "videoId": "-VIxEVeL9zA",
       "url": "https://www.youtube.com/watch?v=-VIxEVeL9zA",
@@ -72,17 +83,6 @@
       "title": null,
       "live": false,
       "summary": null,
-      "sermon": null
-    },
-    {
-      "videoId": "bBLv6JDgdpo",
-      "url": "https://www.youtube.com/watch?v=bBLv6JDgdpo",
-      "thumbnail": "https://i.ytimg.com/vi/bBLv6JDgdpo/hqdefault.jpg",
-      "date": "2026-10-04",
-      "youtubeTitle": "SCCC 10/04/2026",
-      "title": "Noah: The Work of Faith",
-      "live": false,
-      "summary": "From Hebrews 11:1-7 and Genesis 6, a look at Noah, who believed God's warning of a flood no one had ever seen and built the ark. Real faith shows in what we do: don't just walk with God, work for God.",
       "sermon": null
     }
   ],
