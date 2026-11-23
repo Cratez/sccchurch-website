@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-16T01:30:30.195Z",
+  "generatedAt": "2026-11-23T02:06:35.045Z",
   "streamsUrl": "https://www.youtube.com/@southclackamascommunitychu1171/streams",
   "recent": [
+    {
+      "videoId": "pT10xU8L1Bg",
+      "url": "https://www.youtube.com/watch?v=pT10xU8L1Bg",
+      "thumbnail": "https://i.ytimg.com/vi/pT10xU8L1Bg/hqdefault.jpg",
+      "date": "2026-11-22",
+      "youtubeTitle": "SCCC 11/22/2026",
+      "title": null,
+      "live": false,
+      "summary": null,
+      "sermon": null
+    },
     {
       "videoId": "TNTW-jFyyEU",
       "url": "https://www.youtube.com/watch?v=TNTW-jFyyEU",
@@ -73,17 +84,6 @@
         "notesUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s0b98c7cf0e9147ec936a9cf23c02b9b7&cid=8F8F2DB857A1408F",
         "audioUrl": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy84ZjhmMmRiODU3YTE0MDhmL0lnQ2kxeElYcjBoTlNMSEo5am8zVVdIUkFacUM0ZXltUzg0WElsVElsanNicmM0P2U9MGcwSXVi&id=8F8F2DB857A1408F!s23999017897f41e2bf08eb357e7e8bab&cid=8F8F2DB857A1408F"
       }
-    },
-    {
-      "videoId": "V4V7DZmF-zk",
-      "url": "https://www.youtube.com/watch?v=V4V7DZmF-zk",
-      "thumbnail": "https://i.ytimg.com/vi/V4V7DZmF-zk/hqdefault.jpg",
-      "date": "2026-10-11",
-      "youtubeTitle": "SCCC 10/11/2026",
-      "title": null,
-      "live": false,
-      "summary": null,
-      "sermon": null
     }
   ],
   "series": [
